@@ -32,18 +32,19 @@ Gördüğünüz gibi biri küçük diğer büyük harflerden oluşan iki değiş
 - Ayrıca değişken tanımlarken ve tanımlamış olduğumuz değişkeni çağırırken kullandığımız çift ve tek tırnak kullanımı ile ilgili de dikkat etmemiz gereken bir kaç önemli husus bulunuyor. Sırasıyla bu detaylara değinecek olursak.
 Değişken tanımlarken, atayacağımız değeri tırnak içine yazdırmak istersek uygulayabileceğimiz iki metod bulunuyor.
 Örneğin ben konsola tam olarak çift tırnak işareti ile birlikte **"metin"** ifadesini bastırmak istersem; bastırmak istediğim ifadeyi tek tırnak içerisine alarak `' "metin" '` şeklinde yazmam gerekiyor. Şayet tek tırnak ile ekrana basılsın istersem de bu sefer tek tırnaklı ifadeyi çift tırnak içerisine alarak `" 'metin' "` şeklinde yazmam gerekiyor.
-Bu yöntem haricinde herhangi bir ifadeyi tırnak içerisinde bastırmak için tırnak işaretlerinden önce **ters slash**( \ ) işaretini \"metin\" şeklinde kullanmamız yeterli oluyor.
+Bu yöntem haricinde herhangi bir ifadeyi tırnak içerisinde bastırmak için tırnak işaretlerinden önce **ters slash**( \ ) işaretini `\"metin\"` şeklinde kullanmamız yeterli oluyor.
 
-Tüm bunların dışında konu anlatımın başında değişkenlerin programlar çalışırken farklı değerleri alabildiğinden bahsetmiştik. Bu da eğer bizler herhangi bir kısıtlama getirmezsek, sürekli olarak değişkenlerin  üzerine yeni değerler yazılabileceği anlamına geliyor. Bu durumu daha iyi anlamak adına spor="tenis" şeklinde bir değişken tanımlayalım. Gördüğünüz gibi bu şekilde spor isimli değişkeni ne zaman çağırsam karşıma tenis değeri basılmış oluyor. Ancak bu değişkenin değerini özellikle sabitlemediğimiz sürece sonsuza kadar bu şekilde kalmak zorunda değil, yani bu değeri değiştirmek mümkün. Bunun için aynı isimli değişkeni farklı bir değer ile tekrar tanımlamamız yeterli oluyor arkadaşlar. Hemen aynı değişkeni bu sefer futbol değeri ile tanımlayıp, bu durumu teyit edelim. Konsola spor="futbol" şeklinde yazıyorum. Ve echo komutu ile teyit ediyorum. Gördüğünüz gibi önceleri spor değişkenini çağırdığımda karşıma tenis değerini basıyorken, değişkenimizi tekrar tanımlamamız yani diğer bir değişle üzerine yeni değer yazmamız sonucu aldığımız çıktı futbol olarak değişmiş oldu. İlerleyen kısımlarda değiştirilemez değişkenler tanımlama konusuna ayrıca değiniyor olacağız ancak şimdilik basit değişken tanımlama işlemleri ile yapılan tanımlamaların değiştirilebilir değerler aldığını unutmayın lütfen.
+Tüm bunların dışında konu anlatımın başında değişkenlerin programlar çalışırken farklı değerleri alabildiğinden bahsetmiştik. Bu da eğer bizler herhangi bir kısıtlama getirmezsek, sürekli olarak değişkenlerin  üzerine yeni değerler yazılabileceği anlamına geliyor. Bu durumu daha iyi anlamak adına `spor="tenis"` komutu ile spor isimli bir değişken tanımlayalım ve `echo $spor` komutu ile değişkenimizi çağıralım.
 
-Değişkenler yeniden tanımlanabildiği için sistemin çalışmasında rol oynayan, varsayılan olarak tanımlanmış olan değişkenlerle aynı isimlere sahip yeni değişkenler oluşturmama konusunda da dikkatli olmamız gerekiyor. Eğer farkında olmadan sisteme ait değişkenleri yeninden tanımlarsanız sistemle ilgili pek çok soruna yol açabilirsiniz. Bu yüzden, tanımlayacağınız değişkenin daha önce kullanılıp kullanılmadığından tam olarak emin değilseniz öncelikle sistem üzerinde var olup olmadığını kontrol etmenizde fayda var.
-Peki ama nasıl kontrol edebiliriz derseniz,  konsola echo yazıp $ işareti koyduktan sonra tab tuşuna basarak tanımlı tüm değişkenleri listeleyebilirsiniz. Bu sayede halihazırda sistemde tanımlı olan değişkenlere müdahale etmeden daha bilinçli şekilde yeni değişkenler tanımlayabilirsiniz.
+Gördüğünüz gibi bu şekilde spor isimli değişkeni ne zaman çağırsam karşıma **tenis** değeri basılmış oluyor. Ancak değişkenin değerini özellikle sabitlemediğimiz sürece, istenildiği zaman bu değer değiştirilebilir. Bunun için aynı isimli değişkeni farklı bir değer ile tekrar tanımlamamız yeterli oluyor arkadaşlar. Hemen aynı değişkeni bu sefer **futbol** değeri ile tanımlayıp, bu durumu teyit edelim. Konsola `spor="futbol"` şeklinde yazıyorum ve echo komutu ile değişkenimin yeni değerini teyit ediyorum. 
 
-Değişkenlerin EXPORT edilmesi !
-=
+Gördüğünüz gibi önceleri spor değişkenini çağırdığımda karşıma **tenis** değerini basıyorken, değişkenimizi tekrar tanımlamamız yani diğer bir değişle üzerine yeni değer yazmamız sonucu, aldığımız çıktı **futbol** olarak değişmiş oldu. İlerleyen kısımlarda değiştirilemez değişkenler tanımlama konusuna ayrıca değiniyor olacağız ancak şimdilik basit değişken tanımlama işlemleri ile yapılan tanımlamaların değiştirilebilir değerler aldığını unutmayın lütfen.
+
+Değişkenler yeniden tanımlanabildiği için sistemin çalışmasında rol oynayan, varsayılan olarak tanımlanmış olan değişkenlerle aynı isimlere sahip yeni değişkenler oluşturmama konusunda da dikkatli olmamız gerekiyor. Eğer farkında olmadan sisteme ait değişkenleri yeninden tanımlarsanız sistemle ilgili pek çok soruna yol açabilirsiniz. Bu yüzden, tanımlayacağınız değişkenin daha önce kullanılıp kullanılmadığından tam olarak emin değilseniz, değişkeninizi tanımlamadan önce sistem üzerinde var olup olmadığını kontrol etmenizde fayda var.
+Peki ama nasıl kontrol edebiliriz derseniz,  konsola `echo` yazıp `$` işareti koyduktan sonra **Tab** tuşuna basarak tanımlı tüm değişkenleri listeleyebilirsiniz. Bu sayede halihazırda sistemde tanımlı olan değişkenlere müdahale etmeden daha bilinçli şekilde yeni değişkenler tanımlayabilirsiniz.
 
 
-Bu kısıma kadar temel olarak nasıl değişken tanımlanacağından ve tanımlama yaparken nelere dikkat etmemiz gerektiğinden bahsettik. Ancak şu ana kadar ele aldığımız ve örneklediğimiz değişkenler herhangi bir sınıfta yer almıyordu. Buradaki sınıftan kastım tanımladığımız değişkenin hangi türden veriyi içerisinde barındırabileceğinin belirlenmesidir. Yani örneğin değişken sayısal bir değişken mi olacak yoksa bir diziyi mi temsil edecek henüz bunlardan bahsetmedik.
+Şimdiye kadar tanımladığımız değişkenler herhangi bir sınıfta yer almıyordu.  Buradaki sınıftan kastım tanımladığımız değişkenin hangi türden veriyi içerisinde barındırabileceğinin belirlenmesidir. Yani örneğin değişken sayısal bir değişken mi olacak yoksa bir diziyi mi temsil edecek ya da değişkenimiz sabit değerli mi olacak henüz bunlardan bahsetmedik.
 
 Şimdi sırasıyla farklı türden değişkenleri nasıl tanımlarız bunlara göz atalım.
 Değişkenlerin belirli türlerde değer almasını sağlamak için `declare` komutunu kullanıyoruz. 
@@ -102,3 +103,32 @@ Ayrıca kaç tane değişken olduğunu öğrenmek için de # simgesini değişke
 
 
 Tüm değişken numaralarını sıralı şekilde bastırmak istersek de bu sefer ! işaretini kullanmamız gerekiyor. echo ${!dizi[*]}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Değişkenlerin export Edilmesi
+=
+[http://www.belgeler.org/lis/archive-tlkg-lis-6g.html](http://www.belgeler.org/lis/archive-tlkg-lis-6g.html)
+
+Bu kısıma kadar temel olarak değişkenleri nasıl tanımlayabileceğimizden ve tanımlama yaparken nelere dikkat etmemiz gerektiğinden bahsettik. Ancak henüz değinmediğimiz ve önemli olan başka bir konu da; değişkenlerin export edilmediği sürece yalnızca tanımlandıkları konsol üzerinden çağırılabiliyor olduklarıdır. Bu export etme yani dışarı aktarma(ihraç) kavramı nedir diyecek olursanız;
+
+Sisteme girdiğiniz zaman Linux size bir kabuk tahsis eder ve kabuk üzerinde değişkenler tanımlayabilmenize izin verir. Kabuk içinde bir kabuk betiği (script) çalıştırılınca sistem tarafından bir alt kabuk daha yaratılır. Bu andan itibaren iki kabuk çalışır, birisi sisteme girdiğiniz anda tahsis edilen, diğeri de programın çalıştırılabilmesi için sistem tarafından çağırılan. Program bittiği anda alt kabuğun işlevi sona erer ve sistem tarafından öldürülür.
