@@ -55,29 +55,39 @@ Rakam başta olmadığı sürece tüm kombinasyonlar rakam kullanımına uygundu
 ![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
 Gördüğünüz gibi biri küçük diğer büyük harflerden oluşan iki değişken de sistem tarafından farklı algılanarak konsola ayrı ayrı çıktılar basmış oldu. 
 
-- Bunun haricinde değişken tanımlarken **eşittir**(**=**) işaretinin **sağında ve solunda boşluk olmamasına** dikkat etmemiz gerekiyor. Aksi takdirde sistem bizlerin değişken tanımlamak istediğini anlayamadığından, kaçınılmaz olarak konsola "komut yok" şeklinde hata çıktısı basıyor. Aşağıdaki kullanımlar yanlış kullanımlara örnektir.
+- Bunun haricinde değişken tanımlarken **eşittir**(**=**) işaretinin **sağında ve solunda boşluk olmamasına** dikkat etmemiz gerekiyor. Aksi takdirde sistem bizlerin değişken tanımlamak istediğini anlayamadığından, kaçınılmaz olarak konsola "**komut yok**" şeklinde hata çıktısı basıyor. Aşağıdaki kullanımlar yanlış kullanımlara örnektir.
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
 
-- Ayrıca değişken tanımlarken ve tanımlamış olduğumuz değişkeni çağırırken kullandığımız çift ve tek tırnak kullanımı ile ilgili de dikkat etmemiz gereken bir kaç önemli husus bulunuyor. Sırasıyla bu detaylara değinecek olursak.
-Değişken tanımlarken, atayacağımız değeri tırnak içine yazdırmak istersek uygulayabileceğimiz iki metod bulunuyor.
-Örneğin ben konsola tam olarak çift tırnak işareti ile birlikte **"metin"** ifadesini bastırmak istersem; bastırmak istediğim ifadeyi tek tırnak içerisine alarak `' "metin" '` şeklinde yazmam gerekiyor. Şayet tek tırnak ile ekrana basılsın istersem de bu sefer tek tırnaklı ifadeyi çift tırnak içerisine alarak `" 'metin' "` şeklinde yazmam gerekiyor.
-Bu yöntem haricinde herhangi bir ifadeyi tırnak içerisinde bastırmak için tırnak işaretlerinden önce **ters slash**( \ ) işaretini `\"metin\"` şeklinde kullanmamız yeterli oluyor.
+Tüm bunların dışında konu anlatımın başında değişkenlerin programlar çalışırken farklı değerleri alabildiğinden bahsetmiştik. Bu da eğer bizler herhangi bir kısıtlama getirmezsek, sürekli olarak değişkenlerin  üzerine yeni değerler yazılabileceği anlamına geliyor. Bu durumu daha iyi anlamak adına `spor="tenis"` komutu ile **spor** isimli bir değişken tanımlayalım ve `echo $spor` komutu ile değişkenimizi çağıralım.
 
-Tüm bunların dışında konu anlatımın başında değişkenlerin programlar çalışırken farklı değerleri alabildiğinden bahsetmiştik. Bu da eğer bizler herhangi bir kısıtlama getirmezsek, sürekli olarak değişkenlerin  üzerine yeni değerler yazılabileceği anlamına geliyor. Bu durumu daha iyi anlamak adına `spor="tenis"` komutu ile spor isimli bir değişken tanımlayalım ve `echo $spor` komutu ile değişkenimizi çağıralım.
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
 
-Gördüğünüz gibi bu şekilde spor isimli değişkeni ne zaman çağırsam karşıma **tenis** değeri basılmış oluyor. Ancak değişkenin değerini özellikle sabitlemediğimiz sürece, istenildiği zaman bu değer değiştirilebilir. Bunun için aynı isimli değişkeni farklı bir değer ile tekrar tanımlamamız yeterli oluyor arkadaşlar. Hemen aynı değişkeni bu sefer **futbol** değeri ile tanımlayıp, bu durumu teyit edelim. Konsola `spor="futbol"` şeklinde yazıyorum ve echo komutu ile değişkenimin yeni değerini teyit ediyorum. 
+Gördüğünüz gibi bu şekilde **spor** isimli değişkeni ne zaman çağırsam karşıma **tenis** değeri basılmış oluyor. Ancak değişkenin değerini özellikle sabitlemediğimiz sürece, istenildiği zaman bu değer değiştirilebilir. Bunun için aynı isimli değişkeni farklı bir değer ile tekrar tanımlamamız yeterli oluyor arkadaşlar. Hemen aynı değişkeni bu sefer **futbol** değeri ile tanımlayıp, bu durumu teyit edelim. Konsola `spor="futbol"` şeklinde yazıyorum ve `echo` komutu ile değişkenimin yeni değerini teyit ediyorum. 
 
-Gördüğünüz gibi önceleri spor değişkenini çağırdığımda karşıma **tenis** değerini basıyorken, değişkenimizi tekrar tanımlamamız yani diğer bir değişle üzerine yeni değer yazmamız sonucu, aldığımız çıktı **futbol** olarak değişmiş oldu. İlerleyen kısımlarda değiştirilemez değişkenler tanımlama konusuna ayrıca değiniyor olacağız ancak şimdilik basit değişken tanımlama işlemleri ile yapılan tanımlamaların değiştirilebilir değerler aldığını unutmayın lütfen.
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
+
+Gördüğünüz gibi önceleri spor değişkenini çağırdığımda karşıma **tenis** değerini basıyorken, değişkenimizi tekrar tanımlamamız yani diğer bir değişle üzerine yeni değer yazmamız sonucu, aldığımız çıktı **futbol** olarak değişmiş oldu. İlerleyen kısımlarda değiştirilemez(sabit) değişkenler tanımlama konusuna ayrıca değiniyor olacağız ancak şimdilik basit değişken tanımlama işlemleri ile yapılan tanımlamaların değiştirilebilir değerler aldığını unutmayın lütfen.
 
 Değişkenler yeniden tanımlanabildiği için sistemin çalışmasında rol oynayan, varsayılan olarak tanımlanmış olan değişkenlerle aynı isimlere sahip yeni değişkenler oluşturmama konusunda da dikkatli olmamız gerekiyor. Eğer farkında olmadan sisteme ait değişkenleri yeninden tanımlarsanız sistemle ilgili pek çok soruna yol açabilirsiniz. Bu yüzden, tanımlayacağınız değişkenin daha önce kullanılıp kullanılmadığından tam olarak emin değilseniz, değişkeninizi tanımlamadan önce sistem üzerinde var olup olmadığını kontrol etmenizde fayda var.
-Peki ama nasıl kontrol edebiliriz derseniz,  konsola `echo` yazıp `$` işareti koyduktan sonra **Tab** tuşuna basarak tanımlı tüm değişkenleri listeleyebilirsiniz. Bu sayede halihazırda sistemde tanımlı olan değişkenlere müdahale etmeden daha bilinçli şekilde yeni değişkenler tanımlayabilirsiniz.
+Peki ama nasıl kontrol edebiliriz derseniz,  konsola `echo` yazıp `$` işareti koyduktan sonra **Tab** tuşuna basarak tanımlı tüm değişkenleri listeleyebilirsiniz. 
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
+Bu sayede halihazırda sistemde tanımlı olan değişkenlere müdahale etmeden daha bilinçli şekilde yeni değişkenler tanımlayabilirsiniz.
 
 
 Şimdiye kadar pek çok değişken tanımladık ancak tanımladığımız değişkenler herhangi bir sınıfta yer almıyordu.  Buradaki sınıftan kastım tanımladığımız değişkenin hangi türden veriyi içerisinde barındırabileceğinin belirlenmesidir. Yani örneğin değişken sayısal bir değişken mi olacak yoksa bir diziyi mi temsil edecek ya da değişkenimiz sabit değerli mi olacak henüz bunlardan bahsetmedik.
 
 Şimdi sırasıyla farklı türden değişkenleri nasıl tanımlarız bunlara göz atalım.
+
+Sınıfına Göre Değiken Tanımlamak
+=
+
 Değişkenlerin belirli türlerde değer almasını sağlamak için `declare` komutunu kullanıyoruz. 
 
 Aşağıdaki tablodan komutun parametrelerine ve yerine getirebildiği işlevlerine göz atabilirsiniz.
+ 
+
 |Parametre  | İşlev |
 |--|--|
 |-a|Dizi tanımlama işlevindedir. Array(dizi) ifadesinin kısaltmasıdır.|
@@ -88,7 +98,7 @@ Aşağıdaki tablodan komutun parametrelerine ve yerine getirebildiği işlevler
 |-t|Değişkene trace(iz) niteliği verme işlevindedir.|
 |-x|Değişkeni export(ihraç) ederek, alt kabuklara aktarma işlevindedir.|
 
-`declare` komutunu kullanıyorken, eğer değişkenlere özellik eklemek istiyorsak `-` işaretini, şayet var olan özellikleri çıkarmak istiyorsak da `+` işaretini çıkarmak istediğimiz özelliğin parametresini belirterek kullanmamız yeterli oluyor.
+`declare` komutunu kullanıyorken, eğer değişkenlere özellik eklemek istiyorsak `-` işaretini, şayet var olan özellikleri çıkarmak istiyorsak da `+` işaretini eklemek ya da çıkarmak istediğimiz özelliğin parametresini de belirterek kullanmamız yeterli oluyor. 
 
 
 Sayısal Değişken Tanımlama
@@ -97,17 +107,27 @@ Sayısal Değişken Tanımlama
 Anlatımlara ilk olarak sayısal değişken tanımlama işlemi ile başlayalım.
 Sayısal değişken tanımlamak için konsola `declare -i değişken tanımı` şeklinde komutumuzu girmemiz gerekiyor. 
 
-Ben 9 değerine sahip **rakam** isimli bir sayısal değişken tanımlamak istediğim için konsola `declare -i rakam="9"` komutumu giriyorum. 
+Ben **9** değerine sahip **rakam** isimli bir sayısal değişken tanımlamak istediğim için konsola `declare -i rakam="9"` komutumu giriyorum. 
 
-Böylelikle **rakam** isimli sayısal değişkenime **9** rakamını atamış oldum ve  bu değişkenim ben aksini istemedikçe yalnızca sayısal ifadeler alan bir değişken olarak sınıflandırılmış oldu.
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
 
-Bu durumu teyit etmek için öncelikle değişkenimin sınıfını sorgulamak üzere `declare` komutunun **p** parametersi ile `declare -p rakam` komutunu giriyorum. 
+Böylelikle **rakam** isimli sayısal değişkenime **9** rakamını atamış oldum ve  bu değişkenim ben aksini istemedikçe yalnızca sayısal ifadeler alan bir değişken olarak sınıflandırılmış oldu.Bu durumu teyit etmek için öncelikle değişkenimin sınıfını sorgulamak üzere `declare` komutunun **p** parametersi ile `declare -p rakam` komutunu giriyorum. 
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
 
 Sizlerin de gördüğü gibi konsol bana çıktı olarak `declare -i rakam` şeklinde bir çıktı bastı. Bu çıktı ile değişkenimizin sayısal bir değişken olduğunu teyit etmiş olsak da kesin olarak emin olmak adına değişkenimize sayısal değerlerin dışında herhangi bir değer atamaya çalışarak bu durumu netleştirelim. 
 
 Bunun için konsola `rakam="test"` komutumu girdikten sonra, değişkenimin durumunu sorgulamak için `declare -p rakam` komutunu kullanıyorum. 
 
-Ve sizlerin de gördüğü üzere çıktıda rakam değişkenimin değeri "**0**" olarak karışıma gelmiş oldu. Bunun nedeni değişkenime sonradan atamaya çalıştığım "**test**" ifadesinin sayısal bir karşılığının olmamasıdır. Neticede değişkenin sayısal değişken olarak tanımladıktan sonra sayısal değerlerin dışında herhangi bir değer almadığını test ederek, rakam isimli değişkenimizin kesin olarak sayısal bir değişken olduğunu teyit etmiş olduk.
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
+
+Gördüğünüz gibi çıktıda rakam değişkenimin değeri "**0**" olarak karışıma gelmiş oldu. Bunun nedeni değişkenime sonradan atamaya çalıştığım "**test**" ifadesinin sayısal bir karşılığının olmamasıdır. 
+
+Hatırlarsanız değişken tanımlama anlatımlarının başında **rakamlar** isimli değişkene **12345** ifadesini atamış ve bu değişkenimizi bastırmıştık. Şimdi aynı değişkeni atayıp değerini "**"test**" ifadesi ile değiştirerek sayısal değer alma özelliği olan değişkenler ile sıradan değişken arasındaki farkı görelim.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
+
+Gördüğünüz gibi sayısal özellik atamadığım değişkenin içeriğindeki sayısal veriler kolaylıkla değişmiş oldu. Böylelikle sayısal değişkenin sıradan değişken tanımlamaktan farkını kıyaslayarak görmüş olduk.
 
 Ancak tanımladığımız sayısal değişkenler her zaman sayısal değişken olarak kalmak zorunda da değil. Değişkenimizin sınıfını tekrar eski hale getirmek istersek ekleme işleminde kullandığımız **-** işareti yerine  bu sefer **+** işaretini kullanmamız yeterli oluyor. Yani ben **rakam** isimli sayısal değişkenimin, sayısal değişken tutma özelliğini kaldırmak istersem; konsola `declare +i rakam` şeklinde komut girmem yeterli oluyor. Bu şekilde, `declare` komutunu kullanarak istediğimiz değişkene sayısal değişken özelliği ekleyip çıkartabiliyoruz.
 
