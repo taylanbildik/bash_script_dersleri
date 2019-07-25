@@ -191,6 +191,10 @@ Ayrıca dizi içerisinde kaç tane değişken olduğunu öğrenmek için de `#` 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
 
 
+Değerlerin Bastırılması
+=
+
+Bu kısıma kadar pek çok değişken tanımlayıp bu değişkenlerin değerlerini konsola bastırdık. Ancak şu ana kadarki bastırmış olduğumuz değerler bizlerin atadığı değerlerin birebir aynısıydı. Fakat her zaman basılan bu değerlerin tamamına ihtiyaç duymayabiliyoruz. İşte bu gibi durumlarda alacağımız çıktıları düzenlemek, yani örneğin bir kısmını bastırmak ya da bir kısımını silmek gibi işlevleri yerine getirmek için birkaç farklı kullanım şekli bulunuyor. Şimdi genel olarak bu kullanımları ele alalım.
 
 **Değerin bir kısmını seçmek :** 
 Değişkene atanan değer içerisinde belirli bir kısımı almak istersek komutumuzu **${degisken:başlangıç:uzunluk}**  şeklinde kullanıyoruz.
@@ -199,10 +203,14 @@ Değişkene atanan değer içerisinde belirli bir kısımı almak istersek komut
 **Uzunluk :** Seçme işleminin ne kadar uzunlukta olacağını belirtir. Bu kısım boş bırakılırsa seçme işlemi otomatik olarak değerin sonuna kadar yapılır.
 
 ***Örnek Kullanımları;***
+**deneme** isimli değişkene "**123456789**" değerini atıyorum.
 
-**" ${degisken:5} "** = "degisken" adlı değişken değerinin 5. karakterinden sonra hepsi. 
+**" ${degisken::3} "** = "degisken" adlı değişken değerinin ilk 3 karakteri.
 
-**" ${degisken:5:3} "** = "degisken" adlı değişken değerinin 5. karakterinden itibaren 3 karakter.
+
+**" ${degisken:2} "** = "degisken" adlı değişken değerinin 5. karakterinden sonra hepsi. 
+
+**" ${degisken:2:3} "** = "degisken" adlı değişken değerinin 5. karakterinden itibaren 3 karakter.
 
 
 **Değişken değeri içerisinde silme :** 
