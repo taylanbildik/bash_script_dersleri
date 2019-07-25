@@ -191,7 +191,7 @@ Ayrıca dizi içerisinde kaç tane değişken olduğunu öğrenmek için de `#` 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
 
 
-Değerlerin Bastırılması
+Değişken Değerlerin Farklı Şekillerde Bastırılması
 =
 
 Bu kısıma kadar pek çok değişken tanımlayıp bu değişkenlerin değerlerini konsola bastırdık. Ancak şu ana kadarki bastırmış olduğumuz değerler bizlerin atadığı değerlerin birebir aynısıydı. Fakat her zaman basılan bu değerlerin tamamına ihtiyaç duymayabiliyoruz. İşte bu gibi durumlarda alacağımız çıktıları düzenlemek, yani örneğin bir kısmını bastırmak ya da bir kısımını silmek gibi işlevleri yerine getirmek için birkaç farklı kullanım şekli bulunuyor. Şimdi genel olarak bu kullanımları ele alalım.
@@ -205,21 +205,27 @@ Değişkene atanan değer içerisinde belirli bir kısımı almak istersek komut
 ***Örnek Kullanımları;***
 **deneme** isimli değişkene "**123456789**" değerini atıyorum.
 
-**" ${degisken::3} "** = "degisken" adlı değişken değerinin ilk 3 karakteri.
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
 
+**" ${deneme::3} "** = değişken değerinin ilk 3 karakteri.
 
-**" ${degisken:2} "** = "degisken" adlı değişken değerinin 5. karakterinden sonra hepsi. 
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
 
-**" ${degisken:2:3} "** = "degisken" adlı değişken değerinin 5. karakterinden itibaren 3 karakter.
+**" ${deneme:2} "** = değişken değerinin 2. karakterinden sonra hepsi. 
 
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
 
-**Değişken değeri içerisinde silme :** 
-Değişkenimizin içerisinde yer alan değerleri silmek için iki farklı kullanım metodu bulunuyor. Bunlardan ilki değerleri başlangıçtan itibaren silen **#** işareti ve ikincisi ise tersi şekilde istenilen ifadelerin değerlerin sonundan itibaren silen **%** işaretidir. Sırasıyla açıklayacak olursak;
+**" ${deneme:2:4} "** = değişken değerinin 2. karakterinden itibaren 4 karakter.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
+
+**Değişken değeri silmek :** 
+Değişkenimizin içerisinde yer alan değerleri silmek için iki farklı kullanım metodu bulunuyor. Bunlardan ilki değerleri başlangıçtan itibaren silen **#** işareti, ikincisi ise tersi şekilde istenilen ifadelerin değerlerin sonundan itibaren silen **%** işaretidir. Sırasıyla bu kullanımları açıklayacak olursak;
 
 Örneğin **silinecek=(sal salı salıncak )** şeklinde tanımlanmış bir değişkenin değerlerinin başından başlayarak;
-Bir harf grubunu silmek istersek; `${silinecek[*]##silinecek_harf_grubu*}`
-Yalnızca ilgili harfleri silmek istersek;`${silinecek[*]#silinecek_harf*}`
-Komutunu kullanıyoruz. 
+Bir harf grubunu silmek istersek; `${silinecek[*]##silinecek_harf_grubu*}` komutunu kullanıyorken..
+Yalnızca ilgili harfleri silmek istersek;`${silinecek[*]#silinecek_harf*}`komutunu kullanıyoruz. 
+
 Komut içerisinde yer alan kısımları açıklayacak olursak;
 **[*]** şeklinde belirtilen kısım dizideki tüm elemanları kapsıyor.
 Kare işareti(**#**) de silme işlevini yerine getiriyor. Eğer silinecek ifade birleşik harf grubu ise çift kare(**##**) işareti kullanılmalıdır.
