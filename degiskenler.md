@@ -129,33 +129,58 @@ Hatırlarsanız değişken tanımlama anlatımlarının başında **rakamlar** i
 
 Gördüğünüz gibi sayısal özellik atamadığım değişkenin içeriğindeki sayısal veriler kolaylıkla değişmiş oldu. Böylelikle sayısal değişkenin sıradan değişken tanımlamaktan farkını kıyaslayarak görmüş olduk.
 
-Ancak tanımladığımız sayısal değişkenler her zaman sayısal değişken olarak kalmak zorunda da değil. Değişkenimizin sınıfını tekrar eski hale getirmek istersek ekleme işleminde kullandığımız **-** işareti yerine  bu sefer **+** işaretini kullanmamız yeterli oluyor. Yani ben **rakam** isimli sayısal değişkenimin, sayısal değişken tutma özelliğini kaldırmak istersem; konsola `declare +i rakam` şeklinde komut girmem yeterli oluyor. Bu şekilde, `declare` komutunu kullanarak istediğimiz değişkene sayısal değişken özelliği ekleyip çıkartabiliyoruz.
+Ancak tanımladığımız sayısal değişkenler her zaman sayısal değişken olarak kalmak zorunda da değil. Değişkenimizin sınıfını tekrar eski hale getirmek istersek ekleme işleminde kullandığımız **-** işareti yerine  bu sefer **+** işaretini kullanmamız yeterli oluyor. Yani ben **rakam** isimli sayısal değişkenimin, sayısal değişken tutma özelliğini kaldırmak istersem; konsola `declare +i rakam` şeklinde komut girmem yeterli oluyor. 
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
+
+Bu şekilde, `declare` komutunu kullanarak istediğimiz değişkene sayısal değişken özelliği ekleyip çıkartabiliyoruz.
 
 
 
 Dizi Tanımlama
 -
 Birden fazla değeri tek bir değişken içerisine toparlamak istediğimizde dizileri kullanabiliriz. Bu işlem için `declare` komutunun `a` parametresini kullanıyoruz. Komutumuzun kullanımı `declare -a dizi=(değer1 değer2 değer3)` şeklindedir.
-Ayrıca `declare` komutunu kullanmadan `dizi=(değer1 değer2 değer3 )` şeklinde de dizi belirtebiliyoruz.
+Ayrıca `declare` komutunu kullanmadan, dizide yer alacak ifadeleri parantez içine alarak da `dizi=(değer1 değer2 değer3 )` şeklinde dizi belirtebiliyoruz. Buradaki parantezler o değişkenin bir dizi olduğunu otomatik olarak belirtiyor.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
 
 Dizilerin kullanımına en basit örnek alışveriş listesi olarak verilebilir. 
 
-Örneğin ben liste isimli bir değişken tanımlayıp bu değişkenin içerisine istediğim sayıda değer atayabilir ve atadığım değerleri tek tek çağırabilirim. Örnek olması için; konsola `liste=(su süt çay elma ekmek)` şeklinde komutumu girerek, **liste** isimli değişkene birden fazla değer atamış oluyorum.
+Örneğin ben **liste** isimli bir değişken tanımlayıp bu değişkenin içerisine istediğim sayıda değer atayabilir ve atadığım değerleri tek tek çağırabilirim. Örnek olması için; konsola `liste=(su süt çay elma ekmek)` şeklinde komutumu girerek, **liste** isimli değişkene birden fazla değer atamış oluyorum.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
 
 Böylelikle her bir değere **0** dan başlayarak sırasıyla birer index değeri atanmış oldu. Yani örneğin **su** ifadesi ilk değer olduğu için **0** index numarasını almışken, **çay** değerinin index numarası **2** olmuş oldu.
+
 Bizler de sıralı şekilde atanan bu index değerleri sayesinde istediğimiz değerleri diziden çağırabiliyoruz.
 Örneğin dizide yer alan ilk değeri çağırmak istesem konsola `echo ${liste[0]}` komutunu girmem yeterli oluyor.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
 
 Gördüğünüz gibi **0** index numarası ile ilk değerimizi ekran bastırmış olduk.
 Bu işlemi aynı şekilde diğer değerlerimizi bastırmak için de kullanabiliriz.
 
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
+
 Eğer tüm değişkenleri tek sefer bastırmak istersek `*` ya da `@` işaretini kullanabiliriz.
 
-Tanımlanmış olan dizi elemanının kaç karakterden oluştuğunu öğrenmek için, komutumuzu `echo ${#dizi[değişken indexi]}` şeklinde giriyoruz. Ayrıca bu kullanım sadece diziler için değil değişkenler ve sabitler içinde geçerlidir.
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
+
+Tanımlanmış olan dizi elemanının kaç karakterden oluştuğunu öğrenmek için **#** simgesini kullanarak , komutumuzu `echo ${#dizi[değişken indexi]}` şeklinde giriyoruz. 
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
+
+Ayrıca bu kullanım sadece diziler için değil değişkenler ve sabitler içinde geçerlidir.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
 
 Eğer komutumuzda index numarası ile herhangi bir dizi elemanı belirtmezsek varsayılan olarak dizide yer alan ilk eleman işleme alınıyor.
 
-Ayrıca dizi içerisinde kaç tane değişken olduğunu öğrenmek için de `#` simgesini ile birlikte index numarası kısmında  `*` simgesini kullanmamız yeterli. `echo ${#dizi[*]}`
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
+
+Ayrıca dizi içerisinde kaç tane değişken olduğunu öğrenmek için de `#` simgesini ile birlikte index numarası kısmında  `*` simgesini kullanmamız yeterli.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
 
 
 
