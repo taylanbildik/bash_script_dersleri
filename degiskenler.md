@@ -98,10 +98,10 @@ Aşağıdaki tablodan komutun parametrelerine ve yerine getirebildiği işlevler
 
 |Parametre  | İşlev |
 |--|--|
+|-p|Değişkenin niteliklerini bastırma işlevindedir. Print(yazdır) ifadesinin kısaltmasıdır.|
+|-i|Sayısal değişken tanımlama işlevindedir. İnteger(tam sayı) ifadesinin kısaltmasıdır.|
 |-a|Dizi tanımlama işlevindedir. Array(dizi) ifadesinin kısaltmasıdır.|
 |-f|Fonksiyon özelliği tanımlama işlevindedir. Function(fonksiyon) ifadesinin kısaltmasıdır.|
-|-i|Sayısal değişken tanımlama işlevindedir. İnteger(tam sayı) ifadesinin kısaltmasıdır.|
-|-p|Değişkenin niteliklerini bastırma işlevindedir. Print(yazdır) ifadesinin kısaltmasıdır.|
 |-r|Sabit değişken atama işlevindedir. Readonly(yalnızca okunabilir) ifadesinin kısaltmasıdır.|
 |-t|Değişkene trace(iz) niteliği verme işlevindedir.|
 |-x|Değişkeni export(ihraç) ederek, alt kabuklara aktarma işlevindedir.|
@@ -191,6 +191,56 @@ Ayrıca dizi içerisinde kaç tane değişken olduğunu öğrenmek için de `#` 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
 
 
+
+
+Sabit Değişken Tanımlama
+-
+
+Şimdi ise tanımladığımız değişkenin değerinin, değiştirilemez şekilde sabit kalmasını nasıl sağlarız bunu görelim. Bu işlem için `readonly` komutunu ya da `declare` komutunun `r` parametresini kullanabiliyoruz.
+
+Örneğin ben **sabit** isimli bir değişkenin değerini sabitlemek üzere konsola `readonly sabit="sabit değer"` şeklinde komutumu giriyorum. Daha sonra atadığım sabit değeri değiştirmeye çalışarak, değerin gerçekten de sabit olup olmadığını teyit etmek için, sabit isimli değişkenime yeni değer atamaya çalışıyorum. 
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
+
+Ve gördüğünüz gibi **sabit** isimli değişkenimin değeri sabit olduğu için içerisine yeni bir değer atanamadı. 
+
+Ayrıca biliyorsunuz ki sabit değer atama işlemini `readonly` komutu yerine, `declare` komutu ile de gerçekleştirebilirdik. Hemen bu şekilde de bir örnek yapmak adına  konsola `declare -r sabit1="sabit değer 1"` şeklinde de komutumu girip değişkenimin özelliğini `p` parametresi ile teyit ediyorum. 
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
+
+Son olarak bu değerimi de değiştirmeye çalışarak değişkenimin sabit olup olmadığını teyit ediyorum. 
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
+
+Ve yine gördüğünüz gibi atadığımız değişken sabit olduğundan yeni bir değer atanamadı.
+
+**Sabit değişken tanımlarken dikkat edilmesi gereken nokta, sabit değişkenlerin bir kez tanımlandıktan sonra kesinlikle silinip, değiştirilemeyeceğidir**. Sabit değişken bir kez tanımlandıktan sonra sabit şekilde kalır.
+Bu durumu teyit etmek için değişkenimizin sabitlik özelliğini `declare +r` komutu ile kaldırmayı deneyelim. 
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
+
+Komutumuzu girdik ancak gördüğünüz gibi değişken sabit değere sahip olduğundan konsol bu işlemin mümkün olmadığını belirtiyor. 
+Peki ama sabit değişkenler gerçekten sonsuza kadar tanımlandığı şekilde mi kalıyor ?
+
+Aslında bu durum; yalnızca değişkenin tanımlandığı konsol ekranı için geçerli olduğundan, konsol kapatıldığında tanımlanan tüm değişkenlerle birlikte sabit değişkenler de sıfırlanmasıyla sonuçlanır.
+Bu durumun daha net anlamak için lütfen okumaya devam edin.
+
+
+Değişkenlerin export Edilmesi
+=
+
+Bu kısıma kadar temel olarak değişkenleri nasıl tanımlayabileceğimizden ve tanımlama yaparken nelere dikkat etmemiz gerektiğinden bahsettik. Ancak henüz değinmediğimiz ve önemli olan başka bir konu da; değişkenlerin **export** edilmediği sürece yalnızca tanımlandıkları konsol üzerinden çağırılabiliyor olduklarıdır. Bu durumu gözlemlemek için çalışmakta olduğum kabuk üzerinde `degisken="yeni değer"` şeklinde bir değişken tanımlayıp konsola bastırıyorum.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
+
+Değişkeni tanımladığımız kabuk üzerinde değişkenizimi kolaylıkla bastırdık, şimdi de aynı değişkeni bulunduğumuz kabuk altında bir alt kabuk açıp bastırmaya çalışalım. Bu işlem için öncelikle çalışmakta olduğumuz kabukta bash komutunu girerek subshell yani bir alt shell açmamız gerekiyor.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
+
+Gördüğünüz gibi çıktımız boş oldu. Bunun nedeni başta da belirtiğim şekilde, tanımlanan değişkenlerin export edilmediği sürece yalnızca tanımlandığı kabuklar üzerinde çalışabildiğidir.
+
+
+
 Değişken Değerlerin Farklı Şekillerde Bastırılması
 =
 
@@ -242,48 +292,3 @@ Aynı komutları bu sefer **%** işareti ile olacak şekilde kullanmamız yeterl
 
 Değişken içerisinde kelime değiştirme yada silme işlemleri sadece o onki işlemler için geçerlidir. Orjinal değer değişmeyecektir. Değiştirme işlemi sadece istenilen yerde olacaktır, herhangi bir kaydetme durumu sözkonusu değildir. Mesela "degisken" adlı değişken değeri içerisinde kelimeleri değiştirip ekrana yazdırmak için bu yöntemi kullandığınız zaman, işlem sorunsuz olarak gerçekleşecek, Terminal ekranına değiştirilmiş veri yazılacaktır. Fakat orjinal veri kendini koruyacaktır. ileriki derslerimizde kalıcı olarak değiştirme işlemlerini göstereceğiz.
 
-
-
-
-
-
-
-
-
-
-Sabit Değişken Tanımlama
--
-
-Şimdi ise tanımladığımız değişkenin değerinin, değiştirilemez şekilde sabit kalmasını nasıl sağlarız bunu görelim. Bu işlem için `readonly` komutunu ya da `declare` komutunun `r` parametresini kullanabiliyoruz.
-
-Örneğin ben **sabit** isimli bir değişkenin değerini sabitlemek üzere konsola `readonly sabit="sabit değer"` şeklinde komutumu giriyorum. Daha sonra atadığım sabit değeri değiştirmeye çalışarak, değerin gerçekten de sabit olup olmadığını teyit etmek için, sabit isimli değişkenime yeni değer atamaya çalışıyorum. 
-
-Ve gördüğünüz gibi **sabit** isimli değişkenimin değeri sabit olduğu için içerisine yeni bir değer atanamadı. Ayrıca biliyorsunuz ki sabit değer atama işlemini `readonly` komutu yerine, `declare` komutu ile de gerçekleştirebilirdik. Hemen bu şekilde de bir örnek yapmak adına  konsola `declare -r sabit1="sabit değer 1"` şeklinde de komutumu girip değişkenimin özelliğini `p` parametresi ile teyit ediyorum. 
-
-Son olarak bu değerimi de değiştirmeye çalışarak değişkenimin sabit olup olmadığını teyit ediyorum. 
-
-Ve yine gördüğünüz gibi atadığımız değişken sabit olduğundan yeni bir değer atanamadı.
-
-Sabit değişken tanımlarken dikkat edilmesi gereken nokta, sabit değişkenlerin bir kez tanımlandıktan sonra kesinlikle silinip, değiştirilemeyeceğidir. Sabit değişken bir kez tanımlandıktan sonra sabit şekilde kalır.
-Bu durumu teyit etmek için değişkenimizin sabitlik özelliğini `declare +r` komutu ile kaldırmayı deneyelim. 
-
-Komutumuzu girdik ancak gördüğünüz gibi değişken sabit değere sahip olduğundan konsol bu işlemin mümkün olmadığını belirtiyor. 
-Peki ama sabit değişkenler gerçekten sonsuza kadar tanımlandığı şekilde mi kalıyor ?
-
-Aslında bu durum; yalnızca değişkenin tanımlandığı konsol ekranı için geçerli olduğundan, konsol kapatıldığında tanımlanan tüm değişkenlerle birlikte sabit değişkenler de sıfırlanmasıyla sonuçlanır.
-Bu durumun daha net anlamak için lütfen okumaya devam edin.
-
-
-Değişkenlerin export Edilmesi
-=
-[http://www.belgeler.org/lis/archive-tlkg-lis-6g.html](http://www.belgeler.org/lis/archive-tlkg-lis-6g.html)
-
-Bu kısıma kadar temel olarak değişkenleri nasıl tanımlayabileceğimizden ve tanımlama yaparken nelere dikkat etmemiz gerektiğinden bahsettik. Ancak henüz değinmediğimiz ve önemli olan başka bir konu da; değişkenlerin export edilmediği sürece yalnızca tanımlandıkları konsol üzerinden çağırılabiliyor olduklarıdır. Bu export etme yani dışarı aktarma(ihraç) kavramı nedir diyecek olursanız, kavramların daha net anlaşılabilmesi adına açıklamaya temelden başlamamız gerekiyor;
-
-Biz bilgisayarı çalıştırıp GNU/Linux işletim sistemini boot ettiğimizde bizden kullanıcı adı ve şifre bilgisi istemeden çalışan kabuğa "Login Shell" ,kullanıcı adı ve parola ile giriş yaptıktan sonra açılan kabuğa ise "Interactive Shell" deniyor. Interactive Shell üzerinde 6 farklı oturum açıp, 6 oturumda birden farklı işlemler gerçekleştirebiliyoruz.
-Interactive shell üzerinde açtığımız kabuklar "**tty_konsol_numarası**"  şeklinde ifade edilerek numarasına göre, tty1,tty2,tty3,tty4,tty5,tty6 şeklinde isimlendiriliyor. Bu 6 kabuktan 2 si varsayılan olarak grafiksel arayüz ile çalışıyor.
-
-**----Düzenlenecek----**
-Sistemde oturum açtığımız zaman Linux bizlere üzerinde çalışabileceğimiz bir kabuk tahsis etmiş oluyor
-
-Sisteme girdiğiniz zaman Linux size bir kabuk tahsis eder ve kabuk üzerinde değişkenler tanımlayabilmenize izin verir. Kabuk içinde bir kabuk betiği (script) çalıştırılınca sistem tarafından bir alt kabuk daha yaratılır. Bu andan itibaren iki kabuk çalışır, birisi sisteme girdiğiniz anda tahsis edilen, diğeri de programın çalıştırılabilmesi için sistem tarafından çağırılan. Program bittiği anda alt kabuğun işlevi sona erer ve sistem tarafından öldürülür.
