@@ -233,12 +233,22 @@ Bu kısıma kadar temel olarak değişkenleri nasıl tanımlayabileceğimizden v
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
 
-Değişkeni tanımladığımız kabuk üzerinde değişkenizimi kolaylıkla bastırdık, şimdi de aynı değişkeni bulunduğumuz kabuk altında bir alt kabuk açıp bastırmaya çalışalım. Bu işlem için öncelikle çalışmakta olduğumuz kabukta bash komutunu girerek subshell yani bir alt shell açmamız gerekiyor.
+Tanımladığımız kabuk üzerinde değişkenizimi kolaylıkla bastırdık, şimdi de aynı değişkeni bulunduğumuz kabuk altında bir alt kabuk açıp bastırmaya çalışalım. Bu işlem için öncelikle çalışmakta olduğumuz kabukta `bash` komutunu girerek subshell yani bir alt shell açmamız gerekiyor. 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
 
-Gördüğünüz gibi çıktımız boş oldu. Bunun nedeni başta da belirtiğim şekilde, tanımlanan değişkenlerin export edilmediği sürece yalnızca tanımlandığı kabuklar üzerinde çalışabildiğidir.
+Subshell içerisinde olduğumuza göre değişkenimizi bastırmayı deneyelim.
 
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
+
+
+Gördüğünüz gibi çıktımız boş oldu. Bunun nedeni başta da belirtiğim şekilde, tanımlanan değişkenlerin export edilmediği sürece yalnızca tanımlandığı kabuk üzerinde çalışabildiğidir. Bu durumu kanıtlamak adına `exit` komutu ile bulunduğumuz alt shellden çıkış yapıp değişkenimizi **export** edip tekrar deneyelim.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
+
+Böylelikle `export` komutunun ivleşini test ederek görmüş olduk. Ayrıca `export` komutu yerine aynı işlem için `declare` komutunun `x` parameteresi `declare -x degisken` şeklinde de kullanabilirdik.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/1.png)
 
 
 Değişken Değerlerin Farklı Şekillerde Bastırılması
