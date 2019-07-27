@@ -6,6 +6,7 @@ Giriş
 Bash script nedir ne işe yarar ?
 -
 
+
 Bash script kavramının tam olarak anlaşılabilmesi için öncelikle bahsetmemiz gereken birkaç önemli kavram bulunuyor. Şimdi sırasıyla bu kavramları bir örnek üzerinden ele alalım.
 
 Örneğin ben bulunduğum konumda yeni bir dosya oluşturmak istiyorum diyelim. Bu dosyayı oluşturmak için iki farklı seçeneğim buluyor. Dosyayı oluşturmak için ya grafiksel arayüzü kullanacağım ya da komut girerek ilgili dosyanın oluşmasını sağlayacağım. Her iki şekilde de benim yaptığım işlem bilgisayara ne yapması gerektiğini anlatmak oluyor. Yani ben grafiksel arayüzden tıklama işlemleri ile ya da konsoldan komut girerek bilgisayara iş buyurduğumda aslında arkaplanda, girilen işlem emri yorumlanarak donanıma iş yaptırıyor. Ancak bu işlem emrini bilgisayar doğrudan anlayamaz,  anlayamadığı için onun anlayacağı dile çevrilmesi gerekiyor. Bu yüzden çevirme işleminde görevli yapılar bulunuyor. 
@@ -18,7 +19,9 @@ Yapıyı tekrar kısaca ele alacak olursak ben yapılmasını istediğim işlemi
 
 İşte en başında dosya oluşturmak için konsola girdiğim komut da bash dilinin bir komutu, ben bu komut sayesinde shell denilen yapı ile iletişim kurdum, shell de benden aldığımı emri kernel yani çekirdeğe aktardı. Neticede çekirdek de ilgili donanımlara gerekli işi yaptırarak dosyanın oluşmasını sağladı.
 
-Ben shell ile bash dili aracılığı ile iletişim kurdum dedim ancak ; shell denilen yapı, yalnızca bash kabuk dili ile iletişim kuruyor gibi bir anlam çıkmasın, yani shell denilen yapı ile iletişim kurma konusunda bash tek alternatif değil. **Linux** sistemlerinde **BASH** dışında (**ksh,tcsh,zsh,fish...**) gibi birçok **Shell** (**kabuk**) dili bulunuyor. Ancak yetenekleri dolayısıyla **en çok tercih edilen kabuk programı BASH kabuk programıdır**.
+Ben shell ile bash dili aracılığı ile iletişim kurdum dedim ancak ; shell denilen yapı, yalnızca bash kabuk dili ile iletişim kuruyor gibi bir anlam çıkmasın, yani shell denilen yapı ile iletişim kurma konusunda bash tek alternatif değil. **Linux** sistemlerinde **BASH** dışında (**ksh,tcsh,zsh,fish...**) gibi birçok **Shell** (**kabuk**) dili bulunuyor. Ancak yetenekleri dolayısıyla **en çok tercih edilen kabuk programı BASH kabuk programıdır**. 
+
+Bash kabuk programı Stephen Bourne'nin UNIX için geliştirmiş olduğu sh kabuk dilini temel alarak geliştirildiği için; **B**ourne-**A**gain **SH**ell kelimelerinin kısaltması olan **BASH** şeklinde adlandırılmıştır. Bash kabuk dilinin bu kadar yetenekli olmasının nedeni; sh dili haricinde ksh(korn shell) ve csh(C shell) gibi kabuk dillerinin en iyi özelliklerini içerisinde barındırarak, hem etkileşimli hem de programlama için kullanımını işlevsel olarak arttıran geliştirmeler içermesidir. Tüm bu nedenlerden sistemde BASH dışında kabuk dilleri barındırılmasına rağmen sistemde varsayılan olarak BASH kabuk yorumlayıcısı tanımlıdır.
 
 Bizler de bu eğitim serisinde bash kabuk programının komutlarını tek bir dosya içerisinde uygun şekilde toparlayarak toplu işlemleri yerine getirmeyi öğreneceğiz. Bu yapacağımız işlem bash shell scripting yani Türkçe olarak bash kabuk senaryosu olarak geçiyor. Böyle ifade edilmesinin nedeni de kabuk dili olan bash dilinin yerine getirebileceği işlemleri tek tek yapmak yerine senaryolaştırılarak tek seferde tek elden gerçekleşmesinin sağlanmasıdır. 
 Yani kısacası bizler gerekli tüm komutları tek bir dosyada uygun şekilde toparlayarak; durumlara özel senaryolar oluşturacağız ve oluşturduğumuz senaryolara göre de sistem verilen emirleri otomatik olarak gerçekleştirecek.
