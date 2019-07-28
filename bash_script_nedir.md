@@ -1,5 +1,3 @@
-**Kabuk Programla Müfredat**
-
 Giriş
 =
 
@@ -13,11 +11,28 @@ Bash script kavramının tam olarak anlaşılabilmesi için öncelikle bahsetmem
 
 Bu açıklamadan sonra örneğimizi tekrar ele alarak arkaplanda gerçekleşen işlemleri ve görevli yapıları kısaca açıklayalım.
 Ben dosya oluşturmak istiyorum ve bunu bilgisayara ifade etmeliyim. İfade biçimi olarak grafiksel arayüz de olabilir komut kullanımı da olabilir. Ben komut kullanımını tercih ediyorum ve komutumu bilgisayara aktarmak için konsol denilen yapıyı kullanmam gerekiyor. 
-Konsol benim komutlarımı sisteme iletmemdeki yardımcı bir araçtır. Ben komutlarımı bu konsol aracılığı ile sisteme ulaştırırım. Komutumu konsola giriyorum ve komutu onayladığımda, yazmış olduğum komut, shell yani kabuk denilen yapı tarafından alınarak kernel yani çekirdeğe iletiliyor. Çekirdek de aldığı emri donanımlara ifade ederek gerekli işlemi yerine getirtiyor.
+Konsol benim komutlarımı sisteme iletmemdeki yardımcı bir araçtır. Ben komutlarımı bu konsol aracılığı ile sisteme ulaştırırım. 
 
-Yapıyı tekrar kısaca ele alacak olursak ben yapılmasını istediğim işlemi doğrudan donanımın anlayacağı şekilde ifade edemeyeceğim için bunun yerine shell denilen yapıya bash kabuk programı diğer bir değişle bash dili aracılığı ile derdimi anlatıyorum shell de benden aldığı bilgileri çekirdeğe aktarıyor. Çekirdekte donanıma iş yaptırıyor. Yani buradaki aracı yapıların hepsinin temel görevi tercümanlık oluyor.
+![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Giri%C5%9F/komut.png)
 
-İşte en başında dosya oluşturmak için konsola girdiğim komut da bash dilinin bir komutu, ben bu komut sayesinde shell denilen yapı ile iletişim kurdum, shell de benden aldığımı emri kernel yani çekirdeğe aktardı. Neticede çekirdek de ilgili donanımlara gerekli işi yaptırarak dosyanın oluşmasını sağladı.
+Komutumu konsola giriyorum ve komutu onayladığımda, yazmış olduğum komut, **shell** yani **kabuk** denilen yapı tarafından alınıyor. 
+
+![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Giri%C5%9F/shell.png)
+
+Daha sonra **kernel** yani **çekirdeğe** iletiliyor. 
+
+![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Giri%C5%9F/kernel.png)
+
+Çekirdek de aldığı emri donanımlara ifade ederek gerekli işlemi yerine getirtiyor.
+
+![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Giri%C5%9F/hardware.png)
+![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Giri%C5%9F/file.png)
+
+Yapıyı tekrar kısaca ele alacak olursak ben yapılmasını istediğim işlemi doğrudan donanımın anlayacağı şekilde ifade edemeyeceğim için bunun yerine **shell** denilen yapıya **bash** kabuk programı diğer bir değişle **bash** dili aracılığı ile derdimi anlatıyorum **shell** de benden aldığı bilgileri çekirdeğe aktarıyor. Çekirdekte donanıma iş yaptırıyor. Yani buradaki aracı yapıların **hepsinin temel görevi tercümanlık oluyor**.
+
+İşte en başında dosya oluşturmak için konsola girdiğim komut da bash dilinin bir komutu, ben bu komut sayesinde shell denilen yapı ile iletişim kurdum, shell de benden aldığımı emri kernel yani çekirdeğe aktardı. Neticede çekirdek de ilgili donanımlara gerekli işi yaptırarak dosyanın oluşmasını sağladı. Bu yapıyı kısaca aşağıdaki diagramdan görebilirsiniz.
+
+![](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/diagram.png)
 
 Ben shell ile bash dili aracılığı ile iletişim kurdum dedim ancak ; shell denilen yapı, yalnızca bash kabuk dili ile iletişim kuruyor gibi bir anlam çıkmasın, yani shell denilen yapı ile iletişim kurma konusunda bash tek alternatif değil. **Linux** sistemlerinde **BASH** dışında (**ksh,tcsh,zsh,fish...**) gibi birçok **Shell** (**kabuk**) dili bulunuyor. Ancak yetenekleri dolayısıyla **en çok tercih edilen kabuk programı BASH kabuk programıdır**. 
 
