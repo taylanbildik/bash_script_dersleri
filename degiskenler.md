@@ -7,14 +7,18 @@ Kısaca değişkenler, girdiğimiz değerleri alan veya programın çalışması
 Hemen basit bir örnek ile açıklamaya başlayalım;
 Değişken tanımlarken öncelikle değişken adını girerek eşittir işaretini koyduktan sonra değişkene atamak istediğimiz değeri tırnak işareti içerisine yazıyoruz.
 Örneğin ben `sistem="linux"` şeklinde yazarsam, **sistem** isimli değişkene "**linux**" değerini atamış oluyorum. 
+
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/1.png)
+
 Değişkenimin tanımlanıp tanımlanmadığını hemen konsol üzerinden çağırarak kontrol edelim. 
 Tanımladığımız herhangi bir değişkeni çağırırken `echo $degisken` şeklinde komut girmemiz yeterli oluyor. 
+
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/2.png)
 
 Bizim tanımladığımız değişken de **sistem** isimli değişken olduğu için konsola `echo $sistem` komutunu girdiğimde, gördüğünüz gibi karşıma "**linux**" ifadesi basılmış oldu. 
 
 Bir örnek daha yapalım ve bu sefer değişkenimize, değer olarak sayı atayalım. Bunun için `rakamlar="12345"` ifadesini konsola giriyorum ve `echo $rakamlar` komutu ile atadığım değişkene ulaşıyorum. 
+
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/3.png)
 
 İşte değişken tanımlamak bu kadar basit. Ancak yine de değişken tanımlarken dikkat etmemiz gereken önemli birkaç detay bulunuyor.
@@ -23,15 +27,22 @@ Değişken Tanımlanırken Dikkat Edilmesi Gerekenler
 -
 
  - Değişken isimleri tanımlarken Türkçe karakter kullanmadan alfanümerik(**A-Z, a-z**) karakter kullanmamız gerekiyor.
- Örneğin konsola içerisinde Türkçe karakter geçen, `çalı="bitki"` gibi bir değişken tanımlamak istersem, konsol bana çıktı olarak "**böyle bir komut yok**" hatasını basıyor. 
+ 
+Örneğin konsola içerisinde Türkçe karakter geçen, `çalı="bitki"` gibi bir değişken tanımlamak istersem, konsol bana çıktı olarak "**komut yok**" hatasını basıyor. 
+
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/4.png)
  
 Bunun nedeni de değişken tanımlarında Türkçe karakter kullanımının geçersiz olmasıdır arkadaşlar. Bu kullanımın doğrusu Türkçe karakter içermeyen `cali="bitki"` şeklinde olmalıydı. 
+
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/5.png)
 
  
-- Türkçe karakter dışında, değişken ismi tanımlarken alt tire işareti haricinde herhangi bir sembol kullanımı da hataya yol açmaktadır. Örneğin ben `yeni-yeni="yeni değer"` gibi bir değişken tanımlamaya kalkarsam , konsol bana çıktı olarak "**komut yok**" hatasını basacaktır. 
+- Türkçe karakter dışında, değişken ismi tanımlarken alt tire işareti haricinde herhangi bir sembol kullanımı da hataya yol açmaktadır. 
+
+Örneğin ben `yeni-yeni="yeni değer"` gibi bir değişken tanımlamaya kalkarsam , konsol bana çıktı olarak "**komut yok**" hatasını basacaktır. 
+
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/6.png)
+
 Bunun nedeni değişken isminde geçen **tire**(**-**)işaretidir. 
 
 Şimdi aynı örneği **alt tire**(**_**)ile deneyerek bu durumu teyit edelim. Bunun için konsola `yeni_yeni="yeni değer"` ifadesini giriyorum ve tanımladığım değişkeni `echo $yeni_yeni` komutunu girerek sorguluyorum. 
@@ -39,6 +50,7 @@ Bunun nedeni değişken isminde geçen **tire**(**-**)işaretidir.
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/7.png)
 
 Ve gördüğünüz gibi değişken başarılı şekilde tanımlanmış bulunuyor. Tekrar belirtmiş olalım, hatalı bir kullanıma yol açmamak adına değişken tanımlarken **alt tire işareti haricinde hiç bir sembol kullanmayın**. Yani **yeni+yeni**..**yeni#yeni**..**yeni@yeni** vb tüm kullanımlar hatalıdır.
+
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/8.png)
 
 - Dikkat etmemiz gereken bir diğer husus ise tanımlanacak değişken isimlerinin **kesinlikle rakam ile başlamamasıdır**. Fakat başlangıcı hariç değişken isimlerinde rakam kullanılabilir. 
@@ -54,6 +66,7 @@ Rakam başta olmadığı sürece tüm kombinasyonlar rakam kullanımına uygundu
 
 
 - Bir başka dikkat edilmesi gereken ayrıntı da; değişken tanımlarken kullanılan tanımların, Linux sistemlerinde olduğu gibi **büyük küçük harf duyarlılığına** sahip olduğudur. 
+
 Örneğin tamamı büyük harflerden oluşan `TEST="ilk ifade"` şeklindeki bir tanım ile tamamı küçük harflerden oluşan `test="ikinci ifade"` tanımı, bash diline göre iki farklı değişkeni temsil eder. Hemen `echo` komutu yardımıyla bu durumu teyit edelim.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/11.png)
