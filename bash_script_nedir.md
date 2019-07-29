@@ -9,8 +9,6 @@ Bash script kavramının tam olarak anlaşılabilmesi için öncelikle bahsetmem
 
 Örneğin ben bulunduğum konumda yeni bir dosya oluşturmak istiyorum diyelim. Bu dosyayı oluşturmak için iki farklı seçeneğim buluyor. Dosyayı oluşturmak için ya grafiksel arayüzü kullanacağım ya da komut girerek ilgili dosyanın oluşmasını sağlayacağım. Her iki şekilde de benim yaptığım işlem bilgisayara ne yapması gerektiğini anlatmak oluyor. Yani ben grafiksel arayüzden tıklama işlemleri ile ya da konsoldan komut girerek bilgisayara iş buyurduğumda aslında arkaplanda, girilen işlem emri yorumlanarak donanıma iş yaptırıyor. Ancak bu işlem emrini bilgisayar doğrudan anlayamaz,  anlayamadığı için onun anlayacağı dile çevrilmesi gerekiyor. Bu yüzden çevirme işleminde görevli yapılar bulunuyor. 
 
-![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Giri%C5%9F/stab.gif)
-
 Bu açıklamadan sonra örneğimizi tekrar ele alarak arkaplanda gerçekleşen işlemleri ve görevli yapıları kısaca açıklayalım.
 Ben dosya oluşturmak istiyorum ve bunu bilgisayara ifade etmeliyim. İfade biçimi olarak grafiksel arayüz de olabilir komut kullanımı da olabilir. Ben komut kullanımını tercih ediyorum ve komutumu bilgisayara aktarmak için konsol denilen yapıyı kullanmam gerekiyor. 
 Konsol benim komutlarımı sisteme iletmemdeki yardımcı bir araçtır. Ben komutlarımı bu konsol aracılığı ile sisteme ulaştırırım. 
@@ -34,7 +32,7 @@ Yapıyı tekrar kısaca ele alacak olursak ben yapılmasını istediğim işlemi
 
 İşte en başında dosya oluşturmak için konsola girdiğim komut da bash dilinin bir komutu, ben bu komut sayesinde shell denilen yapı ile iletişim kurdum, shell de benden aldığımı emri kernel yani çekirdeğe aktardı. Neticede çekirdek de ilgili donanımlara gerekli işi yaptırarak dosyanın oluşmasını sağladı. Bu yapıyı kısaca aşağıdaki diagramdan görebilirsiniz.
 
-![](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/diagram.png)
+![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Giri%C5%9F/stab.gif)
 
 Ben shell ile bash dili aracılığı ile iletişim kurdum dedim ancak ; shell denilen yapı, yalnızca bash kabuk dili ile iletişim kuruyor gibi bir anlam çıkmasın, yani shell denilen yapı ile iletişim kurma konusunda bash tek alternatif değil. **Linux** sistemlerinde **BASH** dışında (**ksh,tcsh,zsh,fish...**) gibi birçok **Shell** (**kabuk**) dili bulunuyor. Ancak yetenekleri dolayısıyla **en çok tercih edilen kabuk programı BASH kabuk programıdır**. 
 
