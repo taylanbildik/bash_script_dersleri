@@ -9,6 +9,8 @@ Bash script kavramının tam olarak anlaşılabilmesi için öncelikle bahsetmem
 
 Örneğin ben bulunduğum konumda yeni bir dosya oluşturmak istiyorum diyelim. Bu dosyayı oluşturmak için iki farklı seçeneğim buluyor. Dosyayı oluşturmak için ya grafiksel arayüzü kullanacağım ya da komut girerek ilgili dosyanın oluşmasını sağlayacağım. Her iki şekilde de benim yaptığım işlem bilgisayara ne yapması gerektiğini anlatmak oluyor. Yani ben grafiksel arayüzden tıklama işlemleri ile ya da konsoldan komut girerek bilgisayara iş buyurduğumda aslında arkaplanda, girilen işlem emri yorumlanarak donanıma iş yaptırıyor. Ancak bu işlem emrini bilgisayar doğrudan anlayamaz,  anlayamadığı için onun anlayacağı dile çevrilmesi gerekiyor. Bu yüzden çevirme işleminde görevli yapılar bulunuyor. 
 
+![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Giri%C5%9F/stab.gif)
+
 Bu açıklamadan sonra örneğimizi tekrar ele alarak arkaplanda gerçekleşen işlemleri ve görevli yapıları kısaca açıklayalım.
 Ben dosya oluşturmak istiyorum ve bunu bilgisayara ifade etmeliyim. İfade biçimi olarak grafiksel arayüz de olabilir komut kullanımı da olabilir. Ben komut kullanımını tercih ediyorum ve komutumu bilgisayara aktarmak için konsol denilen yapıyı kullanmam gerekiyor. 
 Konsol benim komutlarımı sisteme iletmemdeki yardımcı bir araçtır. Ben komutlarımı bu konsol aracılığı ile sisteme ulaştırırım. 
