@@ -269,13 +269,17 @@ Değişken Değerlerin Farklı Şekillerde Bastırılması
 
 Bu kısıma kadar pek çok değişken tanımlayıp bu değişkenlerin değerlerini konsola bastırdık. Ancak şu ana kadarki bastırmış olduğumuz değerler bizlerin atadığı değerlerin birebir aynısıydı. Fakat her zaman basılan bu değerlerin tamamına ihtiyaç duymayabiliyoruz. İşte bu gibi durumlarda alacağımız çıktıları düzenlemek, yani örneğin bir kısmını bastırmak ya da bir kısımını silmek gibi işlevleri yerine getirmek için birkaç farklı kullanım şekli bulunuyor. Şimdi genel olarak bu kullanımları ele alalım.
 
-**Değerin bir kısmını seçmek :** 
+Değerin bir kısmını seçmek :
+-
+
 Değişkene atanan değer içerisinde belirli bir kısımı almak istersek komutumuzu **${degisken:başlangıç:uzunluk}**  şeklinde kullanıyoruz.
 
 **Başlangıç :** Seçme işleminin başlanacağı yeri temsil eder. Boş bırakılırsa en baştan itibaren seçer.
+
 **Uzunluk :** Seçme işleminin ne kadar uzunlukta olacağını belirtir. Bu kısım boş bırakılırsa seçme işlemi otomatik olarak değerin sonuna kadar yapılır.
 
 ***Örnek Kullanımları;***
+
 **deneme** isimli değişkene "**123456789**" değerini atıyorum.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/40.png)
@@ -292,26 +296,39 @@ Değişkene atanan değer içerisinde belirli bir kısımı almak istersek komut
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/43.png)
 
-**Değişken değeri silmek :** 
+Değişken değeri silmek :
+-
+
 Değişkenimizin içerisinde yer alan değerleri silmek için iki farklı kullanım metodu bulunuyor. Bunlardan ilki değerleri başlangıçtan itibaren silen **#** işareti, ikincisi ise tersi şekilde istenilen ifadelerin değerlerin sonundan itibaren silen **%** işaretidir. Sırasıyla bu kullanımları açıklayacak olursak;
 
 Örneğin **silinecek=(sal salı salıncak )** şeklinde tanımlanmış bir değişkenin değerlerinin başından başlayarak;
+
 Bir harf grubunu silmek istersek; `${silinecek[*]##silinecek_harf_grubu*}` komutunu kullanıyorken..
+
 Yalnızca ilgili harfleri silmek istersek;`${silinecek[*]#silinecek_harf*}`komutunu kullanıyoruz. 
 
 Komut içerisinde yer alan kısımları açıklayacak olursak;
+
 **[*]** şeklinde belirtilen kısım dizideki tüm elemanları kapsıyor.
+
 Kare işareti(**#**) de silme işlevini yerine getiriyor. Eğer silinecek ifade birleşik harf grubu ise çift kare(**##**) işareti kullanılmalıdır.
+
 En son kullandığımız `*` işareti ise silinecek harfin geri kalan kısmının otomatik olarak tamamlanmasını sağlıyor.
 
 Örneğin ben dizi içerisinde yer alan tüm **a** harflerini silmek istersem komutumu `${silinecek[*]#a*}` şeklinde kullanmam yeterli.
+
 Ayrıca tüm ifadelerin dışında özel olarak bir ifadeyi de hedefleyebiliriz, örneğin sadece 3. değerde yer alan **a** harflerini silmek için komutumu `${silinecek[2]#a*}` şeklinde kullanabilirim.
+
 Eğer sileceğim kısım bir harf bütünü ise, örneğin dizilerde yer alan tüm **sa** ifadelerini silmek için `${silinecek[*]##sa*}` komutunu kullanırım.
 
 Değerlerimizi sondan itibaren silmek üzere;
+
 Aynı komutları bu sefer **%** işareti ile olacak şekilde kullanmamız yeterli.
 
-**Değişken içerisinde kelime değiştirme :** Değişkenin değeri içerisinde kırpma işlemi yerine değiştirme yapabilirsiniz. **${degisken/aranan_kelime/değiştirilecek_kelime} ${degisken//aranan_kelime/değiştirilecek_kelime}** İlk kullanım, bir adet ters eğik çizgi ile, sadece ilk eşleşmeyi değiştirme, ikinci kullanım, iki adet eğik çizgi ile bütün eşleşmeleri değiştirme işlemi yapılır. Herhangi bir yazı içerisinde beş adet "skript" kelimesi olsun, tek eğik çizgi ile sadece ilk "skript" kelimesi değişikliğe uğrayacaktır. Bunun aksine çift ters eğik çizgi ile kullanıldığı zaman bütün eşleşen "skript" kelimeleri değişikliğe uğrayacaktır.
+Değişken içerisinde kelime değiştirme :
+-
+
+Değişkenin değeri içerisinde kırpma işlemi yerine değiştirme yapabilirsiniz. **${degisken/aranan_kelime/değiştirilecek_kelime} ${degisken//aranan_kelime/değiştirilecek_kelime}** İlk kullanım, bir adet ters eğik çizgi ile, sadece ilk eşleşmeyi değiştirme, ikinci kullanım, iki adet eğik çizgi ile bütün eşleşmeleri değiştirme işlemi yapılır. Herhangi bir yazı içerisinde beş adet "skript" kelimesi olsun, tek eğik çizgi ile sadece ilk "skript" kelimesi değişikliğe uğrayacaktır. Bunun aksine çift ters eğik çizgi ile kullanıldığı zaman bütün eşleşen "skript" kelimeleri değişikliğe uğrayacaktır.
 
 Değişken içerisinde kelime değiştirme yada silme işlemleri sadece o anki işlemler için geçerlidir. Orjinal değer değişmeyecektir. Değiştirme işlemi sadece istenilen yerde olacaktır, herhangi bir kaydetme durumu sözkonusu değildir. Mesela "degisken" adlı değişken değeri içerisinde kelimeleri değiştirip ekrana yazdırmak için bu yöntemi kullandığınız zaman, işlem sorunsuz olarak gerçekleşecek, Terminal ekranına değiştirilmiş veri yazılacaktır. Fakat orjinal veri kendini koruyacaktır. ileriki derslerimizde kalıcı olarak değiştirme işlemlerini göstereceğiz.
 
