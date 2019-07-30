@@ -267,7 +267,7 @@ Böylelikle `export` komutunun ivleşini test ederek görmüş olduk. Ayrıca `e
 Değişken Değerlerin Farklı Şekillerde Bastırılması
 =
 
-Bu kısıma kadar pek çok değişken tanımlayıp bu değişkenlerin değerlerini konsola bastırdık. Ancak şu ana kadarki bastırmış olduğumuz değerler bizlerin atadığı değerlerin birebir aynısıydı. Fakat her zaman basılan bu değerlerin tamamına ihtiyaç duymayabiliyoruz. İşte bu gibi durumlarda alacağımız çıktıları düzenlemek, yani örneğin bir kısmını bastırmak ya da bir kısımını silmek gibi işlevleri yerine getirmek için birkaç farklı kullanım şekli bulunuyor. Şimdi genel olarak bu kullanımları ele alalım.
+Bu kısıma kadar pek çok değişken tanımlayıp bu değişkenlerin değerlerini konsola bastırdık. Ancak şu ana kadarki bastırmış olduğumuz değerler bizlerin atadığı değerlerin birebir aynısıydı. Fakat her zaman basılan bu değerlerin tamamına ihtiyaç duymayabiliyoruz. İşte bu gibi durumlarda alacağımız çıktıları düzenlemek, yani örneğin bir kısmını bastırmak ya da bir kısımını silmek gibi işlevleri yerine getirmek için birkaç farklı kullanım şekli bulunuyor. Baştan belirtmekŞimdi genel olarak bu kullanımları ele alalım.
 
 Değerin bir kısmını seçmek :
 -
@@ -296,34 +296,48 @@ Değişkene atanan değer içerisinde belirli bir kısımı almak istersek komut
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/43.png)
 
+
 Değişken değeri silmek :
 -
 
-Değişkenimizin içerisinde yer alan değerleri silmek için iki farklı kullanım metodu bulunuyor. Bunlardan ilki değerleri başlangıçtan itibaren silen **#** işareti, ikincisi ise tersi şekilde istenilen ifadelerin değerlerin sonundan itibaren silen **%** işaretidir. Sırasıyla bu kullanımları açıklayacak olursak;
+Değişkenimizin çıktısında basılacak olan değerleri silmek için iki farklı kullanım metodu bulunuyor. Bunlardan ilki değerleri başlangıçtan itibaren silen **#** işareti, ikincisi ise tersi şekilde değeri sondan itibaren silen **%** işaretidir. Sırasıyla bu kullanımları açıklayacak olursak;
 
-Örneğin **silinecek=(sal salı salıncak )** şeklinde tanımlanmış bir değişkenin değerlerinin başından başlayarak;
+Örneğin **{}** şeklinde tanımlanmış bir değişkenin değerlerinin **başından** başlayarak;
 
-Bir harf grubunu silmek istersek; `${silinecek[*]##silinecek_harf_grubu*}` komutunu kullanıyorken..
+Öncelikle örnek üzerinden ilerlemek üzere `silinecek=(sal salı salıncak)` şeklinde değişkenimizi tanımlayalım.
 
-Yalnızca ilgili harfleri silmek istersek;`${silinecek[*]#silinecek_harf*}`komutunu kullanıyoruz. 
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/44.png)
+
+**Bir harf grubuna kadar olan kısmını silmek istersek;** `${silinecek[@]##*silinecek_harf_grubu}` komutunu kullanıyorken..
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/45.png)
+
+**Yalnızca ilgili harfleri içeren kısıma kadar olan kısımı baştan itibaren silmek istersek;** `${silinecek[@]#*silinecek_harf}`komutunu kullanıyoruz. 
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/46.png)
 
 Komut içerisinde yer alan kısımları açıklayacak olursak;
 
-**[*]** şeklinde belirtilen kısım dizideki tüm elemanları kapsıyor.
+**[@]** şeklinde belirtilen kısım dizideki tüm elemanları kapsıyor.(Bu ifade yerine yıldız(asterix) `*` işaretini de kullanabilirdik.)
 
 Kare işareti(**#**) de silme işlevini yerine getiriyor. Eğer silinecek ifade birleşik harf grubu ise çift kare(**##**) işareti kullanılmalıdır.
 
-En son kullandığımız `*` işareti ise silinecek harfin geri kalan kısmının otomatik olarak tamamlanmasını sağlıyor.
+Ayrıca silinecek harf veya harf gurubundan önce kullandığımız `*` işareti, ilgili harfe ya da harf gurubuna kadar olan tüm ifadelerin otomatik olarak tamamlanabilmesi sağlıyor.
 
-Örneğin ben dizi içerisinde yer alan tüm **a** harflerini silmek istersem komutumu `${silinecek[*]#a*}` şeklinde kullanmam yeterli.
 
-Ayrıca tüm ifadelerin dışında özel olarak bir ifadeyi de hedefleyebiliriz, örneğin sadece 3. değerde yer alan **a** harflerini silmek için komutumu `${silinecek[2]#a*}` şeklinde kullanabilirim.
+Ayrıca tüm ifadelerin tek seferde kapsamak yerine özel olarak bir ifadeyi de hedefleyebiliriz, örneğin sadece 3. değerde yer alan **c** harflerine kadar olan kısımı silmek için komutumu `${silinecek[2]#*c}` şeklinde kullanabilirim.
 
-Eğer sileceğim kısım bir harf bütünü ise, örneğin dizilerde yer alan tüm **sa** ifadelerini silmek için `${silinecek[*]##sa*}` komutunu kullanırım.
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/47.png)
+
 
 Değerlerimizi sondan itibaren silmek üzere;
 
 Aynı komutları bu sefer **%** işareti ile olacak şekilde kullanmamız yeterli.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/48.png)
+
+Bu kullanımları daha iyi anlamak adına lütfen kendiniz de buradaki örnekler haricinde bol bol alıştırma yapın. 
+
 
 Değişken içerisinde kelime değiştirme :
 -
