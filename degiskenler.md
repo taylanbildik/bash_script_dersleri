@@ -342,19 +342,26 @@ Bu kullanımları daha iyi anlamak adına lütfen kendiniz de buradaki örnekler
 Değişken değerinin değiştirilmesi(Bul-Değiştir İşlemi) :
 -
 
-Alacağımız çıktılarda yer alan harfleri istediğimiz harfler ile değiştirmek istesek, bu işi iki farklı şekilde gerçekleştirebiliyoruz;
+Alacağımız çıktılarda yer alan ifadeleri istediğimiz ifadeler ile değiştirmek istesek, bu işi iki farklı şekilde gerçekleştirebiliyoruz;
 
-Örnek olması açısında içerisinde birden fazla Linux ifadesinin geçtiği metni kullanıyor olacağız.
+Örnek olması açısında içerisinde birden fazla "Linux" ifadesinin geçtiği metni kullanıyor olacağız.
 
-Eğer yalnızca ilk eşleşmede yer alan ifadeyi değiştirmek istersek komutumuzu tek slash ile `${degisken/aranan/değiştirilecek}` şeklinde kullanmamız gerekiyor.
+Eğer **yalnızca ilk eşleşmede** yer alan ifadeyi değiştirmek istersek komutumuzu **tek slash(/)** ile `${degisken/aranan/değiştirilecek}` şeklinde kullanmamız gerekiyor.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/49.png)
 
-Şayet eşleşmelerde yer alan tüm ifadeleri değiştirek istersek de bu sefer çift slash ile komutumuzu `${degisken//aranan/değiştirilecek}` şeklinde giriyoruz.
+Şayet **eşleşmelerde yer alan tüm ifadeleri** değiştirek istersek de bu sefer **çift slash(//)** ile komutumuzu `${degisken//aranan/değiştirilecek}` şeklinde giriyoruz.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/50.png)
 
-Çıktıları kıyasladığınız tek ve çift slash işaretinin farkını çok daha net kavrayabilirsiniz. Ayrıca fark ettiyseniz daha önce de bahsettiğimiz **küçük büyük harf duyarlılığı bu kullanım için de geçerli** olduğundan, yalnızca aradığımız "**linux**" ifadesi bulunup "**çekirdek**" ifadesi ile değiştirilmiş oldu. 
+Çıktıları kıyasladığınız tek ve çift slash işaretinin farkını çok daha net kavrayabilirsiniz. 
+
+Ayrıca fark ettiyseniz daha önce de bahsettiğimiz **küçük büyük harf duyarlılığı bu kullanım için de geçerli** olduğundan, yalnızca aradığımız "**linux**" ifadesi bulunup "**çekirdek**" ifadesi ile değiştirilmiş oldu. 
+
+Bunun dışında değişiklik yapmak istediğiniz ifade illa bir kelime bütünü olmak zorunda değil. Örneğin yalnızca tek bir harfi de değiştirebiliriz.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/50.png)
+
 
 Son olarak unutmamnız gereken şey; konsola farklı şekillerde bastırma işlemlerinin yalnızca o anki işlemde geçerli olup, orjinal değerde değişikliğe neden olmadığıdır. Bu sayede bizler gerektiğinde orjinal değerleri istediğimiz şekilde manipüle ederek tam ihtiyacımıza göre çıktılar elde edebiliriz.
 
