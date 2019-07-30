@@ -342,9 +342,21 @@ Bu kullanımları daha iyi anlamak adına lütfen kendiniz de buradaki örnekler
 Değişken değerinin değiştirilmesi(Bul-Değiştir İşlemi) :
 -
 
-Tanımlanmış olan değişken değeri içerisinde yer alan ifadeleri tam olarak istediğimiz şekilde değiştirmek için bul değiştir işlemini kullanabiliriz. **${degisken/aranan_kelime/değiştirilecek_kelime} ${degisken//aranan_kelime/değiştirilecek_kelime}** İlk kullanım, bir adet ters eğik çizgi ile, sadece ilk eşleşmeyi değiştirme, ikinci kullanım, iki adet eğik çizgi ile bütün eşleşmeleri değiştirme işlemi yapılır. Herhangi bir yazı içerisinde beş adet "skript" kelimesi olsun, tek eğik çizgi ile sadece ilk "skript" kelimesi değişikliğe uğrayacaktır. Bunun aksine çift ters eğik çizgi ile kullanıldığı zaman bütün eşleşen "skript" kelimeleri değişikliğe uğrayacaktır.
+Alacağımız çıktılarda yer alan harfleri istediğimiz harfler ile değiştirmek istesek, bu işi iki farklı şekilde gerçekleştirebiliyoruz;
 
-Değişken içerisinde kelime değiştirme yada silme işlemleri sadece o anki işlemler için geçerlidir. Orjinal değer değişmeyecektir. Değiştirme işlemi sadece istenilen yerde olacaktır, herhangi bir kaydetme durumu sözkonusu değildir. Mesela "degisken" adlı değişken değeri içerisinde kelimeleri değiştirip ekrana yazdırmak için bu yöntemi kullandığınız zaman, işlem sorunsuz olarak gerçekleşecek, Terminal ekranına değiştirilmiş veri yazılacaktır. Fakat orjinal veri kendini koruyacaktır. ileriki derslerimizde kalıcı olarak değiştirme işlemlerini göstereceğiz.
+Örnek olması açısında içerisinde birden fazla Linux ifadesinin geçtiği metni kullanıyor olacağız.
+
+Eğer yalnızca ilk eşleşmede yer alan ifadeyi değiştirmek istersek komutumuzu tek slash ile `${degisken/aranan/değiştirilecek}` şeklinde kullanmamız gerekiyor.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/49.png)
+
+Şayet eşleşmelerde yer alan tüm ifadeleri değiştirek istersek de bu sefer çift slash ile komutumuzu `${degisken//aranan/değiştirilecek}` şeklinde giriyoruz.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/50.png)
+
+Çıktıları kıyasladığınız tek ve çift slash işaretinin farkını çok daha net kavrayabilirsiniz. Ayrıca fark ettiyseniz daha önce de bahsettiğimiz **küçük büyük harf duyarlılığı bu kullanım için de geçerli** olduğundan, yalnızca aradığımız "**linux**" ifadesi bulunup "**çekirdek**" ifadesi ile değiştirilmiş oldu. 
+
+Son olarak unutmamnız gereken şey; konsola farklı şekillerde bastırma işlemlerinin yalnızca o anki işlemde geçerli olup, orjinal değerde değişikliğe neden olmadığıdır. Bu sayede bizler gerektiğinde orjinal değerleri istediğimiz şekilde manipüle ederek tam ihtiyacımıza göre çıktılar elde edebiliriz.
 
 Değişkenlerin Sıfırlanması (unset)
 -
