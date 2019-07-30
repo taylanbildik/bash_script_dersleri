@@ -360,7 +360,7 @@ Ayrıca fark ettiyseniz daha önce de bahsettiğimiz **küçük büyük harf duy
 
 Bunun dışında değişiklik yapmak istediğiniz ifade illa bir kelime bütünü olmak zorunda değil. Örneğin yalnızca tek bir harfi de değiştirebiliriz.
 
-![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/50.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/51.png)
 
 
 Son olarak unutmamnız gereken şey; konsola farklı şekillerde bastırma işlemlerinin yalnızca o anki işlemde geçerli olup, orjinal değerde değişikliğe neden olmadığıdır. Bu sayede bizler gerektiğinde orjinal değerleri istediğimiz şekilde manipüle ederek tam ihtiyacımıza göre çıktılar elde edebiliriz.
