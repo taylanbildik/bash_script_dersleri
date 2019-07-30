@@ -315,8 +315,17 @@ Aynı komutları bu sefer **%** işareti ile olacak şekilde kullanmamız yeterl
 
 Değişken içerisinde kelime değiştirme yada silme işlemleri sadece o anki işlemler için geçerlidir. Orjinal değer değişmeyecektir. Değiştirme işlemi sadece istenilen yerde olacaktır, herhangi bir kaydetme durumu sözkonusu değildir. Mesela "degisken" adlı değişken değeri içerisinde kelimeleri değiştirip ekrana yazdırmak için bu yöntemi kullandığınız zaman, işlem sorunsuz olarak gerçekleşecek, Terminal ekranına değiştirilmiş veri yazılacaktır. Fakat orjinal veri kendini koruyacaktır. ileriki derslerimizde kalıcı olarak değiştirme işlemlerini göstereceğiz.
 
-Değişkenlerin unset Edilmesi
+Değişkenlerin Sıfırlanması (unset)
 -
-Tanımladığımız değişkenlerin değerlerini sıfırlamak istediğimizde unset komutunu kullanabiliyoruz.
-Şimdi örnek olması açısından çeşitli değişkenlerin değerlerini sıfırlamayı deneyelim.
+Tanımladığımız değişkenleri sıfırlamak yani tanımsız hale getirmek istersek `unset` komutunu kullanabiliyoruz.
+Şimdi örnek olması açısından çeşitli değişkenleri sıfırlamayı deneyelim.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/unset-1.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/unset-2.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/unset-3.png)
+
+
+Gördüğünüz gibi sabit değişkenler hariç diğer değişkenler `unset` komutu sayesinde kolaylıkla sıfırlanabiliyor.
+Sabit değişkenlerin sıfırlanmasının ancak değişkenin tanımlandığı kabuğun kapatılması ile mümkün olacağını zaten biliyorsunuz. O yüzden sabit değişkenler hariç, tanımlamış olduğunuz diğer değişkenleri tanımsız yapmak isterseniz `unset` komutunu kullanmanız yeterli.
+
 
