@@ -339,10 +339,10 @@ Aynı komutları bu sefer **%** işareti ile olacak şekilde kullanmamız yeterl
 Bu kullanımları daha iyi anlamak adına lütfen kendiniz de buradaki örnekler haricinde bol bol alıştırma yapın. 
 
 
-Değişken içerisinde kelime değiştirme :
+Değişken değerinin değiştirilmesi(Bul-Değiştir İşlemi) :
 -
 
-Değişkenin değeri içerisinde kırpma işlemi yerine değiştirme yapabilirsiniz. **${degisken/aranan_kelime/değiştirilecek_kelime} ${degisken//aranan_kelime/değiştirilecek_kelime}** İlk kullanım, bir adet ters eğik çizgi ile, sadece ilk eşleşmeyi değiştirme, ikinci kullanım, iki adet eğik çizgi ile bütün eşleşmeleri değiştirme işlemi yapılır. Herhangi bir yazı içerisinde beş adet "skript" kelimesi olsun, tek eğik çizgi ile sadece ilk "skript" kelimesi değişikliğe uğrayacaktır. Bunun aksine çift ters eğik çizgi ile kullanıldığı zaman bütün eşleşen "skript" kelimeleri değişikliğe uğrayacaktır.
+Tanımlanmış olan değişken değeri içerisinde yer alan ifadeleri tam olarak istediğimiz şekilde değiştirmek için bul değiştir işlemini kullanabiliriz. **${degisken/aranan_kelime/değiştirilecek_kelime} ${degisken//aranan_kelime/değiştirilecek_kelime}** İlk kullanım, bir adet ters eğik çizgi ile, sadece ilk eşleşmeyi değiştirme, ikinci kullanım, iki adet eğik çizgi ile bütün eşleşmeleri değiştirme işlemi yapılır. Herhangi bir yazı içerisinde beş adet "skript" kelimesi olsun, tek eğik çizgi ile sadece ilk "skript" kelimesi değişikliğe uğrayacaktır. Bunun aksine çift ters eğik çizgi ile kullanıldığı zaman bütün eşleşen "skript" kelimeleri değişikliğe uğrayacaktır.
 
 Değişken içerisinde kelime değiştirme yada silme işlemleri sadece o anki işlemler için geçerlidir. Orjinal değer değişmeyecektir. Değiştirme işlemi sadece istenilen yerde olacaktır, herhangi bir kaydetme durumu sözkonusu değildir. Mesela "degisken" adlı değişken değeri içerisinde kelimeleri değiştirip ekrana yazdırmak için bu yöntemi kullandığınız zaman, işlem sorunsuz olarak gerçekleşecek, Terminal ekranına değiştirilmiş veri yazılacaktır. Fakat orjinal veri kendini koruyacaktır. ileriki derslerimizde kalıcı olarak değiştirme işlemlerini göstereceğiz.
 
