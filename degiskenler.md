@@ -350,11 +350,11 @@ Eğer **yalnızca ilk eşleşmede** yer alan ifadeyi değiştirmek istersek komu
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/49.png)
 
-Şayet **eşleşmelerde yer alan tüm ifadeleri** değiştirek istersek de bu sefer **çift slash(//)** ile komutumuzu `${degisken//aranan/değiştirilecek}` şeklinde giriyoruz.
+Şayet **eşleşmelerde yer alan tüm ifadeleri** değiştirmek istersek de bu sefer **çift slash(//)** ile komutumuzu `${degisken//aranan/değiştirilecek}` şeklinde giriyoruz.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/50.png)
 
-Çıktıları kıyasladığınız tek ve çift slash işaretinin farkını çok daha net kavrayabilirsiniz. 
+Çıktılarda yer alan ifadeleri kıyasladığınızda tek ve çift slash kullanımının farkını çok daha net kavrayabilirsiniz. 
 
 Ayrıca fark ettiyseniz daha önce de bahsettiğimiz **küçük büyük harf duyarlılığı bu kullanım için de geçerli** olduğundan, yalnızca aradığımız "**linux**" ifadesi bulunup "**çekirdek**" ifadesi ile değiştirilmiş oldu. 
 
@@ -363,7 +363,7 @@ Bunun dışında değişiklik yapmak istediğiniz ifade illa bir kelime bütün�
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/51.png)
 
 
-Son olarak unutmamnız gereken şey; konsola farklı şekillerde bastırma işlemlerinin yalnızca o anki işlemde geçerli olup, orjinal değerde değişikliğe neden olmadığıdır. Bu sayede bizler gerektiğinde orjinal değerleri istediğimiz şekilde manipüle ederek tam ihtiyacımıza göre çıktılar elde edebiliriz.
+Şimdiye kadar birkaç farklı metod uygulayarak, orjinal değerleri istediğimiz şekilde manipüle edip tam ihtiyacımıza göre çıktılar elde ettik. **Ancak bu aldığımız çıktıların geçici değerler olduğunu ve orjinal değerlerde kalıcı değişikliğe yol açmadığını lütfen unutmayın.** Farklı şekillerde bastırma işlemleri ile bizler sadece aldığımız çıktıları ihtiacımıza göre şekillendirmiş olduk arkadaşlar.
 
 Değişkenlerin Sıfırlanması (unset)
 -
