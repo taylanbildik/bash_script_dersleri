@@ -1,14 +1,16 @@
 Başlarken
 =
-Gerekli çalışma ortamını kurduk ve artık çalışmak için hazırız. Anlatımlara başlamadan belirtmem gerekiyor ki biz bu eğitimde komutların kullanımını ayrıntılı şekilde ele almayacağız. Komutları senaryo haline getirme yani scripting kısmına odaklanacağız. 
-Bunun nedeni de konu kapsamını mümkün oldukça dağıtmadan en verimli şekilde öğrenmenizi sağlamak olacak arkadaşlar.
-Ancak ben yine de komutları kullandıkça kullandığım komutlar hakkında kısa hatırlatmalarda bulunacağım. 
-Kısacası bu eğitimden verim alabilmeniz için temel linux komutlarını ve kullanımını bilmenizi şiddetle tavsiye ederim. Şayet bu konuda eksiğiniz varsa, benim bir önceki video eğitimim olan "Kali linux ile sıfırdan temel linux eğitimi" kursuma kaydolmanızı öneririm. Zira bu eğitim temel linux eğitimimin devamı niteliğinde, kurstan maksimum verim alabilmek adını her ikisi kursu da bir bütün olarak ele almanız çok daha iyi olacaktır.
+Gerekli çalışma ortamını kurduk ve artık çalışmak için hazırız. Anlatımlara başlamadan belirtmem gerekiyor ki biz bu eğitimde komutların kullanımını ayrıntılı şekilde ele almayacağız. Komutları **senaryo** haline getirme yani **scripting** kısmına odaklanacağız. 
+Bunun nedeni de konu kapsamını mümkün oldukça dağıtmadan verimli şekilde öğrenmenizi sağlamaktır. Ancak ben yine de komutları kullandıkça kullandığım komutlar hakkında kısa hatırlatmalarda bulunacağım. 
+
+Kısacası bu eğitimden verim alabilmeniz için temel linux komutlarını ve kullanımını biliyor olmanızı şiddetle tavsiye ederim. Şayet bu konuda eksiğiniz varsa, benim bir önceki video eğitimim olan "[Kali Linux ile Sıfırdan Temel Linux Eğitimi](https://www.udemy.com/kali-linux-ile-sifirdan-temel-linux-egitimi/?couponCode=DOKUMAN)" kursuma kaydolmanızı ya da "[Temel Linux Eğitimi](https://github.com/taylanbildik/Linux_Dersleri#s%C4%B1ral%C4%B1-%C5%9Fekilde-konu-konu-linux-komut-sat%C4%B1r%C4%B1-dok%C3%BCmantasyon-m%C3%BCfredat%C4%B1)" dokümantasyonuma göz atamnızı öneririm. Zira bu eğitim temel linux eğitimimin devamı niteliğinde, eğitimden maksimum verim alabilmek adını her iki eğitimi de bir bütün olarak ele almanız çok daha iyi olacaktır.
 
 Bu girizgahtan sonra artık esas konumuza dönebiliriz. 
-Öncelikle kullanmakta olduğumuz sistemde varsayılan olarak hangi kabuk programı kullanılıyor buna bakalım.
 
-Bakmak için birden fazla yol bulunuyor örneğin konsola `echo $SHELL` komutunu girersek konsol bize mevcut oturumda kullanılan shell yani kabuk programını çıktı olarak basıyor.
+Öncelikle kullanmakta olduğumuz sistemde varsayılan olarak hangi kabuk programı kullanılıyor buna bakalım.
+Bakmak için birden fazla yol bulunuyor, örneğin konsola `echo $SHELL` komutunu girersek konsol bize mevcut oturumda kullanılan **shell** yani **kabuk** programını çıktı olarak basıyor.
+
+
 Bunun dışında eğer süreç sorgusu yaparsak da karşımıza çalışmakta olan shell programı çıkacaktır. Bu şekilde sistemde kullanılmakta olan mevcut kabuk programını kolaylıkla öğrenebiliyoruz. Ayrıca sistemde yalnızca tek bir kabuk programı da bulunmuyor, bunu da etc dizini altında yer alan shells isimli dosyanın içeriğine bakarak teyit edebiliriz.
 Konsola `cat /etc/shells` komutunu girerek dosyamızın içeriğini sorgulayalım. Gördüğünüz gibi sistemde yüklü bulunan kabuk programlarının hepsi bu dosya içerisinde listelenmiş bulunuyor. Listeye baktığınızda sizde yer alan kabuk program çeşitleri bende listelenmiş olanlardan farklı olabilir. Bunun nedeni sistemde yer alan kabuk program çeşitlerinin, kullanılan dağıtıma göre değişkenlik gösterebiliyor olmasındandır.  Yani benimle bire bir aynı çıktıları almadıysanız da bir problem yok. 
 
