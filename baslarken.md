@@ -10,17 +10,17 @@ Bu girizgahtan sonra artık esas konumuza dönebiliriz.
 Öncelikle kullanmakta olduğumuz sistemde varsayılan olarak hangi kabuk programı kullanılıyor buna bakalım.
 Bakmak için birden fazla yol bulunuyor, örneğin konsola `echo $SHELL` komutunu girersek konsol bize mevcut oturumda kullanılan **shell** yani **kabuk** programını çıktı olarak basıyor.
 
-![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Giri%C5%9F/1.png)
+![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Ba%C5%9Flarken/1.png)
 
 Bunun dışında eğer süreç sorgusu yaparsak da karşımıza çalışmakta olan shell programı çıkacaktır. 
 
-![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Giri%C5%9F/2.png)
+![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Ba%C5%9Flarken/2.png)
 
 Bu şekilde sistemde kullanılmakta olan mevcut kabuk programını kolaylıkla öğrenebiliyoruz. 
 
 Ayrıca sistemde yalnızca tek bir kabuk programı da bulunmuyor, bunu da **etc** dizini altında yer alan **shells** isimli dosyanın içeriğine bakarak teyit edebiliriz.Konsola `cat /etc/shells` komutunu girerek dosyamızın içeriğini sorgulayalım. 
 
-![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Giri%C5%9F/3.png)
+![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Ba%C5%9Flarken/3.png)
 
 Gördüğünüz gibi sistemde yüklü bulunan kabuk programlarının hepsi bu dosya içerisinde listelenmiş bulunuyor. Listeye baktığınızda sizde yer alan kabuk program çeşitleri bende listelenmiş olanlardan farklı olabilir. Bunun nedeni sistemde yer alan kabuk program çeşitlerinin, kullanılan dağıtıma göre değişkenlik gösterebiliyor olmasındandır. Yani benimle bire bir aynı çıktıları almadıysanız da bir problem yok. 
 
@@ -33,7 +33,7 @@ Script Dosyası(Betik) Oluşturma
 
 Bash script yazarken ilk olarak dosyanın başına **#!/bin/bash** ifadesini eklememiz gerekiyor. Neden diyecek olursanız, bu satır sonraki alt satırların hangi kabuk tarafından yorumlanacağını bildiren standart bir tanımdır ve  komutların doğru yorumlanabilmesi için her bash scriptinde olmalıdır. 
 
-![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Giri%C5%9F/4.png)
+![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Ba%C5%9Flarken/4.png)
 
 Program çalıştırıldığında sistem tarafından öncelikle ilk satır okunur ve ilk satırda geçen kabuk diline göre program ilgili kabuk dili aracılığı ile çalıştırılır. Şayet ilk satıra hiç bir ifade eklemezseniz program varsayılan olarak mevcut kabuk üzerinden script dosyasını çalıştırmayı dener. Yani aslında mevcut sisteminizde kullanılan kabuk bash ise, **#!/bin/bash** ifadesini betik dosyanıza eklemeseniz de betik dosyanız sistemde varsayılan kabuk bash olduğundan sorunsuz şekilde çalışacaktır. Ancak yine de yazmış olduğunuz betik dosyasının diğer sistemlerde de doğru şekilde çalıştırılabilmesi için bu ifadeyi eklemek son derece önemlidir. Zira çoğu sistem bash kabuğunu varsayılan olarak kullansa da, istisnai durumlarda farklı kabukların kullanıldığı da olabiliyor.
 
@@ -44,13 +44,13 @@ Evet, neticede script içerisinde kullanılan kabuk program çeşidini dosyamız
 İlk scriptimize standart örnek olan konsol ekranına çıktı basan program örneği ile başlayalım istiyorum.
 Bunun için konsola çıktı basan komutumuz olan `echo` komutunu kullanacağız. Örneğin ben konsola `echo "selamlar"` yazarsam çıktı olarak **selamlar** ifadesi konsola basılıyor gördüğünüz gibi. 
 
-![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Giri%C5%9F/5.png)
+![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Ba%C5%9Flarken/5.png)
 
 İşte bizler de bu komutu betik dosyamız içerisine yazıp kaydedersek, bu dosyamızı her çalıştırdığımızda konsol ekranına **selamlar** ifadesi basılacak. 
 
 Hemen test edelim, ben `echo "selamlar"` komutumu betik dosyamın içerisine yazıp, dosyamı "**selam.sh**" ismi ile kaydediyorum. 
 
-![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Giri%C5%9F/6.png)
+![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Ba%C5%9Flarken/6.png)
 
 Dosyamı kaydederken dosya isminin sonunda **.sh** ifadesini eklemem mecburi olmasa da biraz önce bahsettiğimiz düzenli çalışma adına önemli bir ayrıntı. Yine de betik dosyamız, sonunda **sh** ifadesi olmadan da çalışabilir ancak ileride hangi dosyaların betik dosyası olduğunu anlama konusunda dosyaların sonlarındaki **sh** ifadeleri bizlere yardımcı olabilir. Zira linux sistemlerinde dosyayı çalıştırırken dosyanın uzantısının bir önemi yoktur ancak bu gibi uzantıları eklemek dosyanın daha sonra kolay bulunabilmesi adına sınıflandırmaya katkı sunar. Bu durumu daha iyi anlamak adına örneğin yüzlerce dosyanın bulunduğu bir klasör ve bu klasördeki dosyaların hiç birinde ayırt edici uzantı bulunmadığı bir durum hayal edin. Böyle bir durumda hangi dosyanın betik dosyası ya da farklı bir dosya olduğunu anlamanın tek yolu, dosyaların her birini tek tek açarak içlerine bakmayı gerektirir. Tahmin edebileceğiniz gibi bu işlemde inanılmaz vakit alacaktır.  Bu gibi vakit kayıplarını önlemenin en ideal yolu dosya isimlerinin sonunda dosya türlerini belirterek, dosyaları sınıflandırabilir kılmaktır. 
 
