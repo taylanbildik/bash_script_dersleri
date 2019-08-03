@@ -248,7 +248,7 @@ Bu kısıma kadar temel olarak değişkenleri nasıl tanımlayabileceğimizden v
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/alt-kabuk.png)
 
-İşte kabuğun çalışma yapısı böyle olduğundan, bizler herhangi bir değişken tanımladığımızda bu değişkenin alt kabuklarda da tanınmasını istiyorsak mutlaka `export` komutu ile değişkenimizi alt kabuklara ulaştırmalıyız.
+Kabuğun çalışma yapısı böyle olduğundan, bizler herhangi bir değişken tanımladığımızda bu değişkenin alt kabuklarda da tanınmasını istiyorsak mutlaka `export` komutu ile değişkenimizi alt kabuklara ulaştırmalıyız.
 
 Bu durumu gözlemlemek için çalışmakta olduğum kabuk üzerinde `degisken="yeni değer"` şeklinde bir değişken tanımlayıp konsola bastırıyorum.
 
@@ -263,6 +263,7 @@ Tanımlamaları yaptık şimdi de betik dosyamızı çalıştırarak sonuçları
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/37.png)
 
 Gördüğünüz gibi betik dosyası içerisinde tanımlamış olduğum **degisken1** basılırken daha önce tanımlamış olduğum **degisken** basılmadı. Bunun nedeni başta da belirtiğim şekilde, tanımlanan değişkenlerin **export** edilmediği sürece yalnızca tanımlandığı kabuk üzerinde çalışabildiğidir.
+
 Biz betik dosyasını çalıştırdığımızda bulunduğumuz kabuk altında hemen bir alt kabuk oluşturuldu ve betik dosyamız bu alt kabuk üzerinde yürütüldü. Dolayısı ile üst kabukta tanımlanmış olan değişken alt kabuğa **export** edilmediği için alt kabuk tarafından tanınamadı ve değeri basılamadı.
 
 Şimdi aynı işlemi export ederek tekrarlayalım.
@@ -270,7 +271,7 @@ Biz betik dosyasını çalıştırdığımızda bulunduğumuz kabuk altında hem
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/38.png)
 
 
-Gördüğünüz gibi değişkenimizi **export** ettikten sonra alt kabukta çalıştırılan betik dosyası içerisinden de bu değişkeni çağırabildik. Böylelikle `export` komutunun ivleşini test ederek görmüş olduk. Ayrıca `export` komutu yerine aynı işlem için `declare` komutunun `x` parameteresi `declare -x degisken` şeklinde de kullanabilirdik.
+Gördüğünüz gibi değişkenimizi **export** ettikten sonra alt kabukta çalıştırılan betik dosyası içerisinden de bu değişkeni çağırabildik. Böylelikle `export` komutunun işlevini test ederek görmüş olduk. Ayrıca `export` komutu yerine aynı işlem için `declare` komutunun `x` parameteresi, `declare -x degisken` şeklinde de kullanılabilir.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/39.png)
 
