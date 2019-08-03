@@ -242,7 +242,15 @@ Bu durumun daha net anlamak için lütfen okumaya devam edin.
 Değişkenlerin export Edilmesi
 =
 
-Bu kısıma kadar temel olarak değişkenleri nasıl tanımlayabileceğimizden ve tanımlama yaparken nelere dikkat etmemiz gerektiğinden bahsettik. Ancak henüz değinmediğimiz ve önemli olan başka bir konu da; değişkenlerin **export** edilmediği sürece yalnızca tanımlandıkları konsol üzerinden çağırılabiliyor olduklarıdır. Bu durumu gözlemlemek için çalışmakta olduğum kabuk üzerinde `degisken="yeni değer"` şeklinde bir değişken tanımlayıp konsola bastırıyorum.
+Bu kısıma kadar temel olarak değişkenleri nasıl tanımlayabileceğimizden ve tanımlama yaparken nelere dikkat etmemiz gerektiğinden bahsettik. Ancak henüz değinmediğimiz ve önemli olan başka bir konu da; değişkenlerin **export** edilmediği sürece yalnızca tanımlandıkları konsol üzerinden çağırılabiliyor olduklarıdır. 
+
+Örneğin bir betik dosyasını çalıştırdığımızda mevcut **kabuk**(**shell**) bu işlem için bir **alt kabuk**(**subshell**) oluşturur ve betiği bu alt kabukta çalıştırır. Daha sonra görev tamamlanınca alt kabuk öldürülerek ana kabuğa dönülür. Böylelikle tek bir kabuk altında birden fazla alt kabuk oluşturularak aynı anda pek çok işlemin gerçekleştirilmesi mümkün olur. Kabuğun çalışma yapısını daha iyi anlamak adına aşağıdaki örnek çalışma şablonuna göz atabilirsiniz.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/subshell.png)
+
+İşte kabuğun çalışma yapısı böyle olduğundan, bizler herhangi bir değişken tanımladığımızda bu değişkenin alt kabuklarda da tanınmasını istiyorsak mutlaka `export` komutu ile değişkenimizi alt kabuklara ulaştırmalıyız.
+
+Bu durumu gözlemlemek için çalışmakta olduğum kabuk üzerinde `degisken="yeni değer"` şeklinde bir değişken tanımlayıp konsola bastırıyorum.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/35.png)
 
@@ -255,9 +263,10 @@ Subshell içerisinde olduğumuza göre değişkenimizi bastırmayı deneyelim.
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/37.png)
 
 
-Gördüğünüz gibi çıktımız boş oldu. Bunun nedeni başta da belirtiğim şekilde, tanımlanan değişkenlerin export edilmediği sürece yalnızca tanımlandığı kabuk üzerinde çalışabildiğidir. Bu durumu kanıtlamak adına `exit` komutu ile bulunduğumuz alt shellden çıkış yapıp değişkenimizi **export** edip tekrar deneyelim.
+Gördüğünüz gibi çıktımız boş oldu. Bunun nedeni başta da belirtiğim şekilde, tanımlanan değişkenlerin **export** edilmediği sürece yalnızca tanımlandığı kabuk üzerinde çalışabildiğidir. Bu durumu kanıtlamak adına `exit` komutu ile bulunduğumuz alt kabuktan çıkış yapıp değişkenimizi **export** edip tekrar deneyelim.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/38.png)
+
 
 Böylelikle `export` komutunun ivleşini test ederek görmüş olduk. Ayrıca `export` komutu yerine aynı işlem için `declare` komutunun `x` parameteresi `declare -x degisken` şeklinde de kullanabilirdik.
 
