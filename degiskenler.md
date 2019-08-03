@@ -246,7 +246,7 @@ Bu kısıma kadar temel olarak değişkenleri nasıl tanımlayabileceğimizden v
 
 Örneğin bir betik dosyasını çalıştırdığımızda mevcut **kabuk**(**shell**) bu işlem için bir **alt kabuk**(**subshell**) oluşturur ve betiği bu alt kabukta çalıştırır. Daha sonra görev tamamlanınca alt kabuk öldürülerek ana kabuğa dönülür. Böylelikle tek bir kabuk altında birden fazla alt kabuk oluşturularak aynı anda pek çok işlemin gerçekleştirilmesi mümkün olur. Kabuğun çalışma yapısını daha iyi anlamak adına aşağıdaki örnek çalışma şablonuna göz atabilirsiniz.
 
-![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/subshell.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/alt-kabuk.png)
 
 İşte kabuğun çalışma yapısı böyle olduğundan, bizler herhangi bir değişken tanımladığımızda bu değişkenin alt kabuklarda da tanınmasını istiyorsak mutlaka `export` komutu ile değişkenimizi alt kabuklara ulaştırmalıyız.
 
@@ -254,21 +254,23 @@ Bu durumu gözlemlemek için çalışmakta olduğum kabuk üzerinde `degisken="y
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/35.png)
 
-Tanımladığımız kabuk üzerinde değişkenizimi kolaylıkla bastırdık, şimdi de aynı değişkeni bulunduğumuz kabuk altında bir alt kabuk açıp bastırmaya çalışalım. Bu işlem için öncelikle çalışmakta olduğumuz kabukta `bash` komutunu girerek subshell yani bir alt shell açmamız gerekiyor. 
+Tanımladığımız kabuk üzerinde değişkenizimi kolaylıkla bastırdık, şimdi de aynı değişkeni betik dosyası içerisinden çağırarak bastırmayı deneyelim. Bu işlem için test.sh isimli bir betik dosyası oluşturup, daha öncesinde tanımlamış olduğum değişkeni çağırmak üzere `echo $degisken` komutumu giriyorum. Ayrıca betik dosyası içerisinde de `echo $degisken1="deneme"` komutu ile yeni bir değişken tanımlıyorum.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/36.png)
 
-Subshell içerisinde olduğumuza göre değişkenimizi bastırmayı deneyelim.
+Tanımlamaları yaptık şimdi de betik dosyamızı çalıştırarak sonuçları gözlemleyelim.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/37.png)
 
+Gördüğünüz gibi betik dosyası içerisinde tanımlamış olduğum **degisken1** basılırken daha önce tanımlamış olduğum **degisken** basılmadı. Bunun nedeni başta da belirtiğim şekilde, tanımlanan değişkenlerin **export** edilmediği sürece yalnızca tanımlandığı kabuk üzerinde çalışabildiğidir.
+Biz betik dosyasını çalıştırdığımızda bulunduğumuz kabuk altında hemen bir alt kabuk oluşturuldu ve betik dosyamız bu alt kabuk üzerinde yürütüldü. Dolayısı ile üst kabukta tanımlanmış olan değişken alt kabuğa **export** edilmediği için alt kabuk tarafından tanınamadı ve değeri basılamadı.
 
-Gördüğünüz gibi çıktımız boş oldu. Bunun nedeni başta da belirtiğim şekilde, tanımlanan değişkenlerin **export** edilmediği sürece yalnızca tanımlandığı kabuk üzerinde çalışabildiğidir. Bu durumu kanıtlamak adına `exit` komutu ile bulunduğumuz alt kabuktan çıkış yapıp değişkenimizi **export** edip tekrar deneyelim.
+Şimdi aynı işlemi export ederek tekrarlayalım.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/38.png)
 
 
-Böylelikle `export` komutunun ivleşini test ederek görmüş olduk. Ayrıca `export` komutu yerine aynı işlem için `declare` komutunun `x` parameteresi `declare -x degisken` şeklinde de kullanabilirdik.
+Gördüğünüz gibi değişkenimizi **export** ettikten sonra alt kabukta çalıştırılan betik dosyası içerisinden de bu değişkeni çağırabildik. Böylelikle `export` komutunun ivleşini test ederek görmüş olduk. Ayrıca `export` komutu yerine aynı işlem için `declare` komutunun `x` parameteresi `declare -x degisken` şeklinde de kullanabilirdik.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/39.png)
 
