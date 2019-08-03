@@ -254,7 +254,7 @@ Bu durumu gözlemlemek için çalışmakta olduğum kabuk üzerinde `degisken="y
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/35.png)
 
-Tanımladığımız kabuk üzerinde değişkenizimi kolaylıkla bastırdık, şimdi de aynı değişkeni betik dosyası içerisinden çağırarak bastırmayı deneyelim. Bu işlem için test.sh isimli bir betik dosyası oluşturup, daha öncesinde tanımlamış olduğum değişkeni çağırmak üzere `echo $degisken` komutumu giriyorum. Ayrıca betik dosyası içerisinde de `echo $degisken1="deneme"` komutu ile yeni bir değişken tanımlıyorum.
+Tanımladığımız kabuk üzerinde değişkenimizi kolaylıkla bastırdık, şimdi de aynı değişkeni betik dosyası içerisinden çağırarak bastırmayı deneyelim. Bu işlem için **test.sh** isimli bir betik dosyası oluşturup, daha öncesinde tanımlamış olduğum değişkeni çağırmak üzere `echo $degisken` komutumu yazıyorum. Ayrıca betik dosyası içerisinde de `degisken1="deneme"` şeklinde yeni bir değişken tanımlayıp `echo $degisken1`komutu ile bu değişkenin çağırılmasını sağlıyorum.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/36.png)
 
