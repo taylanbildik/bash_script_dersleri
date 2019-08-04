@@ -22,9 +22,12 @@ Daha sonra **kernel** yani **çekirdeğe** iletiliyor.
 
 ![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Giri%C5%9F/kernel.png)
 
-Çekirdek de aldığı emri donanımlara ifade ederek gerekli işlemi yerine getirtiyor.
+Çekirdek kabuktan aldığı emri donanımlara ifade ediyor.
 
 ![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Giri%C5%9F/hardware.png)
+
+Ve en nihayetinde donanım, çekirdekten aldığı emir doğrultusunda yapılması gereken işlevi yerine getiriyor.
+
 ![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Giri%C5%9F/file.png)
 
 Yapıyı tekrar kısaca ele alacak olursak ben yapılmasını istediğim işlemi doğrudan donanımın anlayacağı şekilde ifade edemeyeceğim için bunun yerine **shell** denilen yapıya **bash** kabuk programı diğer bir değişle **bash** dili aracılığı ile derdimi anlatıyorum **shell** de benden aldığı bilgileri çekirdeğe aktarıyor. Çekirdekte donanıma iş yaptırıyor. Yani buradaki aracı yapıların **hepsinin temel görevi tercümanlık oluyor**.
