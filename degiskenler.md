@@ -167,8 +167,11 @@ Bu şekilde, `declare` komutunu kullanarak istediğimiz değişkene sayısal de�
 
 Dizi Tanımlamak
 -
-Birden fazla değeri tek bir değişken içerisine toparlamak istediğimizde dizileri kullanabiliriz. Bu işlem için `declare` komutunun `a` parametresini kullanıyoruz. Komutumuzun kullanımı `declare -a dizi=(değer1 değer2 değer3)` şeklindedir.
-Ayrıca `declare` komutunu kullanmadan, dizide yer alacak ifadeleri parantez içine alarak da `dizi=(değer1 değer2 değer3 )` şeklinde dizi belirtebiliyoruz. Buradaki parantezler o değişkenin bir dizi olduğunu otomatik olarak belirtiyor.
+Birden fazla değeri tek bir değişken içerisine toparlamak istediğimizde dizileri kullanabiliyoruz. 
+
+Bu işlem için `declare` komutunun `a` parametresini kullanıyoruz. Komutumuzun kullanımı `declare -a dizi=(değer1 değer2 değer3)` şeklindedir.
+
+Ayrıca `declare` komutunu kullanmadan, dizide yer alacak ifadeleri parantez içine `dizi=(değer1 değer2 değer3 )` şeklinde alarak da dizi belirtebiliyoruz. Buradaki parantezler o değişkenin bir dizi olduğunu otomatik olarak belirtiyor.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/22.png)
 
@@ -181,11 +184,13 @@ Dizilerin kullanımına en basit örnek alışveriş listesi olarak verilebilir.
 Böylelikle her bir değere **0** dan başlayarak sırasıyla birer index değeri atanmış oldu. Yani örneğin **su** ifadesi ilk değer olduğu için **0** index numarasını almışken, **çay** değerinin index numarası **2** olmuş oldu.
 
 Bizler de sıralı şekilde atanan bu index değerleri sayesinde istediğimiz değerleri diziden çağırabiliyoruz.
+
 Örneğin dizide yer alan ilk değeri çağırmak istesem konsola `echo ${liste[0]}` komutunu girmem yeterli oluyor.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/24.png)
 
 Gördüğünüz gibi **0** index numarası ile ilk değerimizi ekran bastırmış olduk.
+
 Bu işlemi aynı şekilde diğer değerlerimizi bastırmak için de kullanabiliriz.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/25.png)
@@ -198,7 +203,7 @@ Tanımlanmış olan dizi elemanının kaç karakterden oluştuğunu öğrenmek i
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/27.png)
 
-Ayrıca bu kullanım sadece diziler için değil değişkenler ve sabitler içinde geçerlidir.
+Üstelik bu kullanım sadece diziler için değil değişkenler ve sabitler için de geçerlidir.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/28.png)
 
