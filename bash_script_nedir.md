@@ -22,7 +22,7 @@ Daha sonra **kernel** yani **çekirdeğe** iletiliyor.
 
 ![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Giri%C5%9F/kernel.png)
 
-Çekirdek kabuktan aldığı emri donanımlara ifade ediyor.
+Çekirdek, kabuktan aldığı emri donanımlara ifade ediyor.
 
 ![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Giri%C5%9F/hardware.png)
 
@@ -44,7 +44,7 @@ Bash kabuk programı **Stephen Bourne**'nin UNIX için geliştirmiş olduğu **s
 
 Bash kabuk dilinin bu kadar yetenekli olmasının nedeni; **sh** dili haricinde **ksh**(korn shell) ve **csh**(C shell) gibi çeşitli kabuk dillerinin en iyi özelliklerini içerisinde barındırarak, hem etkileşimli olması hem de programlanabilirlik için işlevselliği arttıran geliştirmeler içermesidir. 
 
-Bu gibi sebeplerden ötürü, GNU işletim sistemlerinde **BASH** dışında da kabuk dilleri barındırılmasına rağmen, genelikle sistemin varsayılan kabuk yorumlayıcısı **BASH** kabuğudur.
+Bu gibi sebeplerden ötürü, GNU/Linux işletim sistemlerinde **BASH** dışında da kabuk dilleri barındırılmasına rağmen, genelikle sistemin varsayılan kabuk yorumlayıcısı **BASH** kabuğudur.
 
 Bizler de bu eğitim serisinde bash kabuk programının komutlarını tek bir dosya içerisinde uygun şekilde toparlayarak toplu işlemleri yerine getirmeyi öğreneceğiz. Bu yapacağımız işlem **bash shell scripting** yani Türkçe olarak **bash kabuk senaryosu** olarak geçiyor. Böyle ifade edilmesinin nedeni de kabuk dili olan bash dilinin, yerine getirebileceği işlemleri tek tek yapmak yerine senaryolaştırılarak tek seferde tek elden gerçekleşmesinin sağlanmasıdır. 
 
