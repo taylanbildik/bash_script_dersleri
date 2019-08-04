@@ -47,10 +47,20 @@ Bizler de bu eğitim serisinde bash kabuk programının komutlarını tek bir do
 
 Yani kısacası bizler gerekli tüm komutları tek bir dosyada uygun şekilde toparlayarak; durumlara özel senaryolar oluşturacağız ve oluşturduğumuz senaryolara göre de sistem verilen emirleri otomatik olarak gerçekleştirecek.
 
-Bu neden önemli diyecek olursanız, olası senaryolara bir kaç örnek verelim. Örneğin sistem dosyalarının her gün yedeklenmesinin gerektiği bir durumda bu işlemi otomatikleştirmek yerine her gün elle yapmak gereksiz bir uğraş olacaktır. Yine bir diğer örnek olarak, sistemin online olup olmadığını her daim kontrol etmek yerine bu iş için bir script yazarak 7/24 sistem çalışma durumunun gözetlenmesini ve olası bir kesinti durumunda bizleri haberdar etmesini sağlayabiliriz.  Bu gibi pek çok örnek verebilir ve ayrıca yapılabilecek işlemleri yalnızca böylesine basit işlem adımları olarak da düşünmeyin, bu otomatikleştirilebilir işlemlere oldukça karmaşık olan görevler de atanabilir. Örneğin sistemdeki işleyişin kontrolü için 50 duruma göre 100 karmaşık komutu her gün dikkatli şekilde konsola girmeniz gerektiği bir durumda, bu işlemleri bash schell scripting ile otomatikleştirerek kullanmak oldukça verimli ve stabil sonuçlar doğuracaktır.
+Bu neden önemli diyecek olursanız, olası senaryolara bir kaç örnek verelim. 
+
+Örneğin sistem dosyalarının her gün yedeklenmesinin gerektiği bir durumda bu işlemi otomatikleştirmek yerine her gün elle yapmak gereksiz bir uğraş olacaktır. 
+
+Yine bir diğer örnek olarak, sistemin online olup olmadığını her daim kontrol etmek yerine bu iş için bir script yazarak 7/24 sistem çalışma durumunun gözetlenmesini ve olası bir kesinti durumunda bizleri haberdar etmesini sağlayabiliriz. 
+
+Bu gibi pek çok örnek verebilir ve ayrıca yapılabilecek işlemleri yalnızca böylesine basit işlem adımları olarak da düşünmeyin, bu otomatikleştirilebilir işlemlere oldukça karmaşık olan görevler de atanabilir. Örneğin sistemdeki işleyişin kontrolü için 50 duruma göre 100 karmaşık komutu her gün dikkatli şekilde konsola girmeniz gerektiği bir durumda, bu işlemleri bash schell scripting ile otomatikleştirerek kullanmak oldukça verimli ve stabil sonuçlar doğuracaktır.
 
 Kısacası bash script kullanarak, sistemle ilgili otomatikleştirilebilir her türlü işi tek seferde kolayca yerine getirtebiliyoruz.
-Üstelik bash bir kabuk dili olduğundan diğer dillere oranla sistemle çok daha hızlı etkileşim kurarak, bizlere yüksek performans sağlıyor. En nihayetinde ihtiyaçlarımıza göre script yazarak bizler için çalışan ve yorulmak bilmeyen binlerce sistem yöneticisi üretebiliriz. Eğitimimizin ilerleyen kısımlarda hız ve işlevsellik konusunda bana katılıyor olacağınıza kesinlikle eminim. Hazırsanız bu üstün gücü nasıl kontrol edebileceğimizi öğrenmeye başlayalım :)
+Yani en nihayetinde ihtiyaçlarımıza göre script yazarak bizler için çalışan ve yorulmak bilmeyen binlerce sistem yöneticisi üretebiliriz. 
+
+Üstelik bash bir kabuk dili olduğundan diğer dillere oranla sistemle çok daha hızlı etkileşim kurarak, bizlere yüksek performans sağlıyor. Eğitimimizin ilerleyen kısımlarda hız ve işlevsellik konusunda bana katılıyor olacağınıza kesinlikle eminim. 
+
+Hazırsanız bu üstün gücü nasıl kontrol edebileceğimizi öğrenmeye başlayalım :)
 
 
 
