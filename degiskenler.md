@@ -36,6 +36,7 @@ Bunun nedeni de değişken tanımlarında Türkçe karakter kullanımının geç
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/5.png)
 
+<hr>
  
 - Türkçe karakter dışında, değişken ismi tanımlarken alt tire işareti haricinde herhangi bir sembol kullanımı da hataya yol açmaktadır. 
 
@@ -53,6 +54,8 @@ Ve gördüğünüz gibi değişken başarılı şekilde tanımlanmış bulunuyor
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/8.png)
 
+<hr>
+
 - Dikkat etmemiz gereken bir diğer husus ise tanımlanacak değişken isimlerinin **kesinlikle rakam ile başlamamasıdır**. Fakat başlangıcı hariç değişken isimlerinde rakam kullanılabilir. 
 
 Yani örneğin herhangi bir değişken tanımlarken **1kitap** hatalı bir kullanım iken **kitap1** ya da **kit1ap** doğru kullanıma örnektir. 
@@ -64,6 +67,7 @@ Rakam başta olmadığı sürece tüm kombinasyonlar rakam kullanımına uygundu
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/10.png)
 
+<hr>
 
 - Bir başka dikkat edilmesi gereken ayrıntı da; değişken tanımlarken kullanılan tanımların, Linux sistemlerinde olduğu gibi **büyük küçük harf duyarlılığına** sahip olduğudur. 
 
@@ -73,9 +77,13 @@ Rakam başta olmadığı sürece tüm kombinasyonlar rakam kullanımına uygundu
 
 Gördüğünüz gibi biri küçük diğer büyük harflerden oluşan iki değişken de sistem tarafından farklı algılanarak konsola ayrı ayrı çıktılar basmış oldu. 
 
+<hr>
+
 - Bunun haricinde değişken tanımlarken **eşittir**(**=**) işaretinin **sağında ve solunda boşluk olmamasına** dikkat etmemiz gerekiyor. Aksi takdirde sistem bizlerin değişken tanımlamak istediğini anlayamadığından, kaçınılmaz olarak konsola "**komut yok**" şeklinde hata çıktısı basıyor. Aşağıdaki kullanımlar yanlış kullanımlara örnektir.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/12.png)
+
+<hr>
 
 Tüm bunların dışında konu anlatımın başında değişkenlerin programlar çalışırken farklı değerleri alabildiğinden bahsetmiştik. Bu da eğer bizler herhangi bir kısıtlama getirmezsek, sürekli olarak değişkenlerin  üzerine yeni değerler yazılabileceği anlamına geliyor. Bu durumu daha iyi anlamak adına `spor="tenis"` komutu ile **spor** isimli bir değişken tanımlayalım ve `echo $spor` komutu ile değişkenimizi çağıralım.
 
@@ -89,7 +97,7 @@ Gördüğünüz gibi önceleri spor değişkenini çağırdığımda karşıma *
 
 
 Değişkenler yeniden tanımlanabildiği için sistemin çalışmasında rol oynayan, varsayılan olarak tanımlanmış olan değişkenlerle aynı isimlere sahip yeni değişkenler oluşturmama konusunda da dikkatli olmamız gerekiyor. Eğer farkında olmadan sisteme ait değişkenleri yeninden tanımlarsanız sistemle ilgili pek çok soruna yol açabilirsiniz. Bu yüzden, tanımlayacağınız değişkenin daha önce kullanılıp kullanılmadığından tam olarak emin değilseniz, değişkeninizi tanımlamadan önce sistem üzerinde var olup olmadığını kontrol etmenizde fayda var.
-Peki ama nasıl kontrol edebiliriz derseniz,  konsola `echo` yazıp `$` işareti koyduktan sonra **Tab** tuşuna basarak tanımlı tüm değişkenleri listeleyebilirsiniz. 
+Peki ama nasıl kontrol edebiliriz derseniz,  konsola `echo` yazıp `$` işareti koyduktan sonra <kbd>**Tab**</kbd> tuşuna basarak tanımlı tüm değişkenleri listeleyebilirsiniz. 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/15.png)
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/16.png)
@@ -101,7 +109,7 @@ Bu sayede halihazırda sistemde tanımlı olan değişkenlere müdahale etmeden 
 
 Şimdi sırasıyla farklı türden değişkenleri nasıl tanımlarız bunlara göz atalım.
 
-Sınıfına Göre Değiken Tanımlamak
+Sınıfına Göre Değişken Tanımlamak
 =
 
 Değişkenlerin belirli türlerde değer almasını sağlamak için `declare` komutunu kullanıyoruz. 
@@ -114,37 +122,36 @@ Aşağıdaki tablodan komutun parametrelerine ve yerine getirebildiği işlevler
 |-p|Değişkenin niteliklerini bastırma işlevindedir. Print(yazdır) ifadesinin kısaltmasıdır.|
 |-i|Sayısal değişken tanımlama işlevindedir. İnteger(tam sayı) ifadesinin kısaltmasıdır.|
 |-a|Dizi tanımlama işlevindedir. Array(dizi) ifadesinin kısaltmasıdır.|
-|-f|Fonksiyon özelliği tanımlama işlevindedir. Function(fonksiyon) ifadesinin kısaltmasıdır.|
 |-r|Sabit değişken atama işlevindedir. Readonly(yalnızca okunabilir) ifadesinin kısaltmasıdır.|
-|-t|Değişkene trace(iz) niteliği verme işlevindedir.|
 |-x|Değişkeni export(ihraç) ederek, alt kabuklara aktarma işlevindedir.|
 
 `declare` komutunu kullanıyorken, eğer değişkenlere özellik eklemek istiyorsak `-` işaretini, şayet var olan özellikleri çıkarmak istiyorsak da `+` işaretini eklemek ya da çıkarmak istediğimiz özelliğin parametresini de belirterek kullanmamız yeterli oluyor. 
 
 
-Sayısal Değişken Tanımlama
+Sayısal Değişken Tanımlamak
 -
 
 Anlatımlara ilk olarak sayısal değişken tanımlama işlemi ile başlayalım.
+
 Sayısal değişken tanımlamak için konsola `declare -i değişken tanımı` şeklinde komutumuzu girmemiz gerekiyor. 
 
 Ben **9** değerine sahip **rakam** isimli bir sayısal değişken tanımlamak istediğim için konsola `declare -i rakam="9"` komutumu giriyorum. 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/17.png)
 
-Böylelikle **rakam** isimli sayısal değişkenime **9** rakamını atamış oldum ve  bu değişkenim ben aksini istemedikçe yalnızca sayısal ifadeler alan bir değişken olarak sınıflandırılmış oldu.Bu durumu teyit etmek için öncelikle değişkenimin sınıfını sorgulamak üzere `declare` komutunun **p** parametersi ile `declare -p rakam` komutunu giriyorum. 
+Böylelikle **rakam** isimli sayısal değişkenime **9** rakamını atamış oldum ve  bu değişkenim ben aksini istemedikçe yalnızca sayısal ifadeler alan bir değişken olarak sınıflandırılmış oldu. Bu durumu teyit etmek için öncelikle değişkenimin sınıfını sorgulamak üzere `declare` komutunun **p** parametersini kullanarak `declare -p rakam` komutunu giriyorum. 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/18.png)
 
-Sizlerin de gördüğü gibi konsol bana çıktı olarak `declare -i rakam` şeklinde bir çıktı bastı. Bu çıktı ile değişkenimizin sayısal bir değişken olduğunu teyit etmiş olsak da kesin olarak emin olmak adına değişkenimize sayısal değerlerin dışında herhangi bir değer atamaya çalışarak bu durumu netleştirelim. 
+Sizlerin de gördüğü gibi konsol bana çıktı olarak `declare -i rakam` şeklinde bir çıktı bastı. Bu çıktı ile değişkenimizin sayısal bir değişken olduğunu teyit etmiş olsak da kesin olarak emin olmak adına, değişkenimize sayısal değerlerin dışında herhangi bir değer atamaya çalışarak bu durumu netleştirelim. 
 
 Bunun için konsola `rakam="test"` komutumu girdikten sonra, değişkenimin durumunu sorgulamak için `declare -p rakam` komutunu kullanıyorum. 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/19.png)
 
-Gördüğünüz gibi çıktıda rakam değişkenimin değeri "**0**" olarak karışıma gelmiş oldu. Bunun nedeni değişkenime sonradan atamaya çalıştığım "**test**" ifadesinin sayısal bir karşılığının olmamasıdır. 
+Gördüğünüz gibi çıktıda rakam değişkenimin değeri "**0**" olarak karşıma gelmiş oldu. Bunun nedeni değişkenime sonradan atamaya çalıştığım "**test**" ifadesinin sayısal bir karşılığının olmamasıdır. 
 
-Hatırlarsanız değişken tanımlama anlatımlarının başında **rakamlar** isimli değişkene **12345** ifadesini atamış ve bu değişkenimizi bastırmıştık. Şimdi aynı değişkeni atayıp değerini "**"test**" ifadesi ile değiştirerek sayısal değer alma özelliği olan değişkenler ile sıradan değişken arasındaki farkı görelim.
+Hatırlarsanız değişken tanımlama anlatımlarının başında **rakamlar** isimli değişkene **12345** ifadesini atamış ve bu değişkenimizi bastırmıştık. Şimdi aynı değişkeni atayıp değerini "**"test**" ifadesi ile değiştirerek, sayısal değer alma özelliği olan değişkenler ile sıradan değişken arasındaki farkı görelim.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/20.png)
 
@@ -158,7 +165,7 @@ Bu şekilde, `declare` komutunu kullanarak istediğimiz değişkene sayısal de�
 
 
 
-Dizi Tanımlama
+Dizi Tanımlamak
 -
 Birden fazla değeri tek bir değişken içerisine toparlamak istediğimizde dizileri kullanabiliriz. Bu işlem için `declare` komutunun `a` parametresini kullanıyoruz. Komutumuzun kullanımı `declare -a dizi=(değer1 değer2 değer3)` şeklindedir.
 Ayrıca `declare` komutunu kullanmadan, dizide yer alacak ifadeleri parantez içine alarak da `dizi=(değer1 değer2 değer3 )` şeklinde dizi belirtebiliyoruz. Buradaki parantezler o değişkenin bir dizi olduğunu otomatik olarak belirtiyor.
@@ -206,7 +213,7 @@ Ayrıca dizi içerisinde kaç tane değişken olduğunu öğrenmek için de `#` 
 
 
 
-Sabit Değişken Tanımlama
+Sabit Değişken Tanımlamak
 -
 
 Şimdi ise tanımladığımız değişkenin değerinin, değiştirilemez şekilde sabit kalmasını nasıl sağlarız bunu görelim. Bu işlem için `readonly` komutunu ya da `declare` komutunun `r` parametresini kullanabiliyoruz.
