@@ -121,18 +121,22 @@ Bu durumun nedeni `bash` ya da `sh` komutunu kullandığımızda konsola "**bu b
 
 Ancak bizler konsola `./betik` şeklinde komut girdiğimizde, konsol bu dosyanın ne tür bir dosya olduğunu doğrudan bilmediği için ilgili dosyayı açıp ilk satırına bakıyor ve ilk satırda yer alan ifadeye göre dosyanın ne türden olduğunu anlamlandırmaya çalışıyor. Eğer bizler ilk satırı boş bırakmışsak konsol sistemde varsayılan olarak kullanılan kabuk dili aracılığı ile dosyamızı çalıştırmayı deniyor. Şayet ilk satıra başka bir kabuk dili eklemişsek de bu dile göre dosyayı çalıştırıyor. Hatta bu durumu dosyamızın başına alakasız bir kabuk konumu belirterek deneyelim.
 
-Dosyamın başına **/bin/bash** yerine **/bin/deneme** şeklinde bir ifade ekleyip kaydediyorum. Ve dosyamı `./betik` şeklinde çalıştırmayı deniyorum.
+Dosyamın başına **/bin/bash** yerine **/bin/deneme** şeklinde bir ifade ekleyip kaydediyorum. 
 
 ![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Ba%C5%9Flarken/16.png)
 
+Ve dosyamı `./selamlar.sh` şeklinde çalıştırmayı deniyorum.
+
+![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Ba%C5%9Flarken/17.png)
+
 Bu işlemin sonucunda konsol bana "***hatalı yorumlayıcı: Böyle bir dosya ya da dizin yok***" şeklinde çıktı basarak betik dosyasının ilk satırında geçen kabuk programı konumunun geçersiz olduğunu belirterek betik dosyasını çalıştıramadı.
 
-Aynı dosyayı `bash betik` komutu ile çalıştırdığımızda ise konsol ilk satırda yer alan özel kabuk tanımını okumaya ihtiyaç duymadığından dosyamızı **bash** dili aracılığı ile sorunsuzca çalıştırabildi.
+Aynı dosyayı `bash selamlar.sh` ya da `sh selamlar.sh` komutu ile çalıştırdığımızda ise konsol ilk satırda yer alan özel kabuk tanımını okumaya ihtiyaç duymadığından dosyamızı **bash** ya da **sh** dili aracılığı ile betiği sorunsuzca çalıştırabildi.
 
-![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Ba%C5%9Flarken/15.png)
+![](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/Ba%C5%9Flarken/18.png)
 
 Buradaki önemli ayrım; bizler `bash` ya da `sh` komutunu kullanarak, konsola "**bu dosyayı bash ya da sh dili aracılığı ile çalıştır**"  diye emir veriyoruz. Ancak ikinci kullanımda yani `./betik` şeklindeki kullanım ile konsola "**bu dosyanın ilk satırındaki tanıma bakarak hangi kabuk ile çalışacağını tespit et daha sonra dosyanın çalıştırılabilirlik yetkisi varsa çalıştır**" demiş oluyoruz. Bu sebepten `./betik` şeklindeki kullanım betik dosyasını çalıştırmak için dosyanın çalıştırılabilirlik yetkisine ihtiyaç duyuyor.
 
-Böylelikle ilk bash shell scriptimizi diğer bir değişle ilk betiğimizi yazıp çalıştırmış olduk.
+Böylelikle ilk bash shell scriptimizi diğer bir deyişle ilk betiğimizi yazıp çalıştırmış olduk.
 
 Bir sonraki kısımda anlatıma değişkenler ile devam edeceğiz.
