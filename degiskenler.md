@@ -256,7 +256,7 @@ Değişkenlerin export Edilmesi
 
 Bu kısıma kadar temel olarak değişkenleri nasıl tanımlayabileceğimizden ve tanımlama yaparken nelere dikkat etmemiz gerektiğinden bahsettik. Ancak henüz değinmediğimiz ve önemli olan başka bir konu da; değişkenlerin **export** edilmediği sürece yalnızca tanımlandıkları konsol üzerinden çağırılabiliyor olduklarıdır. 
 
-Örneğin bir betik dosyasını çalıştırdığımızda mevcut **kabuk**(**shell**) bu işlem için çatallama(fork) yaparak bir **alt kabuk**(**subshell**) oluşturur ve betiği bu alt kabukta çalıştırır. Daha sonra görev tamamlanınca alt kabuk öldürülerek ana kabuğa dönülür. Böylelikle tek bir kabuk altında birden fazla alt kabuk oluşturularak aynı anda pek çok işlemin gerçekleştirilmesi mümkün olur. Kabuğun çalışma yapısını daha iyi anlamak adına aşağıdaki örnek çalışma şablonuna göz atabilirsiniz.
+Örneğin bir betik dosyasını çalıştırdığımızda mevcut **kabuk**(**shell**) bu işlem için **çatallama**(**fork**) yaparak bir **alt kabuk**(**subshell**) oluşturur ve betiği bu alt kabukta çalıştırır. Daha sonra görev tamamlanınca alt kabuk öldürülerek ana kabuğa dönülür. Böylelikle tek bir kabuk altında birden fazla alt kabuk oluşturularak aynı anda pek çok işlemin gerçekleştirilmesi mümkün olur. Kabuğun çalışma yapısını daha iyi anlamak adına aşağıdaki örnek çalışma şablonuna göz atabilirsiniz.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/alt-kabuk.png)
 
