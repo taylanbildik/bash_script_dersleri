@@ -444,7 +444,7 @@ Temel ve sık kullanılan değişkenlerden birkaçını da kısaca açıklayacak
 
 Ortam değişkenlerinin değerlerini tek tek kontrol etmek istersek, konsola <code>echo $ORTAM_DEĞİŞKENİ</code> şeklinde komut vererek ilgili bilgilere ulaşabiliriz. Örneğin **HOME** değişkenine bir bakalım.
 
-![enter image description here](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/18.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/52.png)
 
 Gördüğünüz üzere konsol **HOME** değişkeninin değerini root kullanıcısı için **/root** olarak bastırmış oldu.
 
@@ -462,22 +462,26 @@ Gelin şimdi teker teker kullanımlarına değinelim.
 
 **Sadece o an kullanmakta olduğumuz konsola özel olan ve konsolu kapattıktan sonra sıfırlanan ortam değişkenidir.** Aşağıdaki örnek ile adım adım açıklayalım bu durumu:
 
-Terminali açtım ve komut satırına "<code>asdf</code> "(anlamsız karşılığı olmayan bir ifade/komut) yazdım. Konsol yanıt olarak " <code>bash: asdf: komut yok</code> " yazısını ekrana bastı.
+Konsola isim="taylan" şeklinde bir değişken tanımlıyıp, bu değişkeni bastırıyorum.
 
-![enter image description here](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/20.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/53.png)
 
-Görüldüğü gibi konsol çıktısı Türkçe oldu ancak ben bu çıktıları İngilizceye çevirmek istiyorum. Bunun için konsol dilini tutan **LANG**  isimli değişken değerini, konsola <code>LANG=C </code> komutunu vererek değiştiriyorum. Ve sonrasında tekrar komut satırına <code>asdf</code> yazıp dilin değişip değişmediğini kontrol ediyorum.
+Daha sonra yeni bir konsol açarak **isim** değişkenini konsola bastırmayı deniyorum.
 
-![enter image description here](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/21.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/54.png)
 
-Çıktıda da görüldüğü gibi dil değişmiş ve yazdığımız <code>asdf</code> komutunun neticesinde konsol, ekrana `bash: asdf: command not found` yazısını basmış oldu. Sonuç olarak geçerli terminal için dil ingilizceye çevrilmiş oldu.
+Gördüğünüz gibi yeni açmış olduğum konsoldaki çıktı boş oldu. Bunun nedeni tanımladığım değişkenin, bu şekilde tanımlandığına yalnızca tanımlandığı konsol üzerinden çağırılabileceğidir. **Yani bu şekilde yapılan tüm değişiklikler sadece yapıldığı konsol için geçerli oluyor.** 
 
-Bütün bu işlemler sadece bu komut penceresi için sınırlı. Yani açmış olduğumuz terminal ekranını(konsol/komut penceresi) kapatırsak yeni bir tane açtığımızda başlangıçta olduğu gibi konsol bize Türkçe yanıt verecektir. **Yani bu şekilde yapılan tüm değişiklikler sadece yapıldığı konsol için geçerli.** Bunu kendiniz de deneyerek görebilirsiniz.
+Hatta bu değişkeni **export** etmediğimizde alt kabuklarda dahi bastırılamadığını sizler de biliyorsunuz.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/55.png)
 
 
 ### Kullanıcıya (Oturuma) Özel
 
-Daha önce BASH kabuğundan bahsetmiştik ve mevcut sistemimizde bulunup bulunmadığını da kontrol etmiştik. BASH her oturum açtığımızda tüm ayarlarını ve davranışlarını " <kbd>.bashrc</kbd> " isimli gizli bir dosyadan okur. **Ufak bir bilgi daha; başında <kbd>.</kbd> (nokta) olan dosyalar gizli dosya görevindedir.** Konuya dönecek olursak bizim mevcut oturumumuzda ortam değişkenlerinde kalıcı değişiklik yapabilmemiz için yapmak istediğimiz değişiklikleri " <kbd>.bashrc</kbd> " isimli dosyaya eklememiz gerekiyor ki oturum açtığımızda sistem burada yaptığımız değişiklikleri her seferinde görebilsin.
+Daha önce BASH kabuğundan bahsetmiştik ve mevcut sistemimizde bulunup bulunmadığını da kontrol etmiştik. 
+
+BASH her oturum açtığımızda tüm ayarlarını ve davranışlarını her kullanıcıya özel olan " <kbd>.bashrc</kbd> " isimli gizli bir dosyadan okuyor. Yani eğer bizler mevcut oturumumuzdaki değişkenler üzerinde kalıcı değişiklik yapmak istiyorsak; değişiklikleri " <kbd>.bashrc</kbd> " isimli dosyaya eklememiz gerekiyor ki, her oturum açtığımızda sistem burada yaptığımız değişiklikleri otomatik olarak görüp sisteme tanımlayabilsin.
 
 Bulunduğumuz oturumda kalıcı değişiklik yapmak için birisi grafiksel diğeri ise sadece komut satırı arayüzü olmak üzere iki farklı yoldan nasıl değişiklik yaparız onu görelim. İsterseniz ilk olarak grafiksel arayüz ile başlayalım. Öncelikle <kbd>.bashrc</kbd> dosyasını açmalıyız. Dosyayı açmak için konsola <code>leafpad ~/.bashrc</code> komutunu veriyoruz.
 
