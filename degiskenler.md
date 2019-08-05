@@ -402,3 +402,11 @@ Gördüğünüz gibi sabit değişkenler hariç diğer değişkenler `unset` kom
 Sabit değişkenlerin sıfırlanmasının ancak değişkenin tanımlandığı kabuğun kapatılması ile mümkün olacağını zaten biliyorsunuz. O yüzden sabit değişkenler hariç, tanımlamış olduğunuz diğer değişkenleri tanımsız yapmak isterseniz `unset` komutunu kullanmanız yeterli.
 
 
+Sistemde Tanımlı Ortam(Çevre) Değişkenleri
+-
+Bu kısıma kadar kendimiz nasıl değişken tanımlarız bunu ele aldık. Şimdi de sistemde tanımlı olan değişkenlerden bahsederek anlatımlara devam edelim.
+
+Sistemin işleyişinde pek çok konuda kolaylık sunan çeşitli ortam değişkenleri vardır. Bu değişkenlere `env` `printenv` ya da `echo $` komutunun ardından basacağımız <kbd>Tab</kbd> tuşu ile ulaşabiliriz.
+
+
+
