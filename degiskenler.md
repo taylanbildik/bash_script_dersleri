@@ -442,15 +442,15 @@ Temel ve sık kullanılan değişkenlerden birkaçını da kısaca açıklayacak
 
 **TERM:** Komut satırı uygulamalarının hangi terminalde çalışacağını belirtir. Birçok çeşidi vardır ancak xterm yaygın şekilde karşımıza çıkmaktadır.
 
-Ortam değişkenlerinin değerlerini tek tek kontrol etmek istersek, konsola <code>echo $ORTAM_DEĞİŞKENİ</code> şeklinde komut vererek ilgili bilgilere ulaşabiliriz. Örneğin **TERM** değişkenine bir bakalım.
+Ortam değişkenlerinin değerlerini tek tek kontrol etmek istersek, konsola <code>echo $ORTAM_DEĞİŞKENİ</code> şeklinde komut vererek ilgili bilgilere ulaşabiliriz. Örneğin **HOME** değişkenine bir bakalım.
 
 ![enter image description here](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/18.png)
 
-Gördüğünüz üzere konsol **TERM** değişkeninin değerini **xterm** olduğunu göstermiş oldu. Zaten daha önce yaygın olarak kullanıldığından söz ettiğimiz için bu çıktı bizi şaşırtmadı. Eğer bu çıktıyı teyit etmek istersek konsola <code>xterm</code> komutunu verdiğimizde **xterm* açılacak ve çıktı teyit edilmiş olacaktır.
+Gördüğünüz üzere konsol **HOME** değişkeninin değerini root kullanıcısı için **/root** olarak bastırmış oldu.
 
-![enter image description here](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/19.png)
+Neticede sizlerin de gördüğü gibi; bizlerin tanımladığı değişkenler ile sistemde varsayılan olarak tanımlı değişkenleri bastırıken komut kullanımı açısından hiç bir fark bulunmuyor. Buradaki tek küçük fark, sistemde varsayılan olaark tanımlı değişkenlerin daha ayır edici olması açısında genellikle istisnalar dışında tamamı büyük harflerden oluşacak şekilde tanımlanmış olmalarıdır.
 
-İstersek diğer ortam değişkenleri için de aynı şekilde tek tek bilgi alabiliriz. Ancak ortam değişkenleri sabit ve sınırlı değildir. Sistemde var olanların haricinde sizler de biliyorsunuz ki kendimiz de değişkenler tanımlayabiliyoruz. Bu tanımlamaları da üç farklı kategoriye ayırabiliriz;
+Şimdiye kadar hem kendi tanımladığımız hem de sistemde varsayılan olarak tanımlı değişkenleri ele aldık. Şimdi de tanımlanan değişkenlerin kapsamlarını 3 kategori altında tek tek ele alalım; 
 
 - **konsola(terminal) özel :** yalnızca açık olan mevcut konsoldaki uygulamalar için kullanılabilen
 - **kullanıcıya özel:** yalnızca tek kullanıcı için geçerli olan ve o kullanıcının her oturum açtığında kullanabildiği
@@ -466,7 +466,7 @@ Terminali açtım ve komut satırına "<code>asdf</code> "(anlamsız karşılı�
 
 ![enter image description here](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/20.png)
 
-Görüldüğü gibi konsol çıktısı Türkçe oldu ancak ben bu çıktıları İngilizceye çevirmek istiyorum diyelim. Bunun için konsola <code> export LANG=C </code> komutunu veriyorum. Ve sonrasında tekrar komut satırına <code>asdf</code> yazıp dilin değişip değişmediğini kontrol ediyorum.
+Görüldüğü gibi konsol çıktısı Türkçe oldu ancak ben bu çıktıları İngilizceye çevirmek istiyorum. Bunun için konsol dilini tutan **LANG**  isimli değişken değerini, konsola <code>LANG=C </code> komutunu vererek değiştiriyorum. Ve sonrasında tekrar komut satırına <code>asdf</code> yazıp dilin değişip değişmediğini kontrol ediyorum.
 
 ![enter image description here](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/21.png)
 
