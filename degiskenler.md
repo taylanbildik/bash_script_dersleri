@@ -508,7 +508,14 @@ Ancak dosyada değişikliği yaptığımız anda değişken sisteme hemen tanım
 
 Hatta root kullanıcı hesabındayken birden fazla konsol üzerinden bile **soyisim** değişkenini çağırabiliyorum. Hatırlarsanız yanlızca konsola özel olarak tanımladığımız değişkeni yalnızca tanımlandığı konsol üzerinde bastırabiliyorken, kullanıcıya özel olarak tanımlanmış değişkeni kullanıcı hesabında açtığımız tüm konsollar üzerinden bastırabiliyoruz.
 
-Daha sonra ali isimli kullanıcı hesabına geçereke `echo $soyisim` komutu ile değişkeni bastırmayı deniyorum.
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/60.png)
+
+Şimdi de **ali** isimli kullanıcı hesabına geçerek `echo $soyisim` komutu ile değişkeni bastırmayı deneyelim.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/60.png)
+
+Gördüğünüz gibi **root** kullanıcısına özel olarak tanımladığımız **soyisim** değişkenini **root** kullanıcısı dışında diğer kullanıcılar ulaşamıyor.
+
 
 ### Sistem Genelinde
 
