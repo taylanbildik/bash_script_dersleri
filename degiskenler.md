@@ -496,8 +496,19 @@ Komutumuzu girdikten sonra karşımıza konsol ekranı içerisinde <kbd>.bashrc<
 
 Artık böylelikle değişiklik yaptığımız bu root kullanıcı oturumunu ne zaman açarsak, tanımladığımız **soyisim** değişkeni geçerli olacak. 
 
-Ancak dosyada değişikliği yaptığımız anda değişken sisteme hemen tanımlanmıyor. Bunun nedeni <kbd>.bashrc</kbd> dosyasının oturum açılırken okunmasıdır. Yani yaptığımız değişikliklerin geçerli olabilmesi için oturumun kapatılıp tekrar açılması ya da alternatifi olan `source` komutunun `source .bashrc`şeklinde kullanıması gerekiyor.
+Ancak dosyada değişikliği yaptığımız anda değişken sisteme hemen tanımlanmıyor. Bunun nedeni <kbd>.bashrc</kbd> dosyasının oturum açılırken okunmasıdır. Yani yaptığımız değişikliklerin geçerli olabilmesi için oturumun kapatılıp tekrar açılması ya da alternatifi olan `source` komutunun `source .bashrc` şeklinde kullanıması gerekiyor.
 
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/58.png)
+
+Şimdi **root** kullanıcı hesabında ve baska bir kullanıcı hesabı olan **ali** kullanıcı hesabında **soyisim** değişkenini bastırmayı deneyelim.
+
+Öncelikle **root** kullanıcı hesabında konsola `echo $soyisim` yazarak değişken değerimi bastırıyorum.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/59.png)
+
+Hatta root kullanıcı hesabındayken birden fazla konsol üzerinden bile **soyisim** değişkenini çağırabiliyorum. Hatırlarsanız yanlızca konsola özel olarak tanımladığımız değişkeni yalnızca tanımlandığı konsol üzerinde bastırabiliyorken, kullanıcıya özel olarak tanımlanmış değişkeni kullanıcı hesabında açtığımız tüm konsollar üzerinden bastırabiliyoruz.
+
+Daha sonra ali isimli kullanıcı hesabına geçereke `echo $soyisim` komutu ile değişkeni bastırmayı deniyorum.
 
 ### Sistem Genelinde
 
