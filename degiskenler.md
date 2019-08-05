@@ -487,20 +487,17 @@ BASH, her oturum açtığımızda tüm ayarlarını ve davranışlarını kullan
 
 Öncelikle ana dizinde bulunan <kbd>.bashrc</kbd> dosyasını açmak üzere <code>nano -w ~/.bashrc</code> komutunu girelim.
 
-![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/55.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/56.png)
 
-Komutumuzu girdikten sonra karşımıza konsol ekranı içerisinde <kbd>.bashrc</kbd> dosyasının içeriği geliyor. Klavyedeki yön tuşlarını kullanarak en alt satıra inelim ve root kullanıcısına özel olarak tanımlamak istediğimiz değişkeni `export soyad="bildik"` şeklinde girelim.
+Komutumuzu girdikten sonra karşımıza konsol ekranı içerisinde <kbd>.bashrc</kbd> dosyasının içeriği geliyor. Klavyedeki yön tuşlarını kullanarak en alt satıra inelim ve root kullanıcısına özel olarak tanımlamak istediğimiz değişkeni `export soyisim="bildik"` şeklinde girip, <kbd>Ctrl + X</kbd> tuş kombinasyonu ile yaptığımız değişikliği kaydedelim. 
 
-![enter image description here](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/23.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/57.png)
 
-Ve <kbd>Ctrl + X</kbd> tuş kombinasyonunu uyguladım. Daha sonra konsol bana çıkmadan önce dosyada yaptığım değişikliği kaydetmek isteyip istemediğimi sordu bende "**e**" diyerek **dosyanın adını herhangi bir değişime uğratmadan kaydettim** ve işte bu kadar işlem tamamdır.
 
-![enter image description here](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/24.png)
-![enter image description here](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/25.png)
+Artık böylelikle değişiklik yaptığımız bu root kullanıcı oturumunu ne zaman açarsak, tanımladığımız **soyisim** değişkeni geçerli olacak. 
 
-Yalnızca komut satırından işlem yapmak sanki daha uzun ve zor gibi gelmiş olabilir ancak kesinlikle grafiksel olarak yapmaktan bir farkı yok sadece belki izahı biraz uzun sürmüş olabilir.
+Ancak dosyada değişikliği yaptığımız anda değişken sisteme hemen tanımlanmıyor. Bunun nedeni <kbd>.bashrc</kbd> dosyasının oturum açılırken okunmasıdır. Yani yaptığımız değişikliklerin geçerli olabilmesi için oturumun kapatılıp tekrar açılması ya da alternatifi olan `source` komutunun `source .bashrc`şeklinde kullanıması gerekiyor.
 
-Artık böylelikle değişiklik yaptığımız bu kullanıcı oturumunu ne zaman açarsak, yaptığımız dil değişikliği geçerli olacak. Ancak değişikliği yaptığımız anda etki etmiyor. Bunun nedeni <kbd>.bashrc</kbd> dosyasının oturum açılırken okunmasıdır. Yani yaptığımız değişikliklerin geçerli olabilmesi için oturumun kapatılıp tekrar açılması gerekmektedir. Ya da konsoldan vereceğimiz <code>source ~/.bashrc</code> komutu da dosyanın tıpkı oturum yeniden açılıyormuşçasına <kbd> .bashrc</kbd> dosyasının tekrar okunup yapılan değişikliklerin geçerli olmasını sağlar. Ancak benim önerim oturumu kapatıp tekrar açmanız yönündedir.
 
 ### Sistem Genelinde
 
