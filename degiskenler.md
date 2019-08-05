@@ -406,7 +406,27 @@ Sistemde Tanımlı Ortam(Çevre) Değişkenleri
 -
 Bu kısıma kadar kendimiz nasıl değişken tanımlarız bunu ele aldık. Şimdi de sistemde tanımlı olan değişkenlerden bahsederek anlatımlara devam edelim.
 
-Sistemin işleyişinde pek çok konuda kolaylık sunan çeşitli ortam değişkenleri vardır. Bu değişkenlere `env` `printenv` ya da `echo $` komutunun ardından basacağımız <kbd>Tab</kbd> tuşu ile ulaşabiliriz.
 
+Ortam Değişkenlerini Görüntülemek
+-
 
+Sistemin işleyişinde pek çok konuda kolaylık sunan çeşitli ortam değişkenleri vardır.  Bunları görmek istersek komut satırına <code>set</code> , <code>env</code> ya da <code>printenv</code> komutlarından birini ihtiyacımıza göre kullanabiliriz. Bu üç komut arasındaki farklar aşağıdaki şekildedir.
 
+**set :** Shell'e ait olan değişkenlerin adını ve değerlerini verir.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/set.png)
+
+**printenv :** Sistemde bulunan bütün çevresel değişkenleri verir.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/printenv.png)
+
+**env :** Sistemde bulunan bütün "export" edilmiş yani dışa(alt kabuklara) aktarılmış değişkenlerle beraber değişkenleri gösterir.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/env.png)
+
+Ben komutların tam çıktıları çok uzun olduğu için hepsini burada vermedim, ancak sizler 3 komutu da kullanarak aralarındaki farkları mutlaka gözlemleyin.
+
+Ayrıca mevcut kabuk üzerinde tanımlı değişkenleri görmek için de `echo $` komutundan sonra <kbd>Tab</kbd> tuşuna basmanız yeterli.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/15.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/16.png)
