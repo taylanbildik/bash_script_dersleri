@@ -481,22 +481,15 @@ Hatta bu değişkeni **export** etmediğimizde alt kabuklarda dahi bastırılama
 
 Daha önce BASH kabuğundan bahsetmiştik ve mevcut sistemimizde bulunup bulunmadığını da kontrol etmiştik. 
 
-BASH her oturum açtığımızda tüm ayarlarını ve davranışlarını her kullanıcıya özel olan " <kbd>.bashrc</kbd> " isimli gizli bir dosyadan okuyor. Yani eğer bizler mevcut oturumumuzdaki değişkenler üzerinde kalıcı değişiklik yapmak istiyorsak; değişiklikleri " <kbd>.bashrc</kbd> " isimli dosyaya eklememiz gerekiyor ki, her oturum açtığımızda sistem burada yaptığımız değişiklikleri otomatik olarak görüp sisteme tanımlayabilsin.
+BASH, her oturum açtığımızda tüm ayarlarını ve davranışlarını kullanıcıya özel olan ve kullanıcının ana dizininde bulunan <kbd>.bashrc</kbd> isimli gizli bir dosyadan okuyor. Yani eğer bizler mevcut oturumumuzdaki değişkenler üzerinde kalıcı değişiklik yapmak istiyorsak; değişiklikleri <kbd>.bashrc</kbd> isimli dosyaya eklememiz gerekiyor ki, her oturum açtığımızda sistem burada yaptığımız değişiklikleri otomatik olarak görüp sisteme tanımlayabilsin.
 
-Bulunduğumuz oturumda kalıcı değişiklik yapmak için birisi grafiksel diğeri ise sadece komut satırı arayüzü olmak üzere iki farklı yoldan nasıl değişiklik yaparız onu görelim. İsterseniz ilk olarak grafiksel arayüz ile başlayalım. Öncelikle <kbd>.bashrc</kbd> dosyasını açmalıyız. Dosyayı açmak için konsola <code>leafpad ~/.bashrc</code> komutunu veriyoruz.
+Örnek olması açısında bu sefer de `soyisim="bildik"` değişkenini **yalnızca root kullanıcısına özel** olarak tanımlamayı ele alıyorum.
 
-Kodu kısaca açıklayacak olursak <code>leafpad</code> sistemde mevcut bulunan basit metin düzenleyicisinin adıdır, <code>~</code>(<kbd>Alt Gr + ü</kbd> kombinasyonu ile oluşturulan "**tilde**" karakteri) karakteri ev dizinini temsil ediyor <code>/.bashrc</code> ise düzenleme yapacağımız dosyanın adıdır. Bu kısa açıklama sonrası komutları tam olarak anlamamış olabilirsiniz. Ancak yakında her birine değineceğiz ve bu kısımlar da tam anlamıyla oturmuş olacak. Yani şimdilik bu kodlara çok takılmadan asıl anlatılmak istenilene odaklanın lütfen.
+Öncelikle ana dizinde bulunan <kbd>.bashrc</kbd> dosyasını açmak üzere <code>nano -w ~/.bashrc</code> komutunu girelim.
 
-<code>leafpad ~/.bashrc</code> komutunu verdikten sonra karşınıza <kbd>.bashrc</kbd> dosyasının açılmış olması gerek. 
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/55.png)
 
-![enter image description here](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/22.png)
-
-Şimdi yapmak istediğimiz değişikliği dosyanın en alt satırına yani dosyanın sonuna eklemeliyiz. Bu eklemeyi <code>export DEĞİŞKEN_ADI=değeri</code> şeklinde yapıyoruz. Ben örnek olması açısından dil değişikliğini ele aldım. Bu sebepten dil değişimi(Türkçe olan dili ingilizceye çevirmek) için gerekli olan yazı dizisini <code>export LANG=C</code> şeklinde dosyanın sonuna ekledim ve dosyayı kaydederek kapattım.
-
-Geldik diğer yöntem olan yalnızca konsol ekranını kullanarak değişiklik yapmaya.
-
-Bunun için konsola <code>nano -w ~/.bashrc</code> komutumuzu veriyoruz.
-Komutumuzu girdikten sonra karşımıza konsol ekranı içerisinde <kbd>.bashrc</kbd> dosyasının içeriği geliyor. Klavyedeki yön tuşlarını kullanarak en alt satıra iniyoruz ve oraya yapmak istediğimiz değişkliği giriyoruz. Ben dilde değişiklik yapacağım için satırın sonuna <code>export LANG=C</code> şeklinde ekleme yaptım .
+Komutumuzu girdikten sonra karşımıza konsol ekranı içerisinde <kbd>.bashrc</kbd> dosyasının içeriği geliyor. Klavyedeki yön tuşlarını kullanarak en alt satıra inelim ve root kullanıcısına özel olarak tanımlamak istediğimiz değişkeni `export soyad="bildik"` şeklinde girelim.
 
 ![enter image description here](https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/1-%20Komut%20Sat%C4%B1r%C4%B1/23.png)
 
