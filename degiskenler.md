@@ -478,10 +478,9 @@ Ben taşımış olduğum selam.sh dosyasını eski konumuna taşıyarak, bu konu
 
 Yaptığımız değişikliklerin geçerli olabilmesi için oturumu kapatıp tekrar giriş yaptıktan sonra, değişikliğin geçerli olup olmadığını test etmek için **PATH** değişkenini bastırıp farklı konumlardan betik dosyamızı çalıştırmayı deneyebiliriz.
 
-![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/p3.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/p4.png)
 
 Ve en nihayetinde **PATH** değişkeni sayesinde betik dosyamızı her yerden çalıştırılabilir yapmış olduk.
-
 
 Neticede sizlerin de gördüğü gibi; bizlerin tanımladığı değişkenler ile sistemde varsayılan olarak tanımlı değişkenleri bastırıken komut kullanımı açısından hiç bir fark bulunmuyor. Buradaki tek küçük fark, sistemde varsayılan olaark tanımlı değişkenlerin daha ayır edici olması açısında genellikle istisnalar dışında tamamı büyük harflerden oluşacak şekilde tanımlanmış olmalarıdır.
 
