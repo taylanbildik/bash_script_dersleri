@@ -462,18 +462,25 @@ Ben bu dosyanın konumundayken dosyayı `./selam.sh` komutu ile çalıştırabil
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/p1.png)
 
-Yapmamız gereken şey, dosyamızın bulunduğu konumu PATH yoluna eklemek ya da dosyamızı PATH yolu üzerinde yer alan bir konuma taşımak olacak arkadaşlar. Bu sayede konsola selam.sh komutunu girdiğimizde PATH yolu taranacak ve dosyamız bu yol üzerindeki herhangi bir konumda ise bulunup çalıştırılacak. Her iki şekilde de bu durumu test edelim.
+Yapmamız gereken şey, dosyamızın bulunduğu konumu **PATH** yoluna eklemek ya da dosyamızı **PATH** yolu üzerinde yer alan bir konuma taşımak olacak arkadaşlar. Bu sayede konsola `selam.sh` komutunu girdiğimizde **PATH** yolu taranacak ve dosyamız bu yol üzerindeki herhangi bir konumda ise bulunup çalıştırılacak. Her iki şekilde de bu durumu test edelim.
 
-Öncelikle dosyamı PATH yolu üzerinde bulunan bir konuma taşıyorum. Ve ardından dosyamı herhangi bir konumdayken yalnızca ismini belirterek çalıştırmayı deniyorum.
+Öncelikle dosyamı **PATH** yolu üzerinde bulunan bir konuma taşıyorum. Ve ardından dosyamı herhangi bir konumdayken yalnızca ismini belirterek çalıştırmayı deniyorum.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/p2.png)
 
 Gördüğünüz gibi betik dosyam PATH yolu üzerinde bulunan bir konuma eklenince her yerden ismi girilerek çalıştırılabilir oldu.
 
-Aynı şekilde dosyamızın bulunduğu konumu PATH yoluna ekleyerek de her yerden ulaşılabilir kılabiliriz. Bunun için **/etc** dizini altında bulunan ve her oturum açılışında otomatik olarak okunan **profile** dosyası içerisine PATH="path yoluna eklenecek dizin" şeklinde yeni path yolunu belirtmeliyiz.
+Aynı şekilde dosyamızın bulunduğu konumu **PATH** yoluna ekleyerek de her yerden ulaşılabilir kılabiliriz. Bunun için **/etc** dizini altında bulunan ve her oturum açılışında otomatik olarak okunan **profile** dosyası içerisine `PATH="path yoluna eklenecek dizin":$PATH` şeklinde yeni **PATH** yolunu belirtmeliyiz.
 
-Ben taşımış olduğum selam.sh dosyamız eski konumuna taşıyarak bu konumu yani root kullanısının ana dizinini profile dosyasına PATH="/root/" şeklinde ekleyerek her yerden ulaşıabilir kılıyorum. Bu durumu test etmek için farklı konumlardan betik dosyamızı çalıştırmayı deneyebiliriz.
+Ben taşımış olduğum selam.sh dosyasını eski konumuna taşıyarak, bu konumu yani root kullanısının ana dizinini **profile** dosyasına `PATH="/root/:$PATH"` şeklinde ekleyerek her yerden ulaşıabilir kılıyorum. 
 
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/p3.png)
+
+Yaptığımız değişikliklerin geçerli olabilmesi için oturumu kapatıp tekrar giriş yaptıktan sonra, değişikliğin geçerli olup olmadığını test etmek için **PATH** değişkenini bastırıp farklı konumlardan betik dosyamızı çalıştırmayı deneyebiliriz.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/p3.png)
+
+Ve en nihayetinde **PATH** değişkeni sayesinde betik dosyamızı her yerden çalıştırılabilir yapmış olduk.
 
 
 Neticede sizlerin de gördüğü gibi; bizlerin tanımladığı değişkenler ile sistemde varsayılan olarak tanımlı değişkenleri bastırıken komut kullanımı açısından hiç bir fark bulunmuyor. Buradaki tek küçük fark, sistemde varsayılan olaark tanımlı değişkenlerin daha ayır edici olması açısında genellikle istisnalar dışında tamamı büyük harflerden oluşacak şekilde tanımlanmış olmalarıdır.
