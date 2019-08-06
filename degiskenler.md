@@ -470,7 +470,10 @@ Yapmamız gereken şey, dosyamızın bulunduğu konumu PATH yoluna eklemek ya da
 
 Gördüğünüz gibi betik dosyam PATH yolu üzerinde bulunan bir konuma eklenince her yerden ismi girilerek çalıştırılabilir oldu.
 
-Aynı şekilde dosyamızın bulunduğu konumu PATH yoluna ekleyerek de her yerden ulaşılabilir kılabiliriz. Bunun için **/etc** dizini altında bulunan **profile** dosyası içerisine PATH="path yoluna eklenecek dizin" şeklinde komutumuzu girmemiz yeterli.
+Aynı şekilde dosyamızın bulunduğu konumu PATH yoluna ekleyerek de her yerden ulaşılabilir kılabiliriz. Bunun için **/etc** dizini altında bulunan ve her oturum açılışında otomatik olarak okunan **profile** dosyası içerisine PATH="path yoluna eklenecek dizin" şeklinde yeni path yolunu belirtmeliyiz.
+
+Ben taşımış olduğum selam.sh dosyamız eski konumuna taşıyarak bu konumu yani root kullanısının ana dizinini profile dosyasına PATH="/root/" şeklinde ekleyerek her yerden ulaşıabilir kılıyorum. Bu durumu test etmek için farklı konumlardan betik dosyamızı çalıştırmayı deneyebiliriz.
+
 
 
 Neticede sizlerin de gördüğü gibi; bizlerin tanımladığı değişkenler ile sistemde varsayılan olarak tanımlı değişkenleri bastırıken komut kullanımı açısından hiç bir fark bulunmuyor. Buradaki tek küçük fark, sistemde varsayılan olaark tanımlı değişkenlerin daha ayır edici olması açısında genellikle istisnalar dışında tamamı büyük harflerden oluşacak şekilde tanımlanmış olmalarıdır.
