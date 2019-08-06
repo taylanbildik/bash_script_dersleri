@@ -442,11 +442,45 @@ Temel ve sık kullanılan değişkenlerden birkaçını da kısaca açıklayacak
 
 **TERM:** Komut satırı uygulamalarının hangi terminalde çalışacağını belirtir. Birçok çeşidi vardır ancak xterm yaygın şekilde karşımıza çıkmaktadır.
 
-Ortam değişkenlerinin değerlerini tek tek kontrol etmek istersek, konsola <code>echo $ORTAM_DEĞİŞKENİ</code> şeklinde komut vererek ilgili bilgilere ulaşabiliriz. Örneğin **HOME** değişkenine bir bakalım.
+Ortam değişkenlerinin değerlerini tek tek kontrol etmek istersek, konsola <code>echo $ORTAM_DEĞİŞKENİ</code> şeklinde komut vererek ilgili bilgilere ulaşabiliriz. Örneğin **PATH** değişkenine bir bakalım.
 
-![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/52.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/p.png)
 
-Gördüğünüz üzere konsol **HOME** değişkeninin değerini root kullanıcısı için **/root** olarak bastırmış oldu.
+Gördüğünüz üzere konsol **PATH** değişkeni çıktı olarak **/usr/local/sbin: /usr/local/bin: /usr/sbin: /usr/bin: /sbin: /bin** değerini basmış oldu.
+
+Çıktının bize gösterdiği yani konsolun demek istediği şu: 
+
+**Konsoldan girilen herhangi bir komutu çalıştırabilmem için sırasıyla bu <kbd>/usr/local/sbin: /usr/local/bin: /usr/sbin: /usr/bin: /sbin: /bin</kbd> dizinlere bakmam gerek. Eğer verilen komutun çalıştırılabilir dosyası bu dizinlerin içerisinde ise çalıştırırım, yoksa çalıştıramam.**
+
+Çıktıda görülen iki nokta üst üste (<kbd>:</kbd>) işareti ile ayrılmış dizinlere **PATH(yol)** ortam değişkeni deniyor. 
+
+Hazır yeri gelmişken gelin **PATH** yoluna ekli olmayan bir programı bu yola ekleyip konsoldan vereceğimiz bir komutla direk olarak çalışmasını sağlayalım. Yani örneğin ben konsola gedit yazdığımda dosya konumu belirtmeme gerek kalmadan gedit programı otomatik olarak açılıyorsa, bu PATH yolu üzerinde tanımlı olmasındandır. Örnek olması açısında biz de daha önce yazmış olduğumuz **selam.sh** isimli betik dosyamızı bu şekilde istenilen konumdan ismi ile çalıştırılabilir kılalım. Adım adım ilerleyelim;
+
+Benim çalıştırmak istediğim dosya daha önce yazmış olduğum **selam.sh** isimli betik dosyası. 
+
+Ben bu dosyanın konumundayken dosyayı `./selam.sh` komutu ile çalıştırabiliyorum ancak dosyanın bulunduğu dizin dışından herhangi bir konumdayken bu dosyamı doğrudan çalıştıramıyorum.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/p1.png)
+
+Yapmamız gereken şey, dosyamızın bulunduğu konumu **PATH** yoluna eklemek ya da dosyamızı **PATH** yolu üzerinde yer alan bir konuma taşımak olacak arkadaşlar. Bu sayede konsola `selam.sh` komutunu girdiğimizde **PATH** yolu taranacak ve dosyamız bu yol üzerindeki herhangi bir konumda ise bulunup çalıştırılacak. Her iki şekilde de bu durumu test edelim.
+
+Öncelikle dosyamı **PATH** yolu üzerinde bulunan bir konuma taşıyorum. Ve ardından dosyamı herhangi bir konumdayken yalnızca ismini belirterek çalıştırmayı deniyorum.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/p2.png)
+
+Gördüğünüz gibi betik dosyam PATH yolu üzerinde bulunan bir konuma eklenince her yerden ismi girilerek çalıştırılabilir oldu.
+
+Aynı şekilde dosyamızın bulunduğu konumu **PATH** yoluna ekleyerek de her yerden ulaşılabilir kılabiliriz. Bunun için **/etc** dizini altında bulunan ve her oturum açılışında otomatik olarak okunan **profile** dosyası içerisine `PATH="path yoluna eklenecek dizin":$PATH` şeklinde yeni **PATH** yolunu belirtmeliyiz.
+
+Ben taşımış olduğum selam.sh dosyasını eski konumuna taşıyarak, bu konumu yani root kullanısının ana dizinini **profile** dosyasına `PATH="/root/:$PATH"` şeklinde ekleyerek her yerden ulaşıabilir kılıyorum. 
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/p3.png)
+
+Yaptığımız değişikliklerin geçerli olabilmesi için oturumu kapatıp tekrar giriş yaptıktan sonra, değişikliğin geçerli olup olmadığını test etmek için **PATH** değişkenini bastırıp farklı konumlardan betik dosyamızı çalıştırmayı deneyebiliriz.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/p4.png)
+
+Ve en nihayetinde **PATH** değişkeni sayesinde betik dosyamızı her yerden çalıştırılabilir yapmış olduk.
 
 Neticede sizlerin de gördüğü gibi; bizlerin tanımladığı değişkenler ile sistemde varsayılan olarak tanımlı değişkenleri bastırıken komut kullanımı açısından hiç bir fark bulunmuyor. Buradaki tek küçük fark, sistemde varsayılan olaark tanımlı değişkenlerin daha ayır edici olması açısında genellikle istisnalar dışında tamamı büyük harflerden oluşacak şekilde tanımlanmış olmalarıdır.
 
@@ -512,7 +546,7 @@ Hatta root kullanıcı hesabındayken birden fazla konsol üzerinden bile **soyi
 
 Şimdi de **ali** isimli kullanıcı hesabına geçerek `echo $soyisim` komutu ile değişkeni bastırmayı deneyelim.
 
-![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/60.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/61.png)
 
 Gördüğünüz gibi **root** kullanıcısına özel olarak tanımladığımız **soyisim** değişkenini **root** kullanıcısı dışında diğer kullanıcılar ulaşamıyor.
 
@@ -523,26 +557,28 @@ Eğer yaptığımız değişiklik bütün kullanıcı oturumlarında aynı şeki
 
 Öncelikle dosyamızı açmak üzere konsola <code>nano -w /etc/bash.bashrc</code> komutunu girelim.
 
-![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/61.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/62.png)
 
 Bu kez de örnek olması için lokasyon="istanbul" değişkenini <kbd>bash.bashrc</kbd> dosyamıza ekleyip kaydedelim.
 
-![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/62.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/63.png)
 
 Sıra geldi değişikliklerin sistem tarafından tanınmasına. Yapılan değişikliğin sistem bütününde geçerli olabilmesi için daha önce de bahsi geçen <code>source</code> komutunu <kbd>bash.bashrc</kbd> dosyası için <code>source /etc/bash.bashrc</code> şeklinde kullanalım. 
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/64.png)
 
 Ardından değişikliklerin geçerli olup olmadığını denemek için birden fazla kullanıcı hesabında **lokason** değişkenini bastırmayı deneyelim.
 
 Öncelikle **root** kullanıcısı için test edelim.
-![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/63.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/65.png)
 
 Şimdi **ali** kullanıcısı üzerinden değişkenimizi bastırmayı deneyelim.
 
-![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/64.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/66.png)
 
 Son olarak da can kullanıcısı üzerinden değişkenimizi çağıralım.
 
-![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/65.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/67.png)
 
 Çıktımız hepsinde lokasyon değişkeninin değeri olarak istanbul değerini aldığımıza göre sistem genelinde tanımlamayı başarmışız demektir. Yaptığımız bu değişiklik bütün kullanıcılar için yani sistem geneli için geçerlidir. Bu durumu başka bir hesap oluşturarak kendiniz de gözlemleyebilirsiniz.
 
