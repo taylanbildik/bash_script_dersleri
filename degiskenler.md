@@ -444,7 +444,7 @@ Temel ve sık kullanılan değişkenlerden birkaçını da kısaca açıklayacak
 
 Ortam değişkenlerinin değerlerini tek tek kontrol etmek istersek, konsola <code>echo $ORTAM_DEĞİŞKENİ</code> şeklinde komut vererek ilgili bilgilere ulaşabiliriz. Örneğin **PATH** değişkenine bir bakalım.
 
-![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/52.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/p.png)
 
 Gördüğünüz üzere konsol **PATH** değişkeni çıktı olarak **/usr/local/sbin: /usr/local/bin: /usr/sbin: /usr/bin: /sbin: /bin** değerini basmış oldu.
 
@@ -452,8 +452,25 @@ Gördüğünüz üzere konsol **PATH** değişkeni çıktı olarak **/usr/local/
 
 **Konsoldan girilen herhangi bir komutu çalıştırabilmem için sırasıyla bu <kbd>/usr/local/sbin: /usr/local/bin: /usr/sbin: /usr/bin: /sbin: /bin</kbd> dizinlere bakmam gerek. Eğer verilen komutun çalıştırılabilir dosyası bu dizinlerin içerisinde ise çalıştırırım, yoksa çalıştıramam.**
 
-Çıktıda görülen iki nokta üst üste (<kbd>:</kbd>) işareti ile ayrılmış dizinlere **PATH(yol)** ortam değişkeni deniyor. Ben yine de emin olamadım diyenler için gelin **PATH** yoluna ekli olmayan bir programı kendimiz ekleyelim ve konsoldan vereceğimiz bir komutla direk olarak çalışmasını sağlayalım. Adım adım ilerleyelim.
+Çıktıda görülen iki nokta üst üste (<kbd>:</kbd>) işareti ile ayrılmış dizinlere **PATH(yol)** ortam değişkeni deniyor. 
 
+Hazır yeri gelmişken gelin **PATH** yoluna ekli olmayan bir programı bu yola ekleyip konsoldan vereceğimiz bir komutla direk olarak çalışmasını sağlayalım. Yani örneğin ben konsola gedit yazdığımda dosya konumu belirtmeme gerek kalmadan gedit programı otomatik olarak açılıyorsa, bu PATH yolu üzerinde tanımlı olmasındandır. Örnek olması açısında biz de daha önce yazmış olduğumuz **selam.sh** isimli betik dosyamızı bu şekilde istenilen konumdan ismi ile çalıştırılabilir kılalım. Adım adım ilerleyelim;
+
+Benim çalıştırmak istediğim dosya daha önce yazmış olduğum **selam.sh** isimli betik dosyası. 
+
+Ben bu dosyanın konumundayken dosyayı `./selam.sh` komutu ile çalıştırabiliyorum ancak dosyanın bulunduğu dizin dışından herhangi bir konumdayken bu dosyamı doğrudan çalıştıramıyorum.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/p1.png)
+
+Yapmamız gereken şey, dosyamızın bulunduğu konumu PATH yoluna eklemek ya da dosyamızı PATH yolu üzerinde yer alan bir konuma taşımak olacak arkadaşlar. Bu sayede konsola selam.sh komutunu girdiğimizde PATH yolu taranacak ve dosyamız bu yol üzerindeki herhangi bir konumda ise bulunup çalıştırılacak. Her iki şekilde de bu durumu test edelim.
+
+Öncelikle dosyamı PATH yolu üzerinde bulunan bir konuma taşıyorum. Ve ardından dosyamı herhangi bir konumdayken yalnızca ismini belirterek çalıştırmayı deniyorum.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/p2.png)
+
+Gördüğünüz gibi betik dosyam PATH yolu üzerinde bulunan bir konuma eklenince her yerden ismi girilerek çalıştırılabilir oldu.
+
+Aynı şekilde dosyamızın bulunduğu konumu PATH yoluna ekleyerek de her yerden ulaşılabilir kılabiliriz. Bunun için **/etc** dizini altında bulunan **profile** dosyası içerisine PATH="path yoluna eklenecek dizin" şeklinde komutumuzu girmemiz yeterli.
 
 
 Neticede sizlerin de gördüğü gibi; bizlerin tanımladığı değişkenler ile sistemde varsayılan olarak tanımlı değişkenleri bastırıken komut kullanımı açısından hiç bir fark bulunmuyor. Buradaki tek küçük fark, sistemde varsayılan olaark tanımlı değişkenlerin daha ayır edici olması açısında genellikle istisnalar dışında tamamı büyük harflerden oluşacak şekilde tanımlanmış olmalarıdır.
