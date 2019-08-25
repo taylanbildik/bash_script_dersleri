@@ -82,11 +82,13 @@ Gördüğünüz gibi aynı isime sahip olan biri küçük diğeri büyük harfle
 
 <hr>
 
-- Bunun haricinde değişken tanımlarken **eşittir**(**=**) işaretinin **sağında ve solunda boşluk olmamasına** dikkat etmemiz gerekiyor. Aksi takdirde sistem bizlerin değişken tanımlamak istediğini anlayamadığından, kaçınılmaz olarak konsola "**komut yok**" şeklinde hata çıktısı basıyor. **Aşağıdaki kullanımlar yanlış kullanımlara örnektir.**
+- Bunun haricinde değişken tanımlarken **eşittir**(**=**) işaretinin **sağında ve solunda boşluk olmamasına** dikkat etmemiz gerekiyor. Aksi takdirde sistem bizlerin değişken tanımlamak istediğini anlayamadığından, kaçınılmaz olarak konsola "**komut yok**" şeklinde hata çıktısı basıyor. 
+
+**Aşağıdaki kullanımlar yanlış kullanımlara örnektir.**
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/12.png)
 
-Ayrıca değişkenlerin değerini belirtirken kullandığımız tırnak işaretleri, değerin birden fazla kelime bütünü içerdiği durumda sistem tarafından değerin tamamının doğru algılanabilmesi adına çok önemlidir. Yani örneğin ben `kalem="kırmızı"` ya da `kalem1=mavi` şeklinde değişken tanımlayabilirim. 
+Ayrıca değişkenlerin değerini belirtirken kullandığımız tırnak işaretleri, değerin birden fazla kelime bütünü içerdiği durumda sistem tarafından **değerin tamamının** doğru algılanabilmesi adına çok önemlidir. Yani örneğin ben `kalem="kırmızı"` ya da `kalem1=mavi` şeklinde değişken tanımlayabilirim. 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/12-1.png)
 
@@ -100,16 +102,19 @@ Hatırlarsanız konu anlatımının başında değişkenlerin program çalışı
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/13.png)
 
-Gördüğünüz gibi bu şekilde **spor** isimli değişkeni ne zaman çağırsam karşıma **tenis** değeri basılmış oluyor. Ancak değişkenin değerini özellikle sabitlemediğimiz sürece, istenildiği zaman bu değer değiştirilebilir. Bunun için aynı isimli değişkeni farklı bir değer ile tekrar tanımlamamız yeterli oluyor arkadaşlar. Hemen aynı değişkeni bu sefer **futbol** değeri ile tanımlayıp, bu durumu teyit edelim. Konsola `spor="futbol"` şeklinde yazıyorum ve `echo` komutu ile değişkenimin yeni değerini teyit ediyorum. 
+Gördüğünüz gibi bu şekilde **spor** isimli değişkeni ne zaman çağırsam karşıma **tenis** değeri basılmış oluyor. Ancak değişkenin değerini özellikle sabitlemediğimiz sürece, istenildiği zaman bu değer değiştirilebilir. Bunun için aynı isimli değişkeni farklı bir değer ile tekrar tanımlamamız yeterli oluyor arkadaşlar. 
+
+Hemen aynı değişkeni bu sefer **futbol** değeri ile tanımlayıp, bu durumu teyit edelim. Konsola `spor="futbol"` şeklinde yazıyorum ve `echo` komutu ile değişkenimin yeni değerini teyit ediyorum. 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/14.png)
 
-Gördüğünüz gibi önceleri **spor** değişkenini çağırdığımda karşıma **tenis** değeri basılıyorken, değişkenimizi tekrar tanımlamamız yani diğer bir deyişle üzerine yeni değer yazmamız sonucu, aldığımız çıktı **futbol** olarak değişmiş oldu. İlerleyen kısımlarda değiştirilemez(sabit(readonly)) değişkenler tanımlama konusuna da ayrıca değiniyor olacağız ancak şimdilik basit değişken tanımlama işlemleri ile yapılan tanımlamaların değiştirilebilir değerler aldığını unutmayın lütfen.
+Gördüğünüz gibi önceleri **spor** değişkenini çağırdığımda karşıma **tenis** değeri basılıyorken, değişkenimizi tekrar tanımlamamız yani diğer bir deyişle üzerine yeni değer yazmamız sonucu, aldığımız çıktı **futbol** olarak değişmiş oldu. 
 
+İlerleyen kısımlarda değiştirilemez(sabit(readonly)) değişkenler tanımlama konusuna da ayrıca değiniyor olacağız ancak şimdilik basit değişken tanımlama işlemleri ile yapılan tanımlamaların değiştirilebilir değerler aldığını unutmayın lütfen.
 
-Değişkenler yeniden tanımlanabildiği için sistemin çalışmasında rol oynayan, varsayılan olarak tanımlanmış olan değişkenlerle aynı isimlere sahip yeni değişkenler oluşturmama konusunda da dikkatli olmamız gerekiyor. Eğer farkında olmadan sisteme ait değişkenleri yeniden tanımlarsanız sistemle ilgili pek çok soruna yol açabilirsiniz. Bu yüzden, tanımlayacağınız değişkenin daha önce kullanılıp kullanılmadığından tam olarak emin değilseniz, değişkeninizi tanımlamadan önce sistem üzerinde var olup olmadığını kontrol etmenizde fayda var.
+Değişkenler yeniden tanımlanabildiği için sistemin çalışmasında rol oynayan, varsayılan olarak tanımlanmış olan değişkenlerle aynı isimlere sahip yeni değişkenler oluşturmama konusunda da dikkatli olmamız gerekiyor. Eğer farkında olmadan sisteme ait değişkenleri yeniden tanımlarsanız, sistemle ilgili pek çok soruna yol açabilirsiniz. Bu yüzden, tanımlayacağınız değişkenin daha önce kullanılıp kullanılmadığından tam olarak emin değilseniz, değişkeninizi tanımlamadan önce sistem üzerinde var olup olmadığını kontrol etmenizde fayda var.
 
-Peki ama nasıl kontrol edebiliriz derseniz,  konsola `echo` yazıp `$` işareti koyduktan sonra <kbd>**Tab**</kbd> tuşuna basarak tanımlı tüm değişkenleri listeleyebilirsiniz. 
+Konsola `echo` yazıp `$` işareti koyduktan sonra <kbd>**Tab**</kbd> tuşuna basarak tanımlı tüm değişkenleri listeleyebilirsiniz. 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/15.png)
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/16.png)
