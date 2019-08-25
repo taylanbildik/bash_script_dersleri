@@ -27,7 +27,7 @@ Bir örnek daha yapalım ve bu sefer değişkenimize, değer olarak sayı atayal
 Değişken Tanımlanırken Dikkat Edilmesi Gerekenler
 -
 
- - Değişken isimleri tanımlarken Türkçe karakter kullanmadan alfanümerik(**A-Z, a-z**) karakter kullanmamız gerekiyor.
+ - Değişken isimleri tanımlarken **Türkçe karakter kullanmadan** alfanümerik(**A-Z, a-z**) karakter kullanmamız gerekiyor.
  
 Örneğin konsola içerisinde Türkçe karakter geçen, `çalı="bitki"` gibi bir değişken tanımlamak istersem, konsol bana çıktı olarak "**komut yok**" hatasını basıyor. 
 
@@ -47,11 +47,13 @@ Bunun nedeni de değişken tanımlarında Türkçe karakter kullanımının geç
 
 Bunun nedeni değişken isminde geçen **tire**(**-**)işaretidir. 
 
-Şimdi aynı örneği **alt tire**(**_**) ile deneyerek bu durumu teyit edelim. Bunun için konsola `yeni_yeni="yeni değer"` ifadesini giriyorum ve tanımladığım değişkeni `echo $yeni_yeni` komutunu girerek sorguluyorum. 
+Şimdi aynı örneği **alt tire**(**_**) işareti ile deneyereki bu durumu teyit edelim. Bunun için konsola `yeni_yeni="yeni değer"` ifadesini yazıyorum ve tanımladığım değişkeni `echo $yeni_yeni` komutunu girerek sorguluyorum. 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/7.png)
 
-Ve gördüğünüz gibi değişken başarılı şekilde tanımlanmış bulunuyor. Tekrar belirtmiş olalım, hatalı bir kullanıma yol açmamak adına değişken tanımlarken **alt tire işareti haricinde hiç bir sembol kullanmayın**. Yani **yeni+yeni**..**yeni#yeni**..**yeni@yeni** vb tüm kullanımlar hatalıdır.
+Ve gördüğünüz gibi değişken başarılı şekilde tanımlanmış bulunuyor. 
+
+Tekrar belirtmiş olalım, hatalı bir kullanıma yol açmamak adına değişken tanımlarken **alt tire işareti haricinde hiç bir sembol kullanmayın**. Yani **yeni+yeni**..**yeni#yeni**..**yeni@yeni** vb tüm kullanımlar hatalıdır.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/8.png)
 
@@ -64,7 +66,7 @@ Yani örneğin herhangi bir değişken tanımlarken **1kitap** hatalı bir kulla
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/9.png)
 
 Rakam başta olmadığı sürece tüm kombinasyonlar rakam kullanımına uygundur.
-**k1itap**..**ki2tap**..**kit3ap**..**kit33ap**..**kita555p**.. vb.
+(**k1itap**..**ki2tap**..**kit3ap**..**kit33ap**..**kita555p**.. vb.)
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/10.png)
 
@@ -76,7 +78,7 @@ Rakam başta olmadığı sürece tüm kombinasyonlar rakam kullanımına uygundu
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/11.png)
 
-Gördüğünüz gibi biri küçük diğer büyük harflerden oluşan iki değişken de sistem tarafından farklı algılanarak konsola ayrı ayrı çıktılar basmış oldu. 
+Gördüğünüz gibi aynı isime sahip olan biri küçük diğeri büyük harflerden oluşan iki değişken, sistem tarafından iki farklı değişken olarak algılanarak konsola ayrı ayrı çıktılar basmış oldu. 
 
 <hr>
 
@@ -84,9 +86,17 @@ Gördüğünüz gibi biri küçük diğer büyük harflerden oluşan iki değiş
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/12.png)
 
+Ayrıca değişkenlerin değerini belirtirken kullandığımız tırnak işaretleri, değerin birden fazla kelime bütünü içerdiği durumda sistem tarafından değerin tamamının doğru algılanabilmesi adına çok önemlidir. Yani örneğin ben `kalem="kırmızı"` ya da `kalem1=mavi` şeklinde değişken tanımlayabilirim. 
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/12-1.png)
+
+Fakat değerin `kalem="kırmızı pilot"` gibi daha fazla öge içerdiği durumlarda mutlaka tırnak içerisinde yazılması gerekiyor. Bu durumu aşağıdaki çıktılara göz atarak teyit edebilirsiniz. 
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/12-2.png)
+
 <hr>
 
-Tüm bunların dışında, konu anlatımın başında değişkenlerin programlar çalışırken farklı değerleri alabildiğinden bahsetmiştik. Bu da eğer bizler herhangi bir kısıtlama getirmezsek, sürekli olarak değişkenlerin  üzerine yeni değerler yazılabileceği anlamına geliyor. Bu durumu daha iyi anlamak adına `spor="tenis"` komutu ile **spor** isimli bir değişken tanımlayalım ve `echo $spor` komutu ile değişkenimizi çağıralım.
+Hatırlarsanız konu anlatımının başında değişkenlerin program çalışırken farklı değerler alabildiğinden bahsetmiştik. Bu da eğer bizler herhangi bir kısıtlama getirmezsek, sürekli olarak değişkenlerin üzerine yeni değerler yazılabileceği anlamına geliyor. Bu durumu daha iyi anlamak adına `spor="tenis"` komutu ile **spor** isimli bir değişken tanımlayalım ve `echo $spor` komutu ile değişkenimizi çağıralım.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/13.png)
 
@@ -94,7 +104,7 @@ Gördüğünüz gibi bu şekilde **spor** isimli değişkeni ne zaman çağırsa
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/14.png)
 
-Gördüğünüz gibi önceleri spor değişkenini çağırdığımda karşıma **tenis** değerini basıyorken, değişkenimizi tekrar tanımlamamız yani diğer bir değişle üzerine yeni değer yazmamız sonucu, aldığımız çıktı **futbol** olarak değişmiş oldu. İlerleyen kısımlarda değiştirilemez(sabit(readonly)) değişkenler tanımlama konusuna ayrıca değiniyor olacağız ancak şimdilik basit değişken tanımlama işlemleri ile yapılan tanımlamaların değiştirilebilir değerler aldığını unutmayın lütfen.
+Gördüğünüz gibi önceleri **spor** değişkenini çağırdığımda karşıma **tenis** değeri basılıyorken, değişkenimizi tekrar tanımlamamız yani diğer bir deyişle üzerine yeni değer yazmamız sonucu, aldığımız çıktı **futbol** olarak değişmiş oldu. İlerleyen kısımlarda değiştirilemez(sabit(readonly)) değişkenler tanımlama konusuna da ayrıca değiniyor olacağız ancak şimdilik basit değişken tanımlama işlemleri ile yapılan tanımlamaların değiştirilebilir değerler aldığını unutmayın lütfen.
 
 
 Değişkenler yeniden tanımlanabildiği için sistemin çalışmasında rol oynayan, varsayılan olarak tanımlanmış olan değişkenlerle aynı isimlere sahip yeni değişkenler oluşturmama konusunda da dikkatli olmamız gerekiyor. Eğer farkında olmadan sisteme ait değişkenleri yeniden tanımlarsanız sistemle ilgili pek çok soruna yol açabilirsiniz. Bu yüzden, tanımlayacağınız değişkenin daha önce kullanılıp kullanılmadığından tam olarak emin değilseniz, değişkeninizi tanımlamadan önce sistem üzerinde var olup olmadığını kontrol etmenizde fayda var.
