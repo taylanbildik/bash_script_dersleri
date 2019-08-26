@@ -364,13 +364,14 @@ Komut içerisinde yer alan kısımları açıklayacak olursak;
 
 Kare işareti(**#**) de silme işlevini yerine getiriyor. Eğer silinecek ifade birleşik harf grubu ise çift kare(**##**) işareti kullanılmalıdır.
 
-Ayrıca silinecek harf veya harf gurubundan önce kullandığımız `*` işareti, ilgili harfe ya da harf gurubuna kadar olan tüm ifadelerin otomatik olarak tamamlanabilmesi sağlıyor.
+Ayrıca silinecek harf veya harf gurubundan önce kullandığımız `*` işareti, ilgili harfe ya da harf grubuna kadar olan tüm ifadelerin otomatik olarak tamamlanabilmesi sağlıyor.
 
 
-Ayrıca tüm ifadelerin tek seferde kapsamak yerine özel olarak bir ifadeyi de hedefleyebiliriz, örneğin sadece 3. değerde yer alan **c** harflerine kadar olan kısımı silmek için komutumu `${silinecek[2]#*c}` şeklinde kullanabilirim.
+Ayrıca tüm ifadelerin tek seferde kapsamak yerine özel olarak bir ifadeyi de hedefleyebiliriz, örneğin dizide yer alan 3. değerde yer alan **c** harflerine kadar olan kısımı silmek için komutumu `${silinecek[2]#*c}` şeklinde kullanabilirim.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/47.png)
 
+<hr>
 
 Değerlerimizi sondan itibaren silmek üzere;
 
@@ -405,7 +406,7 @@ Bunun dışında değişiklik yapmak istediğiniz ifade illa bir kelime bütün�
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/51.png)
 
 
-Şimdiye kadar birkaç farklı metod uygulayarak, orjinal değerleri istediğimiz şekilde manipüle edip tam ihtiyacımıza göre çıktılar elde ettik. **Ancak bu aldığımız çıktıların geçici değerler olduğunu ve orjinal değerlerde kalıcı değişikliğe yol açmadığını lütfen unutmayın.** Farklı şekillerde bastırma işlemleri ile bizler sadece aldığımız çıktıları ihtiacımıza göre şekillendirmiş olduk arkadaşlar.
+Şimdiye kadar birkaç farklı metod uygulayarak, orjinal değerleri istediğimiz şekilde manipüle edip tam ihtiyacımıza göre çıktılar elde ettik. **Ancak bu aldığımız çıktıların geçici değerler olduğunu ve orjinal değerlerde kalıcı değişikliğe yol açmadığını lütfen unutmayın.** Farklı şekillerde bastırma işlemleri ile bizler sadece aldığımız çıktıları ihtiyacımıza göre şekillendirmiş olduk arkadaşlar.
 
 Değişkenlerin Sıfırlanması (unset)
 -
