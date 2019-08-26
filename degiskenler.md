@@ -303,6 +303,19 @@ Gördüğünüz gibi değişkenimizi `export` ettikten sonra alt kabukta çalı�
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/39.png)
 
+Değişkenlerin Sıfırlanması (unset)
+-
+Tanımladığımız değişkenleri sıfırlamak yani tanımsız hale getirmek istersek `unset` komutunu kullanabiliyoruz.
+Şimdi örnek olması açısından çeşitli değişkenleri sıfırlamayı deneyelim.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/unset-1.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/unset-2.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/unset-3.png)
+
+
+Gördüğünüz gibi sabit değişkenler hariç diğer değişkenler `unset` komutu sayesinde kolaylıkla sıfırlanabiliyor.
+Sabit değişkenlerin sıfırlanmasının ancak değişkenin tanımlandığı kabuğun kapatılması ile mümkün olacağını zaten biliyorsunuz. O yüzden sabit değişkenler hariç, tanımlamış olduğunuz diğer değişkenleri tanımsız yapmak isterseniz `unset` komutunu kullanmanız yeterli.
+
 
 Değişken Değerlerin Farklı Şekillerde Bastırılması
 =
@@ -408,19 +421,7 @@ Bunun dışında değişiklik yapmak istediğiniz ifade illa bir kelime bütün�
 
 Şimdiye kadar birkaç farklı metod uygulayarak, orjinal değerleri istediğimiz şekilde manipüle edip tam ihtiyacımıza göre çıktılar elde ettik. **Ancak bu aldığımız çıktıların geçici değerler olduğunu ve orjinal değerlerde kalıcı değişikliğe yol açmadığını lütfen unutmayın.** Farklı şekillerde bastırma işlemleri ile bizler sadece aldığımız çıktıları ihtiyacımıza göre şekillendirmiş olduk arkadaşlar.
 
-Değişkenlerin Sıfırlanması (unset)
--
-Tanımladığımız değişkenleri sıfırlamak yani tanımsız hale getirmek istersek `unset` komutunu kullanabiliyoruz.
-Şimdi örnek olması açısından çeşitli değişkenleri sıfırlamayı deneyelim.
-
-![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/unset-1.png)
-![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/unset-2.png)
-![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/unset-3.png)
-
-
-Gördüğünüz gibi sabit değişkenler hariç diğer değişkenler `unset` komutu sayesinde kolaylıkla sıfırlanabiliyor.
-Sabit değişkenlerin sıfırlanmasının ancak değişkenin tanımlandığı kabuğun kapatılması ile mümkün olacağını zaten biliyorsunuz. O yüzden sabit değişkenler hariç, tanımlamış olduğunuz diğer değişkenleri tanımsız yapmak isterseniz `unset` komutunu kullanmanız yeterli.
-
+Ayrıca yeri gelmişken değişkenleri bastırırken kullandığımız echo komutununun çoklu işlevlerini kullanarak farklı çıktılar elde etemyi ele almak istiyorum.
 
 Sistemde Tanımlı Ortam(Çevre) Değişkenleri
 =
