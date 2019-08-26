@@ -102,7 +102,7 @@ Hatırlarsanız konu anlatımının başında değişkenlerin program çalışı
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/13.png)
 
-Gördüğünüz gibi bu şekilde **spor** isimli değişkeni ne zaman çağırsam karşıma **tenis** değeri basılmış oluyor. Ancak değişkenin değerini özellikle sabitlemediğimiz sürece, istenildiği zaman bu değer değiştirilebilir. Bunun için aynı isimli değişkeni farklı bir değer ile tekrar tanımlamamız yeterli oluyor arkadaşlar. 
+Gördüğünüz gibi bu şekilde **spor** isimli değişkeni ne zaman çağırsam karşıma **tenis** değeri basılmış oluyor. Ancak değişkenin değerini özellikle sabitlemediğimiz sürece, istenildiği zaman bu değer değiştirilebilir. Değişken değerini değiştirmek için aynı isimli değişkeni farklı bir değer ile tekrar tanımlamamız yeterli oluyor arkadaşlar. 
 
 Hemen aynı değişkeni bu sefer **futbol** değeri ile tanımlayıp, bu durumu teyit edelim. Konsola `spor="futbol"` şeklinde yazıyorum ve `echo` komutu ile değişkenimin yeni değerini teyit ediyorum. 
 
@@ -136,13 +136,13 @@ Aşağıdaki tablodan komutun parametrelerine ve yerine getirebildiği işlevler
 
 |Parametre  | İşlev |
 |--|--|
-|-p|Değişkenin niteliklerini bastırma işlevindedir. Print(yazdır) ifadesinin kısaltmasıdır.|
-|-i|Sayısal değişken tanımlama işlevindedir. İnteger(tam sayı) ifadesinin kısaltmasıdır.|
-|-a|Dizi tanımlama işlevindedir. Array(dizi) ifadesinin kısaltmasıdır.|
-|-r|Sabit değişken atama işlevindedir. Readonly(yalnızca okunabilir) ifadesinin kısaltmasıdır.|
-|-x|Değişkeni export(ihraç) ederek, alt kabuklara aktarma işlevindedir.|
+|-p|Değişkenin niteliklerini bastırma işlevindedir. **p**rint(yazdır) ifadesinin kısaltmasıdır.|
+|-i|Sayısal değişken tanımlama işlevindedir. **i**nteger(tam sayı) ifadesinin kısaltmasıdır.|
+|-a|Dizi tanımlama işlevindedir. **a**rray(dizi) ifadesinin kısaltmasıdır.|
+|-r|Sabit değişken atama işlevindedir. **r**eadonly(yalnızca okunabilir) ifadesinin kısaltmasıdır.|
+|-x|Değişkeni **e**xport(ihraç) ederek, alt kabuklara aktarma işlevindedir.|
 
-`declare` komutunu kullanıyorken, eğer değişkenlere özellik eklemek istiyorsak `-` işaretini, şayet var olan özellikleri çıkarmak istiyorsak da `+` işaretini eklemek ya da çıkarmak istediğimiz özelliğin parametresini de belirterek kullanmamız yeterli oluyor. 
+`declare` komutunu kullanıyorken; eğer değişkenlere özellik eklemek istiyorsak `-` işaretini, şayet var olan özellikleri çıkarmak istiyorsak da `+` işaretini, eklemek ya da çıkarmak istediğimiz özelliğin parametresini de belirterek kullanmamız yeterli oluyor. 
 
 
 Sayısal Değişken Tanımlamak
@@ -150,7 +150,7 @@ Sayısal Değişken Tanımlamak
 
 Anlatımlara ilk olarak sayısal değişken tanımlama işlemi ile başlayalım.
 
-Sayısal değişken tanımlamak için konsola `declare -i değişken tanımı` şeklinde komutumuzu girmemiz gerekiyor. 
+Sayısal değişken tanımlamak için konsola `declare -i değişken="değeri"` şeklinde komutumuzu girmemiz gerekiyor. 
 
 Ben **9** değerine sahip **rakam** isimli bir sayısal değişken tanımlamak istediğim için konsola `declare -i rakam="9"` komutumu giriyorum. 
 
@@ -160,9 +160,9 @@ Böylelikle **rakam** isimli sayısal değişkenime **9** rakamını atamış ol
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/18.png)
 
-Sizlerin de gördüğü gibi konsol bana çıktı olarak `declare -i rakam` şeklinde bir çıktı bastı. Bu çıktı ile değişkenimizin sayısal bir değişken olduğunu teyit etmiş olsak da kesin olarak emin olmak adına, değişkenimize sayısal değerlerin dışında herhangi bir değer atamaya çalışarak bu durumu netleştirelim. 
+Sizlerin de gördüğü gibi konsol bana çıktı olarak `declare -i rakam="9"` şeklinde bir çıktı bastı. Bu çıktı ile değişkenimizin sayısal bir değişken olduğunu teyit etmiş olsak da kesin olarak emin olmak adına, değişkenimize sayısal değerlerin dışında herhangi bir değer atamaya çalışarak bu durumu netleştirelim. 
 
-Bunun için konsola `rakam="test"` komutumu girdikten sonra, değişkenimin durumunu sorgulamak için `declare -p rakam` komutunu kullanıyorum. 
+Bunun için konsola `rakam="test"` komutumu girdikten sonra, değişkenimin durumunu sorgulamak üzere `declare -p rakam` komutunu kullanıyorum. 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/19.png)
 
@@ -172,7 +172,7 @@ Hatırlarsanız değişken tanımlama anlatımlarının başında **rakamlar** i
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/20.png)
 
-Gördüğünüz gibi sayısal özellik atamadığım değişkenin içeriğindeki sayısal veriler kolaylıkla değişmiş oldu. Böylelikle sayısal değişkenin sıradan değişken tanımlamaktan farkını kıyaslayarak görmüş olduk.
+Gördüğünüz gibi sayısal özellik atamadığım değişkenin içeriğindeki sayısal veriler kolaylıkla değişmiş oldu. Böylelikle sayısal değişken ile sıradan değişken tanımlamanın farkını kıyaslayarak görmüş olduk.
 
 Ancak tanımladığımız sayısal değişkenler her zaman sayısal değişken olarak kalmak zorunda da değil. Değişkenimizin sınıfını tekrar eski hale getirmek istersek ekleme işleminde kullandığımız **-** işareti yerine  bu sefer **+** işaretini kullanmamız yeterli oluyor. Yani ben **rakam** isimli sayısal değişkenimin, sayısal değişken tutma özelliğini kaldırmak istersem; konsola `declare +i rakam` şeklinde komut girmem yeterli oluyor. 
 
@@ -186,7 +186,7 @@ Dizi Tanımlamak
 -
 Birden fazla değeri tek bir değişken içerisine toparlamak istediğimizde dizileri kullanabiliyoruz. 
 
-Bu işlem için `declare` komutunun `a` parametresini kullanıyoruz. Komutumuzun kullanımı `declare -a dizi=(değer1 değer2 değer3)` şeklindedir.
+Dizi tanımlamak için `declare` komutunun `a` parametresini `declare -a dizi=(değer1 değer2 değer3)` şeklinde kullanabiliyoruz.
 
 Ayrıca `declare` komutunu kullanmadan, dizide yer alacak ifadeleri parantez içine `dizi=(değer1 değer2 değer3 )` şeklinde alarak da dizi belirtebiliyoruz. Buradaki parantezler o değişkenin bir dizi olduğunu otomatik olarak belirtiyor.
 
@@ -198,17 +198,17 @@ Dizilerin kullanımına en basit örnek alışveriş listesi olarak verilebilir.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/23.png)
 
-Böylelikle her bir değere **0** dan başlayarak sırasıyla birer index değeri atanmış oldu. Yani örneğin **su** ifadesi ilk değer olduğu için **0** index numarasını almışken, **çay** değerinin index numarası **2** olmuş oldu.
+Böylelikle her bir değere **0 dan başlayarak** sırasıyla birer index numarası atanmış oldu. Yani örneğin **su** ifadesi ilk değer olduğu için **0** index numarasını almışken, 3. sıradaki **çay** değerinin index numarası **2** olmuş oldu.
 
 Bizler de sıralı şekilde atanan bu index değerleri sayesinde istediğimiz değerleri diziden çağırabiliyoruz.
 
-Örneğin dizide yer alan ilk değeri çağırmak istesem konsola `echo ${liste[0]}` komutunu girmem yeterli oluyor.
+Örneğin dizide yer alan ilk değeri çağırmak istersem konsola `echo ${liste[0]}` komutunu girmem yeterli oluyor.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/24.png)
 
 Gördüğünüz gibi **0** index numarası ile ilk değerimizi ekran bastırmış olduk.
 
-Bu işlemi aynı şekilde diğer değerlerimizi bastırmak için de kullanabiliriz.
+Bu işlemi aynı şekilde diğer değerlerimizi tek tek bastırmak için de kullanabiliriz.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/25.png)
 
