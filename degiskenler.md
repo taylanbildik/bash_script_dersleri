@@ -264,7 +264,7 @@ Bu durumu teyit etmek için değişkenimizin sabitlik özelliğini `declare +r` 
 Komutumuzu girdik ancak gördüğünüz gibi değişken sabit değere sahip olduğundan konsol bu işlemin mümkün olmadığını belirtiyor. 
 Peki ama sabit değişkenler gerçekten sonsuza kadar tanımlandığı şekilde mi kalıyor ?
 
-Aslında bu durum; yalnızca değişkenin tanımlandığı konsol ekranı için geçerli olduğundan, konsol kapatıldığında tanımlanan tüm değişkenlerle birlikte sabit değişkenler de sıfırlanmasıyla sonuçlanır.
+Aslında bu durum; yalnızca değişkenin tanımlandığı konsol ekranı için geçerli olduğundan, konsol kapatıldığında tanımlanan tüm değişkenlerle birlikte sabit değişkenlerin de sıfırlanmasıyla sonuçlanır.
 Bu durumun daha net anlamak için lütfen okumaya devam edin.
 
 
@@ -291,15 +291,15 @@ Tanımlamaları yaptık şimdi de betik dosyamızı çalıştırarak sonuçları
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/37.png)
 
-Gördüğünüz gibi betik dosyası içerisinde tanımlamış olduğum **degisken1** basılırken daha önce tanımlamış olduğum **degisken** basılmadı. Bunun nedeni başta da belirtiğim şekilde, tanımlanan değişkenlerin **export** edilmediği sürece yalnızca tanımlandığı kabuk üzerinde çalışabildiğidir.
-Biz betik dosyasını çalıştırdığımızda bulunduğumuz kabuk altında hemen bir alt kabuk oluşturuldu ve betik dosyamız bu alt kabuk üzerinde yürütüldü. Dolayısı ile üst kabukta tanımlanmış olan değişken alt kabuğa **export** edilmediği için alt kabuk tarafından tanınamadı ve değeri basılamadı.
+Gördüğünüz gibi betik dosyası içerisinde tanımlamış olduğum **degisken1** basılırken daha önce tanımlamış olduğum **degisken** basılmadı. Bunun nedeni başta da belirtiğim şekilde, tanımlanan değişkenlerin `export` edilmediği sürece yalnızca tanımlandığı kabuk üzerinde çalışabildiğidir.
+Biz betik dosyasını çalıştırdığımızda bulunduğumuz kabuk altında hemen bir alt kabuk oluşturuldu ve betik dosyamız bu alt kabuk üzerinde yürütüldü. Dolayısı ile üst kabukta tanımlanmış olan değişken alt kabuğa `export` edilmediği için alt kabuk tarafından tanınamadı ve değeri basılamadı.
 
-Şimdi aynı işlemi export ederek tekrarlayalım.
+Şimdi aynı işlemi `export` ederek tekrarlayalım.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/38.png)
 
 
-Gördüğünüz gibi değişkenimizi **export** ettikten sonra alt kabukta çalıştırılan betik dosyası içerisinden de bu değişkeni çağırabildik. Böylelikle `export` komutunun ivleşini test ederek görmüş olduk. Ayrıca `export` komutu yerine aynı işlem için `declare` komutunun `x` parameteresi `declare -x degisken` şeklinde de kullanabilirdik.
+Gördüğünüz gibi değişkenimizi `export` ettikten sonra alt kabukta çalıştırılan betik dosyası içerisinden de bu değişkeni çağırabildik. Böylelikle `export` komutunun işlevini test ederek görmüş olduk. Ayrıca `export` komutu yerine aynı işlem için `declare` komutunun `x` parameteresini `declare -x degisken` şeklinde de kullanabilirdik.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/39.png)
 
@@ -307,9 +307,9 @@ Gördüğünüz gibi değişkenimizi **export** ettikten sonra alt kabukta çal�
 Değişken Değerlerin Farklı Şekillerde Bastırılması
 =
 
-Bu kısıma kadar pek çok değişken tanımlayıp bu değişkenlerin değerlerini konsola bastırdık. Ancak şu ana kadarki bastırmış olduğumuz değerler bizlerin atadığı değerlerin birebir aynısıydı. Fakat her zaman basılan bu değerlerin tamamına ihtiyaç duymayabiliyoruz. İşte bu gibi durumlarda alacağımız çıktıları düzenlemek, yani örneğin bir kısmını bastırmak ya da bir kısımını silmek gibi işlevleri yerine getirmek için birkaç farklı kullanım şekli bulunuyor. Şimdi genel olarak bu kullanımları ele alalım.
+Bu kısıma kadar pek çok değişken tanımlayıp bu değişkenlerin değerlerini konsola bastırdık. Ancak şu ana kadar ki bastırmış olduğumuz değerler bizlerin atadığı değerlerin birebir aynısıydı. Fakat her zaman basılan bu değerlerin tamamına ihtiyaç duymayabiliyoruz. İşte bu gibi durumlarda alacağımız çıktıları düzenlemek, yani örneğin bir kısmını bastırmak ya da bir kısımını silmek gibi işlevleri yerine getirmek için birkaç farklı kullanım şekli bulunuyor. Şimdi genel olarak bu kullanımları ele alalım.
 
-Değerin bir kısmını seçmek :
+Değerin bir kısmını bastırmak :
 -
 
 Değişkene atanan değer içerisinde belirli bir kısımı almak istersek komutumuzu **${degisken:başlangıç:uzunluk}**  şeklinde kullanıyoruz.
@@ -340,13 +340,15 @@ Değişkene atanan değer içerisinde belirli bir kısımı almak istersek komut
 Değişken değeri silmek :
 -
 
-Değişkenimizin çıktısında basılacak olan değerleri silmek için iki farklı kullanım metodu bulunuyor. Bunlardan ilki değerleri başlangıçtan itibaren silen **#** işareti, ikincisi ise tersi şekilde değeri sondan itibaren silen **%** işaretidir. Sırasıyla bu kullanımları açıklayacak olursak;
+Değişkenimizin çıktısında basılacak olan değerleri silmek için iki farklı kullanım metodu bulunuyor. 
 
-Örneğin **{}** şeklinde tanımlanmış bir değişkenin değerlerinin **başından** başlayarak;
+Bunlardan ilki değerleri **başlangıçtan itibaren** silen **#** işareti, ikincisi ise tersi şekilde değeri **sondan itibaren** silen **%** işaretidir. Sırasıyla bu kullanımları açıklayacak olursak;
 
 Öncelikle örnek üzerinden ilerlemek üzere `silinecek=(sal salı salıncak)` şeklinde değişkenimizi tanımlayalım.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/44.png)
+
+Örneğin `silinecek=(sal salı salıncak)` şeklinde tanımlanmış bir değişkenin değerlerinin **başından** başlayarak;
 
 **Bir harf grubuna kadar olan kısmını silmek istersek;** `${silinecek[@]##*silinecek_harf_grubu}` komutunu kullanıyorken..
 
