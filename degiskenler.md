@@ -493,7 +493,7 @@ Gördüğünüz gibi betik dosyam PATH yolu üzerinde bulunan bir konuma eklenin
 
 Aynı şekilde dosyamızın bulunduğu konumu **PATH** yoluna ekleyerek de her yerden ulaşılabilir kılabiliriz. Bunun için **/etc** dizini altında bulunan ve her oturum açılışında otomatik olarak okunan **profile** dosyası içerisine `PATH="path yoluna eklenecek dizin":$PATH` şeklinde yeni **PATH** yolunu belirtmeliyiz.
 
-Ben taşımış olduğum selam.sh dosyasını eski konumuna taşıyarak, bu konumu yani root kullanısının ana dizinini **profile** dosyasına `PATH="/root/:$PATH"` şeklinde ekleyerek her yerden ulaşıabilir kılıyorum. 
+Ben taşımış olduğum **selam.sh** dosyasını eski konumuna taşıyarak, bu konumu yani root kullanısının ana dizinini **profile** dosyasına `PATH="/root/:$PATH"` şeklinde ekleyerek her yerden ulaşılabilir kılıyorum. 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/p3.png)
 
@@ -503,7 +503,7 @@ Yaptığımız değişikliklerin geçerli olabilmesi için oturumu kapatıp tekr
 
 Ve en nihayetinde **PATH** değişkeni sayesinde betik dosyamızı her yerden çalıştırılabilir yapmış olduk.
 
-Neticede sizlerin de gördüğü gibi; bizlerin tanımladığı değişkenler ile sistemde varsayılan olarak tanımlı değişkenleri bastırıken komut kullanımı açısından hiç bir fark bulunmuyor. Buradaki tek küçük fark, sistemde varsayılan olaark tanımlı değişkenlerin daha ayır edici olması açısında genellikle istisnalar dışında tamamı büyük harflerden oluşacak şekilde tanımlanmış olmalarıdır.
+Neticede sizlerin de gördüğü gibi; bizlerin tanımladığı değişkenler ile sistemde varsayılan olarak tanımlı değişkenleri bastırıken komut kullanımı açısından hiç bir fark bulunmuyor. Buradaki tek küçük fark, sistemde varsayılan olarak tanımlı değişkenlerin daha ayırt edici olması açısında genellikle istisnalar dışında tamamı büyük harflerden oluşacak şekilde tanımlanmış olmalarıdır.
 
 Şimdiye kadar hem kendi tanımladığımız hem de sistemde varsayılan olarak tanımlı değişkenleri ele aldık. Şimdi de tanımlanan değişkenlerin kapsamlarını 3 kategori altında tek tek ele alalım; 
 
@@ -517,7 +517,7 @@ Gelin şimdi teker teker kullanımlarına değinelim.
 
 **Sadece o an kullanmakta olduğumuz konsola özel olan ve konsolu kapattıktan sonra sıfırlanan ortam değişkenidir.** Aşağıdaki örnek ile adım adım açıklayalım bu durumu:
 
-Konsola isim="taylan" şeklinde bir değişken tanımlıyıp, bu değişkeni bastırıyorum.
+Konsola `isim="taylan"` şeklinde bir değişken tanımlıyıp, bu değişkeni bastırıyorum.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/53.png)
 
@@ -540,7 +540,7 @@ BASH, her oturum açtığımızda tüm ayarlarını ve davranışlarını kullan
 
 Örnek olması açısında bu sefer de `soyisim="bildik"` değişkenini **yalnızca root kullanıcısına özel** olarak tanımlamayı ele alıyorum.
 
-Öncelikle ana dizinde bulunan <kbd>.bashrc</kbd> dosyasını açmak üzere <code>nano -w ~/.bashrc</code> komutunu girelim.
+Öncelikle ana dizinde bulunan <kbd>.bashrc</kbd> dosyasını açmak üzere <code>nano ~/.bashrc</code> komutunu girelim.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/56.png)
 
@@ -569,18 +569,18 @@ Hatta root kullanıcı hesabındayken birden fazla konsol üzerinden bile **soyi
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/61.png)
 
-Gördüğünüz gibi **root** kullanıcısına özel olarak tanımladığımız **soyisim** değişkenini **root** kullanıcısı dışında diğer kullanıcılar ulaşamıyor.
+Gördüğünüz gibi **root** kullanıcısına özel olarak tanımladığımız **soyisim** değişkenine, **root** kullanıcısı dışında diğer kullanıcılar ulaşamıyor.
 
 
 ### Sistem Genelinde
 
-Eğer yaptığımız değişiklik bütün kullanıcı oturumlarında aynı şekilde geçerli olsun istiyorsak, değişkenin sistemde her oturum açıldığında okunan bir dosyada bulunması gerekiyor. Bu yüzden tanımlayacağımız değişkeni <kbd>/etc</kbd> dizini altında yer alan <kbd>bash.bashrc</kbd> dosyasında uygun şekilde eklemeliyiz. 
+Eğer yaptığımız değişiklik bütün kullanıcı oturumlarında aynı şekilde geçerli olsun istiyorsak, değişkenin sistemde her oturum açıldığında okunan bir dosyada bulunması gerekiyor. Bu yüzden tanımlayacağımız değişkeni <kbd>/etc</kbd> dizini altında yer alan <kbd>bash.bashrc</kbd> dosyasına uygun şekilde eklemeliyiz. 
 
-Öncelikle dosyamızı açmak üzere konsola <code>nano -w /etc/bash.bashrc</code> komutunu girelim.
+Öncelikle dosyamızı açmak üzere konsola <code>nano /etc/bash.bashrc</code> komutunu girelim.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/62.png)
 
-Bu kez de örnek olması için lokasyon="istanbul" değişkenini <kbd>bash.bashrc</kbd> dosyamıza ekleyip kaydedelim.
+Bu kez de örnek olması için `lokasyon="istanbul"` değişkenini <kbd>bash.bashrc</kbd> dosyamıza ekleyip kaydedelim.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/63.png)
 
@@ -597,10 +597,10 @@ Ardından değişikliklerin geçerli olup olmadığını denemek için birden fa
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/66.png)
 
-Son olarak da can kullanıcısı üzerinden değişkenimizi çağıralım.
+Son olarak da **can** kullanıcısı üzerinden değişkenimizi çağıralım.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/67.png)
 
-Çıktımız hepsinde lokasyon değişkeninin değeri olarak istanbul değerini aldığımıza göre sistem genelinde tanımlamayı başarmışız demektir. Yaptığımız bu değişiklik bütün kullanıcılar için yani sistem geneli için geçerlidir. Bu durumu başka bir hesap oluşturarak kendiniz de gözlemleyebilirsiniz.
+Çıktılarımızın hepsinde **lokasyon** değişkeninin değeri olarak **istanbul** ifadesini gördüğümüze göre, değişkenimizi sistem genelinde tanımlamayı başarmışız demektir. Yaptığımız bu değişiklik bütün kullanıcılar için yani sistem geneli için geçerlidir. Bu durumu başka bir hesap oluşturarak kendiniz de gözlemleyebilirsiniz.
 
-Ayrıca değişiklikleri geri almak isterseniz eklediğiniz ifadeyi ilgili dosyadan silin ve sistemi <code>source ilgili_dosya_adı</code> şeklindeki komut bütünü ile yeniden konfigüre edin, böylelikle bütün değişimler düzelmiş olacaktır.
+Ayrıca değişiklikleri geri almak isterseniz eklediğiniz ifadeyi ilgili dosyadan silin ve sistemi <code>source ilgili_dosya_adı</code> şeklindeki komut bütünü ile yeniden konfigüre edin, böylelikle bütün değişiklikler sıfırlanmış olacaktır.
