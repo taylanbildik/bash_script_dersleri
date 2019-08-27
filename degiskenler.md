@@ -433,12 +433,12 @@ Ayrıca yeri gelmişken değişkenleri bastırırken kullandığımız `echo` ko
 </thead>
 <tbody>
 <tr>
-<td><strong>-n</strong></td>
-<td>Sonraki satırı atlamaz.</td>
-</tr>
-<tr>
 <td><strong>-e</strong></td>
 <td>Ters eğik çizgi ile belirtilen özelliklerin yorumlanmasını sağlar.</td>
+</tr>
+ <tr>
+<td><strong>\n</strong></td>
+<td>Sonraki satıra atlar.</td>
 </tr>
 <tr>
 <td><strong>\b</strong></td>
@@ -482,7 +482,15 @@ Ayrıca yeri gelmişken değişkenleri bastırırken kullandığımız `echo` ko
 
 Şimdi sırasıyla işlevleri örnekler üzerinden açıklayarak devam edelim.
 
-**-n parametresi**;
+**-e parametresi**; `echo` komutunun ardından gireceğimiz ters slash işaretli özel parametrelerin doğru şekilde yorumlanabilmesini sağlar. Yani `echo` komutunun farklı bastırma seçeneklerini kullanmak istiyorsak mutlaka **-e** parametresini kullanmamız gerekiyor. Bu durumu örnekler üzerinden çok daha net kavramış olacaksınız.
+
+**\n parametresi**; kullanoldığı yerden sonra, bir alt satıra geçerek çıktıları bastırır. Yani bir satır atlamış olur.
+Örnek olması açısınan **"Test metni"** ifadesini alt alta basılacak şekilde ayarlamak istiyorum.
+Bunun için `echo` komutunun ardından **-e** parametresini kullanıp bir alt satıra geçmek istediğim kısıma **\n** ifadesini ekliyorum.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo1.png)
+
+Gördüğünüz gibi **metni** ifadesinin hemen öncesinde kullanmış olduğum **\n** parametresi **metin** ifadesinin bir alt satırda basılmasını sağladı.
 
 Sistemde Tanımlı Ortam(Çevre) Değişkenleri
 =
