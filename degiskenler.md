@@ -421,7 +421,68 @@ Bunun dışında değişiklik yapmak istediğiniz ifade illa bir kelime bütün�
 
 Şimdiye kadar birkaç farklı metod uygulayarak, orjinal değerleri istediğimiz şekilde manipüle edip tam ihtiyacımıza göre çıktılar elde ettik. **Ancak bu aldığımız çıktıların geçici değerler olduğunu ve orjinal değerlerde kalıcı değişikliğe yol açmadığını lütfen unutmayın.** Farklı şekillerde bastırma işlemleri ile bizler sadece aldığımız çıktıları ihtiyacımıza göre şekillendirmiş olduk arkadaşlar.
 
-Ayrıca yeri gelmişken değişkenleri bastırırken kullandığımız echo komutununun çoklu işlevlerini kullanarak farklı çıktılar elde etemyi ele almak istiyorum.
+Ayrıca yeri gelmişken değişkenleri bastırırken kullandığımız `echo` komutununun çoklu işlevlerini kullanarak farklı çıktılar elde etmeyi de ele almak istiyorum. Hangi parametrenin hangi işlevde olduğunu kısaca aşağıdaki tabloya bakayarak anlayabilirsiniz.
+
+
+<div class="table"><table>
+<thead>
+<tr>
+<th>Seçenekler</th>
+<th>Açıklama</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-n</strong></td>
+<td>Sonraki satırı atlamaz.</td>
+</tr>
+<tr>
+<td><strong>-e</strong></td>
+<td>Ters eğik çizgi ile belirtilen özelliklerin yorumlanmasını sağlar.</td>
+</tr>
+<tr>
+<td><strong>\b</strong></td>
+<td>Soldan bir karakter siler.</td>
+</tr>
+<tr>
+<td><strong>\c</strong></td>
+<td>Sağdan bir karakter siler.</td>
+</tr>
+<tr>
+<td><strong>\</strong></td>
+<td>Ters eğik çizgi basmak üzere kullanılır.</td>
+</tr>
+<tr>
+<td><strong>\n</strong></td>
+<td>Yeni satıra atlar.</td>
+</tr>
+<tr>
+<td><strong>\r</strong></td>
+<td>Soldaki her şeyi siler</td>
+</tr>
+<tr>
+<td><strong>\t</strong></td>
+<td>Tab tuşu görevi görür.</td>
+</tr>
+<tr>
+<td><strong>\v</strong></td>
+<td>Dikey tab görevi görür.</td>
+</tr>
+<tr>
+<td><strong>$(komut)</strong></td>
+<td>Komutların echo komutu üzerinden basılmasını sağlar.</td>
+</tr>
+<tr>
+<td><strong>`komut`</strong></td>
+<td>Komutların echo komutu üzerinden basılmasını sağlar.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+Şimdi sırasıyla işlevleri örnekler üzerinden açıklayarak devam edelim.
+
+**-n parametresi**;
 
 Sistemde Tanımlı Ortam(Çevre) Değişkenleri
 =
