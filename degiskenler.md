@@ -482,15 +482,25 @@ Ayrıca yeri gelmişken değişkenleri bastırırken kullandığımız `echo` ko
 
 Şimdi sırasıyla işlevleri örnekler üzerinden açıklayarak devam edelim.
 
-**-e parametresi**; `echo` komutunun ardından gireceğimiz ters slash işaretli özel parametrelerin doğru şekilde yorumlanabilmesini sağlar. Yani `echo` komutunun farklı bastırma seçeneklerini kullanmak istiyorsak mutlaka **-e** parametresini kullanmamız gerekiyor. Bu durumu örnekler üzerinden çok daha net kavramış olacaksınız.
+**-e parametresi**; `echo` komutunun ardından gireceğimiz **ters slash** işaretli özel parametrelerin doğru şekilde yorumlanabilmesini sağlar. Yani `echo` komutunun farklı bastırma seçeneklerini kullanmak istiyorsak mutlaka **-e** parametresini kullanmamız gerekiyor. Bu durumu örnekler üzerinden çok daha net kavramış olacaksınız.
 
-**\n parametresi**; kullanoldığı yerden sonra, bir alt satıra geçerek çıktıları bastırır. Yani bir satır atlamış olur.
-Örnek olması açısınan **"Test metni"** ifadesini alt alta basılacak şekilde ayarlamak istiyorum.
+**\n parametresi**; kullanıldığı yerden sonra, bir alt satıra geçerek çıktıları bastırır. Yani bir satır atlamış olur.
+
+Örnek olması açısından **"test metni"** ifadesini alt alta basılacak şekilde ayarlamak istiyorum.
 Bunun için `echo` komutunun ardından **-e** parametresini kullanıp bir alt satıra geçmek istediğim kısıma **\n** ifadesini ekliyorum.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo1.png)
 
-Gördüğünüz gibi **metni** ifadesinin hemen öncesinde kullanmış olduğum **\n** parametresi **metin** ifadesinin bir alt satırda basılmasını sağladı.
+Gördüğünüz gibi **metni** ifadesinin hemen öncesinde kullanmış olduğum **\n** parametresi **metni** ifadesinin bir alt satırda basılmasını sağladı. Aynı işlemi **-e** parametresi olmadan yapmaya çalışsaydık, `echo` komutu **\n** ifadesinin işlevini algılayamayacağından **metni** ifadesini bir alt satıra basamayacaktı. Bu durumu aşağıdaki çıktıya bakarak gözlemleyebilirsiniz.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo2.png)
+
+**\b parametresi**;
+**\c parametresi**;
+**\ parametresi**;
+**\n parametresi**;
+**\n parametresi**;
+
 
 Sistemde Tanımlı Ortam(Çevre) Değişkenleri
 =
