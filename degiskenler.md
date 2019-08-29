@@ -499,7 +499,7 @@ Parametrenin kullanıldığı kısımdan önceki kısımda yer alan karakter say
 
 Yani örneğin **12345 abcd** şeklinde bir çıktıda kullanırsak;
 
-Eğer **abcd** ifadesinden hemen önce **\r** parametresini eklersem, **abcd** 4 karakterden oluştuğundan ve önündeki **12345** ifadesi ise 5 karakterden oluştuğundan **abcd** ifadesinin eksik kalan 5. karakteri ifadenin 5. karakterinden otomatik tamamlanıyor. Yani \r parametresi kullanılan yerden önceki ifadenin uzunluğu ile, \r parametresinden sonraki ifadenin uzunluğu eşit olmak zorunda. \r parametresinden sonraki kısım, önceki kısıma oranla daha kısa bir ifade ise otomatik olarak eksik kalan kısımlar \r parametresinden önceki ifadeden tamamlanıyor.
+Eğer **abcd** ifadesinden hemen önce **\r** parametresini eklersem, **abcd** 4 karakterden oluştuğundan ve önündeki **12345** ifadesi ise 5 karakterden oluştuğundan **abcd** ifadesinin eksik kalan 5. karakteri ifadenin 5. karakterinden otomatik tamamlanıyor. Yani **\r** parametresi kullanılan yerden önceki ifadenin uzunluğu ile, **\r** parametresinden sonraki ifadenin uzunluğu eşit olmak zorunda. **\r** parametresinden sonraki kısım, önceki kısıma oranla daha kısa bir ifade ise otomatik olarak eksik kalan kısımlar **\r** parametresinden önceki ifadeden tamamlanıyor.
 
 Bu açıklamadan bir şey anlamadıysanız aşağıdaki çıktılara dikkatli şekilde bakarak ve komutu bizzat uygulayarak ne demek istediğimi rahatlıkla anlayabilirsiniz.
 
@@ -509,33 +509,36 @@ Bu açıklamadan bir şey anlamadıysanız aşağıdaki çıktılara dikkatli ş
 
 \t
 -
+Kullanıldığı kısımdan sonrası için tab tuşu görevi görür.
 
-Parametrenin kullanıldığı
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo8.png)
 
 \v
 -
 
-Parametrenin kullanıldığı 
+Kullanıldığı kısımdan sonrasını aynı hizada bir alt satırda basar, bir nevi dikey tab görebi görür.
 
-\\
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo9.png)
+
+\\\ ya da \\\\
 -
 
-Parametrenin kullanıldığı 
+Eğer bastıracağımız ifadenin içerisinde **ters slash** geçiyorsa bunun **-e** parametresinin özellikleri dışında algılanabilmesi için ya **3** ya da **4**'lü şekilde kullanılması gerekiyor. **-e** parametresini kullanmadığımızda zaten ters slash ifadesi özel bir anlam kazanmadığından bu kadar çok yazmamız gerekmeiyor, ancak tek bir ifade içerisinde hem **-e** parametresinin sağlayacağı avantajları kullanmak hem de ters slash işareti basmak isteyebiliriz. İşte bu durumlarda bu şeklide çoklu kullanım şarttır.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo10.png)
+
 
 \a
 -
 
-Parametrenin kullanıldığı 
+Basılan ifade ile birlikte eğer konsol destekliyorsa uyarı sesinin çıkmasını sağlar, bir nevi zildir.
 
-$(komut)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo11.png)
+
+$(komut) ya da 'komut'
 -
 
-Parametrenin kullanıldığı 
 
-'komut'
--
-
-Parametrenin kullanıldığı 
 
 
 Sistemde Tanımlı Ortam(Çevre) Değişkenleri
