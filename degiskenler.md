@@ -520,7 +520,7 @@ Kullanıldığı kısımdan sonrasını aynı hizada bir alt satırda basar, bir
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo9.png)
 
-\\\ ya da \\\\
+3'lü ya da 4'lü Ters Slash
 -
 
 Eğer bastıracağımız ifadenin içerisinde **ters slash** geçiyorsa bunun **-e** parametresinin özellikleri dışında algılanabilmesi için ya **3** ya da **4**'lü şekilde kullanılması gerekiyor. **-e** parametresini kullanmadığımızda zaten ters slash ifadesi özel bir anlam kazanmadığından bu kadar çok yazmamız gerekmeiyor, ancak tek bir ifade içerisinde hem **-e** parametresinin sağlayacağı avantajları kullanmak hem de ters slash işareti basmak isteyebiliriz. İşte bu durumlarda bu şeklide çoklu kullanım şarttır.
