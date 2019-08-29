@@ -495,7 +495,17 @@ Gördüğünüz gibi sağ tarafta yer alan her şeyi sildiğinden, bir alt satı
 \r
 -
 
-Parametrenin kullanıldığı kısımdan önceki..
+Parametrenin kullanıldığı kısımdan önceki kısımda yer alan karakter sayısına göre, parametrenin kullanıldığı kısımdan sonraki karakterler önceki karakterlerden tamamlanır. 
+
+Yani örneğin **12345 abcd** şeklinde bir çıktıda kullanırsak;
+
+Eğer **abcd** ifadesinden hemen önce **\r** parametresini eklersem, **abcd** 4 karakterden oluştuğundan ve önündeki **12345** ifadesi ise 5 karakterden oluştuğundan **abcd** ifadesinin eksik kalan 5. karakteri ifadenin 5. karakterinden otomatik tamamlanıyor. Yani \r parametresi kullanılan yerden önceki ifadenin uzunluğu ile, \r parametresinden sonraki ifadenin uzunluğu eşit olmak zorunda. \r parametresinden sonraki kısım, önceki kısıma oranla daha kısa bir ifade ise otomatik olarak eksik kalan kısımlar \r parametresinden önceki ifadeden tamamlanıyor.
+
+Bu açıklamadan bir şey anlamadıysanız aşağıdaki çıktılara dikkatli şekilde bakarak ve komutu bizzat uygulayarak ne demek istediğimi rahatlıkla anlayabilirsiniz.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo6.png)
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo7.png)
 
 \t
 -
