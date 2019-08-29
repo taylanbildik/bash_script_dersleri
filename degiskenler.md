@@ -542,7 +542,7 @@ $(komut) ya da 'komut'
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo12.png)
 
-Ancak hatırlatmak isterim ki; aldığımız çıktılardan da görebileceğiniz gibi, `echo` komutu üzerinden konsol komutlarını çalıştırdığımızda, renklendirme ve içerik düzeni gibi bash kabuğunun sahip olduğu pek çok işlevsel özellik de kayboluyor. Yani bu kullanımı yalnızca temel çıktılar elde etmede kullanacağımızı unutmayın lütfen.
+Ancak hatırlatmak isterim ki; aldığımız çıktılardan da görebileceğiniz gibi, `echo` komutu üzerinden konsol komutlarını çalıştırdığımızda, renklendirme ve içerik düzeni gibi bash kabuğunun sahip olduğu pek çok işlevsel özellik de kayboluyor. Yani bu kullanımı genel olarak yalnızca temel çıktılar elde etmede kullanacağımızı unutmayın lütfen.
 
 
 Sistemde Tanımlı Ortam(Çevre) Değişkenleri
