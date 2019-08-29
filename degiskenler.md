@@ -423,66 +423,30 @@ Bunun dışında değişiklik yapmak istediğiniz ifade illa bir kelime bütün�
 
 Ayrıca yeri gelmişken değişkenleri bastırırken kullandığımız `echo` komutununun çoklu işlevlerini kullanarak farklı çıktılar elde etmeyi de ele almak istiyorum. Hangi parametrenin hangi işlevde olduğunu kısaca aşağıdaki tabloya bakayarak anlayabilirsiniz.
 
+|Seçenekler| Açıklama |
+|--|--|
+|**-e**|Ters eğik çizgi ile belirtilen özelliklerin yorumlanmasını sağlar. |
+|**-n**|Sonraki satırı atlamaz.|
+|**\n**|Yeni satıra atlar.|
+|**\b**|Soldan bir karakter siler. |
+|**\e**|Sağdan bir karakter siler. |
+|**\c**|Sağında yer alan her şeyi siler. |
+|**\r**|Satır başına göre tamamlama yapar.|
+|**\t**|Tab tuşu görevi görür.|
+|**\v**|Dikey tab görevi görür.|
+|**\\\\**|Ters eğik çizgi basmak üzere kullanılır. |
+|**\a**|Çıktı ile birlikte konsoldan uyarı sesi çıkmasını sağlar.|
+|**$(komut)**|Komutların echo komutu üzerinden basılmasını sağlar.
+|**'komut'**| Komutların echo komutu üzerinden basılmasını sağlar.
 
-<div class="table"><table>
-<thead>
-<tr>
-<th>Seçenekler</th>
-<th>Açıklama</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>-e</strong></td>
-<td>Ters eğik çizgi ile belirtilen özelliklerin yorumlanmasını sağlar.</td>
-</tr>
- <tr>
-<td><strong>\n</strong></td>
-<td>Sonraki satıra atlar.</td>
-</tr>
-<tr>
-<td><strong>\b</strong></td>
-<td>Soldan bir karakter siler.</td>
-</tr>
-<tr>
-<td><strong>\c</strong></td>
-<td>Sağdan bir karakter siler.</td>
-</tr>
-<tr>
-<td><strong>\</strong></td>
-<td>Ters eğik çizgi basmak üzere kullanılır.</td>
-</tr>
-<tr>
-<td><strong>\n</strong></td>
-<td>Yeni satıra atlar.</td>
-</tr>
-<tr>
-<td><strong>\r</strong></td>
-<td>Soldaki her şeyi siler</td>
-</tr>
-<tr>
-<td><strong>\t</strong></td>
-<td>Tab tuşu görevi görür.</td>
-</tr>
-<tr>
-<td><strong>\v</strong></td>
-<td>Dikey tab görevi görür.</td>
-</tr>
-<tr>
-<td><strong>$(komut)</strong></td>
-<td>Komutların echo komutu üzerinden basılmasını sağlar.</td>
-</tr>
-<tr>
-<td><strong>`komut`</strong></td>
-<td>Komutların echo komutu üzerinden basılmasını sağlar.</td>
-</tr>
-</tbody>
-</table>
-</div>
+
 
 Şimdi sırasıyla işlevleri örnekler üzerinden açıklayarak devam edelim.
 
 **-e parametresi**; `echo` komutunun ardından gireceğimiz **ters slash** işaretli özel parametrelerin doğru şekilde yorumlanabilmesini sağlar. Yani `echo` komutunun farklı bastırma seçeneklerini kullanmak istiyorsak mutlaka **-e** parametresini kullanmamız gerekiyor. Bu durumu örnekler üzerinden çok daha net kavramış olacaksınız.
+**-n parametresi**; Satır atlanmasını engeller. İşlevini anlamak için aşağıdaki iki çıktıyı dikkatlice incelemeniz yeterlidir.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo0.png)
 
 **\n parametresi**; kullanıldığı yerden sonra, bir alt satıra geçerek çıktıları bastırır. Yani bir satır atlamış olur.
 
@@ -495,12 +459,21 @@ Gördüğünüz gibi **metni** ifadesinin hemen öncesinde kullanmış olduğum 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo2.png)
 
-**\b parametresi**;
-**\c parametresi**;
-**\ parametresi**;
-**\n parametresi**;
-**\n parametresi**;
+**\b parametresi**; Parametrenin kullanıldığı yerin solundaki bir karakteri silme işlevindedir.
 
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo3.png)
+
+**\e parametresi**; Parametrenin kullanıldığı yerin sağındaki bir karakteri silme işlevindedir.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo4.png)
+
+**\c parametresi**; Parametrenin kullanıldığı yerin sağındaki her şeyi silme işlevindedir.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo5.png)
+
+Gördüğünüz gibi sağ tarafta yer alan her şeyi sildiğinden, bir alt satıra geçme işlevi de siliniyor ve çıktı ile yeni komut girişi aynı satırda gözüküyor. Hatta son çıktıya dikkatlice bakacak olursanı, satırın sonuna eklemiş olduğum **\c** parametresi tıpkı **-n** parametresi gibi işlev görerek bir sonraki satıra atlamadan aynı satırdan devam edilmesini sağlıyor.
+
+**\r parametresi**;
 
 Sistemde Tanımlı Ortam(Çevre) Değişkenleri
 =
