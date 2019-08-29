@@ -5,13 +5,14 @@ Bu kısımda değişkenleri ele alacağız, peki ama nedir bu değişkenler ?
 Kısaca değişkenler, girdiğimiz değerleri alan veya programın çalışmasıyla bazı değerlerin atandığı veri tutucularıdır.  Biz bir değişkene değer atayarak o değeri tekrar tekrar tanımlamak yerine tek bir değişken üzerinden istediğimiz zaman çağırabiliyoruz. Eğer bu tanımdan bir şey anlamadıysanız sorun yok arkadaşlar, konuyu örnekler ile ele aldıkça tam olarak ne demek istediğimi anlıyor olacaksınız.
 
 Hemen basit bir örnek ile açıklamaya başlayalım;
+
 Değişken tanımlarken öncelikle değişken adını girerek eşittir işaretini koyduktan sonra değişkene atamak istediğimiz değeri tırnak işareti içerisine yazıyoruz.
+
 Örneğin ben `sistem="linux"` şeklinde yazarsam, **sistem** isimli değişkene "**linux**" değerini atamış oluyorum. 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/1.png)
 
-Değişkenimin tanımlanıp tanımlanmadığını hemen konsol üzerinden çağırarak kontrol edelim. 
-Tanımladığımız herhangi bir değişkeni çağırırken `echo $degisken` şeklinde komut girmemiz yeterli oluyor. 
+Değişkenimin tanımlanıp tanımlanmadığını hemen konsol üzerinden çağırarak kontrol edelim. Tanımladığımız herhangi bir değişkeni çağırırken `echo $degisken` şeklinde komut girmemiz yeterli oluyor. 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/2.png)
 
@@ -26,7 +27,7 @@ Bir örnek daha yapalım ve bu sefer değişkenimize, değer olarak sayı atayal
 Değişken Tanımlanırken Dikkat Edilmesi Gerekenler
 -
 
- - Değişken isimleri tanımlarken Türkçe karakter kullanmadan alfanümerik(**A-Z, a-z**) karakter kullanmamız gerekiyor.
+ - Değişken isimleri tanımlarken **Türkçe karakter kullanmadan** alfanümerik(**A-Z, a-z**) karakter kullanmamız gerekiyor.
  
 Örneğin konsola içerisinde Türkçe karakter geçen, `çalı="bitki"` gibi bir değişken tanımlamak istersem, konsol bana çıktı olarak "**komut yok**" hatasını basıyor. 
 
@@ -38,7 +39,7 @@ Bunun nedeni de değişken tanımlarında Türkçe karakter kullanımının geç
 
 <hr>
  
-- Türkçe karakter dışında, değişken ismi tanımlarken alt tire işareti haricinde herhangi bir sembol kullanımı da hataya yol açmaktadır. 
+- Türkçe karakter dışında, değişken ismi tanımlarken **alt tire işareti haricinde** herhangi bir sembol kullanımı da hataya yol açmaktadır. 
 
 Örneğin ben `yeni-yeni="yeni değer"` gibi bir değişken tanımlamaya kalkarsam , konsol bana çıktı olarak "**komut yok**" hatasını basacaktır. 
 
@@ -46,24 +47,26 @@ Bunun nedeni de değişken tanımlarında Türkçe karakter kullanımının geç
 
 Bunun nedeni değişken isminde geçen **tire**(**-**)işaretidir. 
 
-Şimdi aynı örneği **alt tire**(**_**)ile deneyerek bu durumu teyit edelim. Bunun için konsola `yeni_yeni="yeni değer"` ifadesini giriyorum ve tanımladığım değişkeni `echo $yeni_yeni` komutunu girerek sorguluyorum. 
+Şimdi aynı örneği **alt tire**(**_**) işareti ile deneyereki bu durumu teyit edelim. Bunun için konsola `yeni_yeni="yeni değer"` ifadesini yazıyorum ve tanımladığım değişkeni `echo $yeni_yeni` komutunu girerek sorguluyorum. 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/7.png)
 
-Ve gördüğünüz gibi değişken başarılı şekilde tanımlanmış bulunuyor. Tekrar belirtmiş olalım, hatalı bir kullanıma yol açmamak adına değişken tanımlarken **alt tire işareti haricinde hiç bir sembol kullanmayın**. Yani **yeni+yeni**..**yeni#yeni**..**yeni@yeni** vb tüm kullanımlar hatalıdır.
+Ve gördüğünüz gibi değişken başarılı şekilde tanımlanmış bulunuyor. 
+
+Tekrar belirtmiş olalım, hatalı bir kullanıma yol açmamak adına değişken tanımlarken **alt tire işareti haricinde hiç bir sembol kullanmayın**. Yani **yeni+yeni**..**yeni#yeni**..**yeni@yeni** vb tüm kullanımlar hatalıdır.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/8.png)
 
 <hr>
 
-- Dikkat etmemiz gereken bir diğer husus ise tanımlanacak değişken isimlerinin **kesinlikle rakam ile başlamamasıdır**. Fakat başlangıcı hariç değişken isimlerinde rakam kullanılabilir. 
+- Dikkat etmemiz gereken bir diğer husus ise tanımlanacak değişken isimlerinin **kesinlikle rakam ile başlamamasıdır**. Fakat başlangıcı hariç, değişken isimlerinde rakam kullanılabilir. 
 
 Yani örneğin herhangi bir değişken tanımlarken **1kitap** hatalı bir kullanım iken **kitap1** ya da **kit1ap** doğru kullanıma örnektir. 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/9.png)
 
 Rakam başta olmadığı sürece tüm kombinasyonlar rakam kullanımına uygundur.
-**k1itap**..**ki2tap**..**kit3ap**..**kit33ap**..**kita555p**.. vb.
+(**k1itap**..**ki2tap**..**kit3ap**..**kit33ap**..**kita555p**.. vb.)
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/10.png)
 
@@ -75,29 +78,43 @@ Rakam başta olmadığı sürece tüm kombinasyonlar rakam kullanımına uygundu
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/11.png)
 
-Gördüğünüz gibi biri küçük diğer büyük harflerden oluşan iki değişken de sistem tarafından farklı algılanarak konsola ayrı ayrı çıktılar basmış oldu. 
+Gördüğünüz gibi aynı isime sahip olan biri küçük diğeri büyük harflerden oluşan iki değişken, sistem tarafından iki farklı değişken olarak algılanarak konsola ayrı ayrı çıktılar basmış oldu. 
 
 <hr>
 
-- Bunun haricinde değişken tanımlarken **eşittir**(**=**) işaretinin **sağında ve solunda boşluk olmamasına** dikkat etmemiz gerekiyor. Aksi takdirde sistem bizlerin değişken tanımlamak istediğini anlayamadığından, kaçınılmaz olarak konsola "**komut yok**" şeklinde hata çıktısı basıyor. Aşağıdaki kullanımlar yanlış kullanımlara örnektir.
+- Bunun haricinde değişken tanımlarken **eşittir**(**=**) işaretinin **sağında ve solunda boşluk olmamasına** dikkat etmemiz gerekiyor. Aksi takdirde sistem bizlerin değişken tanımlamak istediğini anlayamadığından, kaçınılmaz olarak konsola "**komut yok**" şeklinde hata çıktısı basıyor. 
+
+**Aşağıdaki kullanımlar yanlış kullanımlara örnektir.**
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/12.png)
 
+Ayrıca değişkenlerin değerini belirtirken kullandığımız tırnak işaretleri, değerin birden fazla kelime bütünü içerdiği durumda sistem tarafından **değerin tamamının** doğru algılanabilmesi adına çok önemlidir. Yani örneğin ben `kalem="kırmızı"` ya da `kalem1=mavi` şeklinde değişken tanımlayabilirim. 
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/12-1.png)
+
+Fakat değerin `kalem="kırmızı pilot"` gibi daha fazla öge içerdiği durumlarda mutlaka tırnak içerisinde yazılması gerekiyor. Bu durumu aşağıdaki çıktılara göz atarak teyit edebilirsiniz. 
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/12-2.png)
+
 <hr>
 
-Tüm bunların dışında konu anlatımın başında değişkenlerin programlar çalışırken farklı değerleri alabildiğinden bahsetmiştik. Bu da eğer bizler herhangi bir kısıtlama getirmezsek, sürekli olarak değişkenlerin  üzerine yeni değerler yazılabileceği anlamına geliyor. Bu durumu daha iyi anlamak adına `spor="tenis"` komutu ile **spor** isimli bir değişken tanımlayalım ve `echo $spor` komutu ile değişkenimizi çağıralım.
+Hatırlarsanız konu anlatımının başında değişkenlerin program çalışırken farklı değerler alabildiğinden bahsetmiştik. Bu da eğer bizler herhangi bir kısıtlama getirmezsek, sürekli olarak değişkenlerin üzerine yeni değerler yazılabileceği anlamına geliyor. Bu durumu daha iyi anlamak adına `spor="tenis"` komutu ile **spor** isimli bir değişken tanımlayalım ve `echo $spor` komutu ile değişkenimizi çağıralım.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/13.png)
 
-Gördüğünüz gibi bu şekilde **spor** isimli değişkeni ne zaman çağırsam karşıma **tenis** değeri basılmış oluyor. Ancak değişkenin değerini özellikle sabitlemediğimiz sürece, istenildiği zaman bu değer değiştirilebilir. Bunun için aynı isimli değişkeni farklı bir değer ile tekrar tanımlamamız yeterli oluyor arkadaşlar. Hemen aynı değişkeni bu sefer **futbol** değeri ile tanımlayıp, bu durumu teyit edelim. Konsola `spor="futbol"` şeklinde yazıyorum ve `echo` komutu ile değişkenimin yeni değerini teyit ediyorum. 
+Gördüğünüz gibi bu şekilde **spor** isimli değişkeni ne zaman çağırsam karşıma **tenis** değeri basılmış oluyor. Ancak değişkenin değerini özellikle sabitlemediğimiz sürece, istenildiği zaman bu değer değiştirilebilir. Değişken değerini değiştirmek için aynı isimli değişkeni farklı bir değer ile tekrar tanımlamamız yeterli oluyor arkadaşlar. 
+
+Hemen aynı değişkeni bu sefer **futbol** değeri ile tanımlayıp, bu durumu teyit edelim. Konsola `spor="futbol"` şeklinde yazıyorum ve `echo` komutu ile değişkenimin yeni değerini teyit ediyorum. 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/14.png)
 
-Gördüğünüz gibi önceleri spor değişkenini çağırdığımda karşıma **tenis** değerini basıyorken, değişkenimizi tekrar tanımlamamız yani diğer bir değişle üzerine yeni değer yazmamız sonucu, aldığımız çıktı **futbol** olarak değişmiş oldu. İlerleyen kısımlarda değiştirilemez(sabit) değişkenler tanımlama konusuna ayrıca değiniyor olacağız ancak şimdilik basit değişken tanımlama işlemleri ile yapılan tanımlamaların değiştirilebilir değerler aldığını unutmayın lütfen.
+Gördüğünüz gibi önceleri **spor** değişkenini çağırdığımda karşıma **tenis** değeri basılıyorken, değişkenimizi tekrar tanımlamamız yani diğer bir deyişle üzerine yeni değer yazmamız sonucu, aldığımız çıktı **futbol** olarak değişmiş oldu. 
 
+İlerleyen kısımlarda değiştirilemez(sabit(readonly)) değişkenler tanımlama konusuna da ayrıca değiniyor olacağız ancak şimdilik basit değişken tanımlama işlemleri ile yapılan tanımlamaların değiştirilebilir değerler aldığını unutmayın lütfen.
 
-Değişkenler yeniden tanımlanabildiği için sistemin çalışmasında rol oynayan, varsayılan olarak tanımlanmış olan değişkenlerle aynı isimlere sahip yeni değişkenler oluşturmama konusunda da dikkatli olmamız gerekiyor. Eğer farkında olmadan sisteme ait değişkenleri yeninden tanımlarsanız sistemle ilgili pek çok soruna yol açabilirsiniz. Bu yüzden, tanımlayacağınız değişkenin daha önce kullanılıp kullanılmadığından tam olarak emin değilseniz, değişkeninizi tanımlamadan önce sistem üzerinde var olup olmadığını kontrol etmenizde fayda var.
-Peki ama nasıl kontrol edebiliriz derseniz,  konsola `echo` yazıp `$` işareti koyduktan sonra <kbd>**Tab**</kbd> tuşuna basarak tanımlı tüm değişkenleri listeleyebilirsiniz. 
+Değişkenler yeniden tanımlanabildiği için sistemin çalışmasında rol oynayan, varsayılan olarak tanımlanmış olan değişkenlerle aynı isimlere sahip yeni değişkenler oluşturmama konusunda da dikkatli olmamız gerekiyor. Eğer farkında olmadan sisteme ait değişkenleri yeniden tanımlarsanız, sistemle ilgili pek çok soruna yol açabilirsiniz. Bu yüzden, tanımlayacağınız değişkenin daha önce kullanılıp kullanılmadığından tam olarak emin değilseniz, değişkeninizi tanımlamadan önce sistem üzerinde var olup olmadığını kontrol etmenizde fayda var.
+
+Konsola `echo` yazıp `$` işareti koyduktan sonra <kbd>**Tab**</kbd> tuşuna basarak tanımlı tüm değişkenleri listeleyebilirsiniz. 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/15.png)
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/16.png)
@@ -119,13 +136,13 @@ Aşağıdaki tablodan komutun parametrelerine ve yerine getirebildiği işlevler
 
 |Parametre  | İşlev |
 |--|--|
-|-p|Değişkenin niteliklerini bastırma işlevindedir. Print(yazdır) ifadesinin kısaltmasıdır.|
-|-i|Sayısal değişken tanımlama işlevindedir. İnteger(tam sayı) ifadesinin kısaltmasıdır.|
-|-a|Dizi tanımlama işlevindedir. Array(dizi) ifadesinin kısaltmasıdır.|
-|-r|Sabit değişken atama işlevindedir. Readonly(yalnızca okunabilir) ifadesinin kısaltmasıdır.|
-|-x|Değişkeni export(ihraç) ederek, alt kabuklara aktarma işlevindedir.|
+|-p|Değişkenin niteliklerini bastırma işlevindedir. **p**rint(yazdır) ifadesinin kısaltmasıdır.|
+|-i|Sayısal değişken tanımlama işlevindedir. **i**nteger(tam sayı) ifadesinin kısaltmasıdır.|
+|-a|Dizi tanımlama işlevindedir. **a**rray(dizi) ifadesinin kısaltmasıdır.|
+|-r|Sabit değişken atama işlevindedir. **r**eadonly(yalnızca okunabilir) ifadesinin kısaltmasıdır.|
+|-x|Değişkeni **e**xport(ihraç) ederek, alt kabuklara aktarma işlevindedir.|
 
-`declare` komutunu kullanıyorken, eğer değişkenlere özellik eklemek istiyorsak `-` işaretini, şayet var olan özellikleri çıkarmak istiyorsak da `+` işaretini eklemek ya da çıkarmak istediğimiz özelliğin parametresini de belirterek kullanmamız yeterli oluyor. 
+`declare` komutunu kullanıyorken; eğer değişkenlere özellik eklemek istiyorsak `-` işaretini, şayet var olan özellikleri çıkarmak istiyorsak da `+` işaretini, eklemek ya da çıkarmak istediğimiz özelliğin parametresini de belirterek kullanmamız yeterli oluyor. 
 
 
 Sayısal Değişken Tanımlamak
@@ -133,7 +150,7 @@ Sayısal Değişken Tanımlamak
 
 Anlatımlara ilk olarak sayısal değişken tanımlama işlemi ile başlayalım.
 
-Sayısal değişken tanımlamak için konsola `declare -i değişken tanımı` şeklinde komutumuzu girmemiz gerekiyor. 
+Sayısal değişken tanımlamak için konsola `declare -i değişken="değeri"` şeklinde komutumuzu girmemiz gerekiyor. 
 
 Ben **9** değerine sahip **rakam** isimli bir sayısal değişken tanımlamak istediğim için konsola `declare -i rakam="9"` komutumu giriyorum. 
 
@@ -143,9 +160,9 @@ Böylelikle **rakam** isimli sayısal değişkenime **9** rakamını atamış ol
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/18.png)
 
-Sizlerin de gördüğü gibi konsol bana çıktı olarak `declare -i rakam` şeklinde bir çıktı bastı. Bu çıktı ile değişkenimizin sayısal bir değişken olduğunu teyit etmiş olsak da kesin olarak emin olmak adına, değişkenimize sayısal değerlerin dışında herhangi bir değer atamaya çalışarak bu durumu netleştirelim. 
+Sizlerin de gördüğü gibi konsol bana çıktı olarak `declare -i rakam="9"` şeklinde bir çıktı bastı. Bu çıktı ile değişkenimizin sayısal bir değişken olduğunu teyit etmiş olsak da kesin olarak emin olmak adına, değişkenimize sayısal değerlerin dışında herhangi bir değer atamaya çalışarak bu durumu netleştirelim. 
 
-Bunun için konsola `rakam="test"` komutumu girdikten sonra, değişkenimin durumunu sorgulamak için `declare -p rakam` komutunu kullanıyorum. 
+Bunun için konsola `rakam="test"` komutumu girdikten sonra, değişkenimin durumunu sorgulamak üzere `declare -p rakam` komutunu kullanıyorum. 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/19.png)
 
@@ -155,7 +172,7 @@ Hatırlarsanız değişken tanımlama anlatımlarının başında **rakamlar** i
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/20.png)
 
-Gördüğünüz gibi sayısal özellik atamadığım değişkenin içeriğindeki sayısal veriler kolaylıkla değişmiş oldu. Böylelikle sayısal değişkenin sıradan değişken tanımlamaktan farkını kıyaslayarak görmüş olduk.
+Gördüğünüz gibi sayısal özellik atamadığım değişkenin içeriğindeki sayısal veriler kolaylıkla değişmiş oldu. Böylelikle sayısal değişken ile sıradan değişken tanımlamanın farkını kıyaslayarak görmüş olduk.
 
 Ancak tanımladığımız sayısal değişkenler her zaman sayısal değişken olarak kalmak zorunda da değil. Değişkenimizin sınıfını tekrar eski hale getirmek istersek ekleme işleminde kullandığımız **-** işareti yerine  bu sefer **+** işaretini kullanmamız yeterli oluyor. Yani ben **rakam** isimli sayısal değişkenimin, sayısal değişken tutma özelliğini kaldırmak istersem; konsola `declare +i rakam` şeklinde komut girmem yeterli oluyor. 
 
@@ -169,7 +186,7 @@ Dizi Tanımlamak
 -
 Birden fazla değeri tek bir değişken içerisine toparlamak istediğimizde dizileri kullanabiliyoruz. 
 
-Bu işlem için `declare` komutunun `a` parametresini kullanıyoruz. Komutumuzun kullanımı `declare -a dizi=(değer1 değer2 değer3)` şeklindedir.
+Dizi tanımlamak için `declare` komutunun `a` parametresini `declare -a dizi=(değer1 değer2 değer3)` şeklinde kullanabiliyoruz.
 
 Ayrıca `declare` komutunu kullanmadan, dizide yer alacak ifadeleri parantez içine `dizi=(değer1 değer2 değer3 )` şeklinde alarak da dizi belirtebiliyoruz. Buradaki parantezler o değişkenin bir dizi olduğunu otomatik olarak belirtiyor.
 
@@ -181,17 +198,17 @@ Dizilerin kullanımına en basit örnek alışveriş listesi olarak verilebilir.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/23.png)
 
-Böylelikle her bir değere **0** dan başlayarak sırasıyla birer index değeri atanmış oldu. Yani örneğin **su** ifadesi ilk değer olduğu için **0** index numarasını almışken, **çay** değerinin index numarası **2** olmuş oldu.
+Böylelikle her bir değere **0 dan başlayarak** sırasıyla birer index numarası atanmış oldu. Yani örneğin **su** ifadesi ilk değer olduğu için **0** index numarasını almışken, 3. sıradaki **çay** değerinin index numarası **2** olmuş oldu.
 
 Bizler de sıralı şekilde atanan bu index değerleri sayesinde istediğimiz değerleri diziden çağırabiliyoruz.
 
-Örneğin dizide yer alan ilk değeri çağırmak istesem konsola `echo ${liste[0]}` komutunu girmem yeterli oluyor.
+Örneğin dizide yer alan ilk değeri çağırmak istersem konsola `echo ${liste[0]}` komutunu girmem yeterli oluyor.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/24.png)
 
 Gördüğünüz gibi **0** index numarası ile ilk değerimizi ekran bastırmış olduk.
 
-Bu işlemi aynı şekilde diğer değerlerimizi bastırmak için de kullanabiliriz.
+Bu işlemi aynı şekilde diğer değerlerimizi tek tek bastırmak için de kullanabiliriz.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/25.png)
 
@@ -223,7 +240,7 @@ Sabit Değişken Tanımlamak
 
 Şimdi ise tanımladığımız değişkenin değerinin, değiştirilemez şekilde sabit kalmasını nasıl sağlarız bunu görelim. Bu işlem için `readonly` komutunu ya da `declare` komutunun `r` parametresini kullanabiliyoruz.
 
-Örneğin ben **sabit** isimli bir değişkenin değerini sabitlemek üzere konsola `readonly sabit="sabit değer"` şeklinde komutumu giriyorum. Daha sonra atadığım sabit değeri değiştirmeye çalışarak, değerin gerçekten de sabit olup olmadığını teyit etmek için, sabit isimli değişkenime yeni değer atamaya çalışıyorum. 
+Örneğin ben **sabit** isimli bir değişkenin değerini sabitlemek üzere konsola `readonly sabit="sabit değer"` şeklinde komutumu giriyorum. Daha sonra atadığım sabit değeri değiştirmeye çalışarak, değerin gerçekten sabit olup olmadığını teyit etmeye çalışıyorum.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/31.png)
 
@@ -247,7 +264,7 @@ Bu durumu teyit etmek için değişkenimizin sabitlik özelliğini `declare +r` 
 Komutumuzu girdik ancak gördüğünüz gibi değişken sabit değere sahip olduğundan konsol bu işlemin mümkün olmadığını belirtiyor. 
 Peki ama sabit değişkenler gerçekten sonsuza kadar tanımlandığı şekilde mi kalıyor ?
 
-Aslında bu durum; yalnızca değişkenin tanımlandığı konsol ekranı için geçerli olduğundan, konsol kapatıldığında tanımlanan tüm değişkenlerle birlikte sabit değişkenler de sıfırlanmasıyla sonuçlanır.
+Aslında bu durum; yalnızca değişkenin tanımlandığı konsol ekranı için geçerli olduğundan, konsol kapatıldığında tanımlanan tüm değişkenlerle birlikte sabit değişkenlerin de sıfırlanmasıyla sonuçlanır.
 Bu durumun daha net anlamak için lütfen okumaya devam edin.
 
 
@@ -274,25 +291,38 @@ Tanımlamaları yaptık şimdi de betik dosyamızı çalıştırarak sonuçları
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/37.png)
 
-Gördüğünüz gibi betik dosyası içerisinde tanımlamış olduğum **degisken1** basılırken daha önce tanımlamış olduğum **degisken** basılmadı. Bunun nedeni başta da belirtiğim şekilde, tanımlanan değişkenlerin **export** edilmediği sürece yalnızca tanımlandığı kabuk üzerinde çalışabildiğidir.
-Biz betik dosyasını çalıştırdığımızda bulunduğumuz kabuk altında hemen bir alt kabuk oluşturuldu ve betik dosyamız bu alt kabuk üzerinde yürütüldü. Dolayısı ile üst kabukta tanımlanmış olan değişken alt kabuğa **export** edilmediği için alt kabuk tarafından tanınamadı ve değeri basılamadı.
+Gördüğünüz gibi betik dosyası içerisinde tanımlamış olduğum **degisken1** basılırken daha önce tanımlamış olduğum **degisken** basılmadı. Bunun nedeni başta da belirtiğim şekilde, tanımlanan değişkenlerin `export` edilmediği sürece yalnızca tanımlandığı kabuk üzerinde çalışabildiğidir.
+Biz betik dosyasını çalıştırdığımızda bulunduğumuz kabuk altında hemen bir alt kabuk oluşturuldu ve betik dosyamız bu alt kabuk üzerinde yürütüldü. Dolayısı ile üst kabukta tanımlanmış olan değişken alt kabuğa `export` edilmediği için alt kabuk tarafından tanınamadı ve değeri basılamadı.
 
-Şimdi aynı işlemi export ederek tekrarlayalım.
+Şimdi aynı işlemi `export` ederek tekrarlayalım.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/38.png)
 
 
-Gördüğünüz gibi değişkenimizi **export** ettikten sonra alt kabukta çalıştırılan betik dosyası içerisinden de bu değişkeni çağırabildik. Böylelikle `export` komutunun ivleşini test ederek görmüş olduk. Ayrıca `export` komutu yerine aynı işlem için `declare` komutunun `x` parameteresi `declare -x degisken` şeklinde de kullanabilirdik.
+Gördüğünüz gibi değişkenimizi `export` ettikten sonra alt kabukta çalıştırılan betik dosyası içerisinden de bu değişkeni çağırabildik. Böylelikle `export` komutunun işlevini test ederek görmüş olduk. Ayrıca `export` komutu yerine aynı işlem için `declare` komutunun `x` parameteresini `declare -x degisken` şeklinde de kullanabilirdik.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/39.png)
+
+Değişkenlerin Sıfırlanması (unset)
+-
+Tanımladığımız değişkenleri sıfırlamak yani tanımsız hale getirmek istersek `unset` komutunu kullanabiliyoruz.
+Şimdi örnek olması açısından çeşitli değişkenleri sıfırlamayı deneyelim.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/unset-1.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/unset-2.png)
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/unset-3.png)
+
+
+Gördüğünüz gibi sabit değişkenler hariç diğer değişkenler `unset` komutu sayesinde kolaylıkla sıfırlanabiliyor.
+Sabit değişkenlerin sıfırlanmasının ancak değişkenin tanımlandığı kabuğun kapatılması ile mümkün olacağını zaten biliyorsunuz. O yüzden sabit değişkenler hariç, tanımlamış olduğunuz diğer değişkenleri tanımsız yapmak isterseniz `unset` komutunu kullanmanız yeterli.
 
 
 Değişken Değerlerin Farklı Şekillerde Bastırılması
 =
 
-Bu kısıma kadar pek çok değişken tanımlayıp bu değişkenlerin değerlerini konsola bastırdık. Ancak şu ana kadarki bastırmış olduğumuz değerler bizlerin atadığı değerlerin birebir aynısıydı. Fakat her zaman basılan bu değerlerin tamamına ihtiyaç duymayabiliyoruz. İşte bu gibi durumlarda alacağımız çıktıları düzenlemek, yani örneğin bir kısmını bastırmak ya da bir kısımını silmek gibi işlevleri yerine getirmek için birkaç farklı kullanım şekli bulunuyor. Şimdi genel olarak bu kullanımları ele alalım.
+Bu kısıma kadar pek çok değişken tanımlayıp bu değişkenlerin değerlerini konsola bastırdık. Ancak şu ana kadar ki bastırmış olduğumuz değerler bizlerin atadığı değerlerin birebir aynısıydı. Fakat her zaman basılan bu değerlerin tamamına ihtiyaç duymayabiliyoruz. İşte bu gibi durumlarda alacağımız çıktıları düzenlemek, yani örneğin bir kısmını bastırmak ya da bir kısımını silmek gibi işlevleri yerine getirmek için birkaç farklı kullanım şekli bulunuyor. Şimdi genel olarak bu kullanımları ele alalım.
 
-Değerin bir kısmını seçmek :
+Değerin bir kısmını bastırmak :
 -
 
 Değişkene atanan değer içerisinde belirli bir kısımı almak istersek komutumuzu **${degisken:başlangıç:uzunluk}**  şeklinde kullanıyoruz.
@@ -323,13 +353,15 @@ Değişkene atanan değer içerisinde belirli bir kısımı almak istersek komut
 Değişken değeri silmek :
 -
 
-Değişkenimizin çıktısında basılacak olan değerleri silmek için iki farklı kullanım metodu bulunuyor. Bunlardan ilki değerleri başlangıçtan itibaren silen **#** işareti, ikincisi ise tersi şekilde değeri sondan itibaren silen **%** işaretidir. Sırasıyla bu kullanımları açıklayacak olursak;
+Değişkenimizin çıktısında basılacak olan değerleri silmek için iki farklı kullanım metodu bulunuyor. 
 
-Örneğin **{}** şeklinde tanımlanmış bir değişkenin değerlerinin **başından** başlayarak;
+Bunlardan ilki değerleri **başlangıçtan itibaren** silen **#** işareti, ikincisi ise tersi şekilde değeri **sondan itibaren** silen **%** işaretidir. Sırasıyla bu kullanımları açıklayacak olursak;
 
 Öncelikle örnek üzerinden ilerlemek üzere `silinecek=(sal salı salıncak)` şeklinde değişkenimizi tanımlayalım.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/44.png)
+
+Örneğin `silinecek=(sal salı salıncak)` şeklinde tanımlanmış bir değişkenin değerlerinin **başından** başlayarak;
 
 **Bir harf grubuna kadar olan kısmını silmek istersek;** `${silinecek[@]##*silinecek_harf_grubu}` komutunu kullanıyorken..
 
@@ -345,13 +377,14 @@ Komut içerisinde yer alan kısımları açıklayacak olursak;
 
 Kare işareti(**#**) de silme işlevini yerine getiriyor. Eğer silinecek ifade birleşik harf grubu ise çift kare(**##**) işareti kullanılmalıdır.
 
-Ayrıca silinecek harf veya harf gurubundan önce kullandığımız `*` işareti, ilgili harfe ya da harf gurubuna kadar olan tüm ifadelerin otomatik olarak tamamlanabilmesi sağlıyor.
+Ayrıca silinecek harf veya harf gurubundan önce kullandığımız `*` işareti, ilgili harfe ya da harf grubuna kadar olan tüm ifadelerin otomatik olarak tamamlanabilmesi sağlıyor.
 
 
-Ayrıca tüm ifadelerin tek seferde kapsamak yerine özel olarak bir ifadeyi de hedefleyebiliriz, örneğin sadece 3. değerde yer alan **c** harflerine kadar olan kısımı silmek için komutumu `${silinecek[2]#*c}` şeklinde kullanabilirim.
+Ayrıca tüm ifadelerin tek seferde kapsamak yerine özel olarak bir ifadeyi de hedefleyebiliriz, örneğin dizide yer alan 3. değerde yer alan **c** harflerine kadar olan kısımı silmek için komutumu `${silinecek[2]#*c}` şeklinde kullanabilirim.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/47.png)
 
+<hr>
 
 Değerlerimizi sondan itibaren silmek üzere;
 
@@ -386,21 +419,61 @@ Bunun dışında değişiklik yapmak istediğiniz ifade illa bir kelime bütün�
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/51.png)
 
 
-Şimdiye kadar birkaç farklı metod uygulayarak, orjinal değerleri istediğimiz şekilde manipüle edip tam ihtiyacımıza göre çıktılar elde ettik. **Ancak bu aldığımız çıktıların geçici değerler olduğunu ve orjinal değerlerde kalıcı değişikliğe yol açmadığını lütfen unutmayın.** Farklı şekillerde bastırma işlemleri ile bizler sadece aldığımız çıktıları ihtiacımıza göre şekillendirmiş olduk arkadaşlar.
+Şimdiye kadar birkaç farklı metod uygulayarak, orjinal değerleri istediğimiz şekilde manipüle edip tam ihtiyacımıza göre çıktılar elde ettik. **Ancak bu aldığımız çıktıların geçici değerler olduğunu ve orjinal değerlerde kalıcı değişikliğe yol açmadığını lütfen unutmayın.** Farklı şekillerde bastırma işlemleri ile bizler sadece aldığımız çıktıları ihtiyacımıza göre şekillendirmiş olduk arkadaşlar.
 
-Değişkenlerin Sıfırlanması (unset)
--
-Tanımladığımız değişkenleri sıfırlamak yani tanımsız hale getirmek istersek `unset` komutunu kullanabiliyoruz.
-Şimdi örnek olması açısından çeşitli değişkenleri sıfırlamayı deneyelim.
+Ayrıca yeri gelmişken değişkenleri bastırırken kullandığımız `echo` komutununun çoklu işlevlerini kullanarak farklı çıktılar elde etmeyi de ele almak istiyorum. Hangi parametrenin hangi işlevde olduğunu kısaca aşağıdaki tabloya bakayarak anlayabilirsiniz.
 
-![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/unset-1.png)
-![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/unset-2.png)
-![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/unset-3.png)
+|Seçenekler| Açıklama |
+|--|--|
+|**-e**|Ters eğik çizgi ile belirtilen özelliklerin yorumlanmasını sağlar. |
+|**-n**|Sonraki satırı atlamaz.|
+|**\n**|Yeni satıra atlar.|
+|**\b**|Soldan bir karakter siler. |
+|**\e**|Sağdan bir karakter siler. |
+|**\c**|Sağında yer alan her şeyi siler. |
+|**\r**|Satır başına göre tamamlama yapar.|
+|**\t**|Tab tuşu görevi görür.|
+|**\v**|Dikey tab görevi görür.|
+|**\\\\**|Ters eğik çizgi basmak üzere kullanılır. |
+|**\a**|Çıktı ile birlikte konsoldan uyarı sesi çıkmasını sağlar.|
+|**$(komut)**|Komutların echo komutu üzerinden basılmasını sağlar.
+|**'komut'**| Komutların echo komutu üzerinden basılmasını sağlar.
 
 
-Gördüğünüz gibi sabit değişkenler hariç diğer değişkenler `unset` komutu sayesinde kolaylıkla sıfırlanabiliyor.
-Sabit değişkenlerin sıfırlanmasının ancak değişkenin tanımlandığı kabuğun kapatılması ile mümkün olacağını zaten biliyorsunuz. O yüzden sabit değişkenler hariç, tanımlamış olduğunuz diğer değişkenleri tanımsız yapmak isterseniz `unset` komutunu kullanmanız yeterli.
 
+Şimdi sırasıyla işlevleri örnekler üzerinden açıklayarak devam edelim.
+
+**-e parametresi**; `echo` komutunun ardından gireceğimiz **ters slash** işaretli özel parametrelerin doğru şekilde yorumlanabilmesini sağlar. Yani `echo` komutunun farklı bastırma seçeneklerini kullanmak istiyorsak mutlaka **-e** parametresini kullanmamız gerekiyor. Bu durumu örnekler üzerinden çok daha net kavramış olacaksınız.
+**-n parametresi**; Satır atlanmasını engeller. İşlevini anlamak için aşağıdaki iki çıktıyı dikkatlice incelemeniz yeterlidir.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo0.png)
+
+**\n parametresi**; kullanıldığı yerden sonra, bir alt satıra geçerek çıktıları bastırır. Yani bir satır atlamış olur.
+
+Örnek olması açısından **"test metni"** ifadesini alt alta basılacak şekilde ayarlamak istiyorum.
+Bunun için `echo` komutunun ardından **-e** parametresini kullanıp bir alt satıra geçmek istediğim kısıma **\n** ifadesini ekliyorum.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo1.png)
+
+Gördüğünüz gibi **metni** ifadesinin hemen öncesinde kullanmış olduğum **\n** parametresi **metni** ifadesinin bir alt satırda basılmasını sağladı. Aynı işlemi **-e** parametresi olmadan yapmaya çalışsaydık, `echo` komutu **\n** ifadesinin işlevini algılayamayacağından **metni** ifadesini bir alt satıra basamayacaktı. Bu durumu aşağıdaki çıktıya bakarak gözlemleyebilirsiniz.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo2.png)
+
+**\b parametresi**; Parametrenin kullanıldığı yerin solundaki bir karakteri silme işlevindedir.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo3.png)
+
+**\e parametresi**; Parametrenin kullanıldığı yerin sağındaki bir karakteri silme işlevindedir.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo4.png)
+
+**\c parametresi**; Parametrenin kullanıldığı yerin sağındaki her şeyi silme işlevindedir.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo5.png)
+
+Gördüğünüz gibi sağ tarafta yer alan her şeyi sildiğinden, bir alt satıra geçme işlevi de siliniyor ve çıktı ile yeni komut girişi aynı satırda gözüküyor. Hatta son çıktıya dikkatlice bakacak olursanı, satırın sonuna eklemiş olduğum **\c** parametresi tıpkı **-n** parametresi gibi işlev görerek bir sonraki satıra atlamadan aynı satırdan devam edilmesini sağlıyor.
+
+**\r parametresi**;
 
 Sistemde Tanımlı Ortam(Çevre) Değişkenleri
 =
@@ -472,7 +545,7 @@ Gördüğünüz gibi betik dosyam PATH yolu üzerinde bulunan bir konuma eklenin
 
 Aynı şekilde dosyamızın bulunduğu konumu **PATH** yoluna ekleyerek de her yerden ulaşılabilir kılabiliriz. Bunun için **/etc** dizini altında bulunan ve her oturum açılışında otomatik olarak okunan **profile** dosyası içerisine `PATH="path yoluna eklenecek dizin":$PATH` şeklinde yeni **PATH** yolunu belirtmeliyiz.
 
-Ben taşımış olduğum selam.sh dosyasını eski konumuna taşıyarak, bu konumu yani root kullanısının ana dizinini **profile** dosyasına `PATH="/root/:$PATH"` şeklinde ekleyerek her yerden ulaşıabilir kılıyorum. 
+Ben taşımış olduğum **selam.sh** dosyasını eski konumuna taşıyarak, bu konumu yani root kullanısının ana dizinini **profile** dosyasına `PATH="/root/:$PATH"` şeklinde ekleyerek her yerden ulaşılabilir kılıyorum. 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/p3.png)
 
@@ -482,7 +555,7 @@ Yaptığımız değişikliklerin geçerli olabilmesi için oturumu kapatıp tekr
 
 Ve en nihayetinde **PATH** değişkeni sayesinde betik dosyamızı her yerden çalıştırılabilir yapmış olduk.
 
-Neticede sizlerin de gördüğü gibi; bizlerin tanımladığı değişkenler ile sistemde varsayılan olarak tanımlı değişkenleri bastırıken komut kullanımı açısından hiç bir fark bulunmuyor. Buradaki tek küçük fark, sistemde varsayılan olaark tanımlı değişkenlerin daha ayır edici olması açısında genellikle istisnalar dışında tamamı büyük harflerden oluşacak şekilde tanımlanmış olmalarıdır.
+Neticede sizlerin de gördüğü gibi; bizlerin tanımladığı değişkenler ile sistemde varsayılan olarak tanımlı değişkenleri bastırıken komut kullanımı açısından hiç bir fark bulunmuyor. Buradaki tek küçük fark, sistemde varsayılan olarak tanımlı değişkenlerin daha ayırt edici olması açısında genellikle istisnalar dışında tamamı büyük harflerden oluşacak şekilde tanımlanmış olmalarıdır.
 
 Şimdiye kadar hem kendi tanımladığımız hem de sistemde varsayılan olarak tanımlı değişkenleri ele aldık. Şimdi de tanımlanan değişkenlerin kapsamlarını 3 kategori altında tek tek ele alalım; 
 
@@ -496,7 +569,7 @@ Gelin şimdi teker teker kullanımlarına değinelim.
 
 **Sadece o an kullanmakta olduğumuz konsola özel olan ve konsolu kapattıktan sonra sıfırlanan ortam değişkenidir.** Aşağıdaki örnek ile adım adım açıklayalım bu durumu:
 
-Konsola isim="taylan" şeklinde bir değişken tanımlıyıp, bu değişkeni bastırıyorum.
+Konsola `isim="taylan"` şeklinde bir değişken tanımlıyıp, bu değişkeni bastırıyorum.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/53.png)
 
@@ -519,7 +592,7 @@ BASH, her oturum açtığımızda tüm ayarlarını ve davranışlarını kullan
 
 Örnek olması açısında bu sefer de `soyisim="bildik"` değişkenini **yalnızca root kullanıcısına özel** olarak tanımlamayı ele alıyorum.
 
-Öncelikle ana dizinde bulunan <kbd>.bashrc</kbd> dosyasını açmak üzere <code>nano -w ~/.bashrc</code> komutunu girelim.
+Öncelikle ana dizinde bulunan <kbd>.bashrc</kbd> dosyasını açmak üzere <code>nano ~/.bashrc</code> komutunu girelim.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/56.png)
 
@@ -548,18 +621,18 @@ Hatta root kullanıcı hesabındayken birden fazla konsol üzerinden bile **soyi
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/61.png)
 
-Gördüğünüz gibi **root** kullanıcısına özel olarak tanımladığımız **soyisim** değişkenini **root** kullanıcısı dışında diğer kullanıcılar ulaşamıyor.
+Gördüğünüz gibi **root** kullanıcısına özel olarak tanımladığımız **soyisim** değişkenine, **root** kullanıcısı dışında diğer kullanıcılar ulaşamıyor.
 
 
 ### Sistem Genelinde
 
-Eğer yaptığımız değişiklik bütün kullanıcı oturumlarında aynı şekilde geçerli olsun istiyorsak, değişkenin sistemde her oturum açıldığında okunan bir dosyada bulunması gerekiyor. Bu yüzden tanımlayacağımız değişkeni <kbd>/etc</kbd> dizini altında yer alan <kbd>bash.bashrc</kbd> dosyasında uygun şekilde eklemeliyiz. 
+Eğer yaptığımız değişiklik bütün kullanıcı oturumlarında aynı şekilde geçerli olsun istiyorsak, değişkenin sistemde her oturum açıldığında okunan bir dosyada bulunması gerekiyor. Bu yüzden tanımlayacağımız değişkeni <kbd>/etc</kbd> dizini altında yer alan <kbd>bash.bashrc</kbd> dosyasına uygun şekilde eklemeliyiz. 
 
-Öncelikle dosyamızı açmak üzere konsola <code>nano -w /etc/bash.bashrc</code> komutunu girelim.
+Öncelikle dosyamızı açmak üzere konsola <code>nano /etc/bash.bashrc</code> komutunu girelim.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/62.png)
 
-Bu kez de örnek olması için lokasyon="istanbul" değişkenini <kbd>bash.bashrc</kbd> dosyamıza ekleyip kaydedelim.
+Bu kez de örnek olması için `lokasyon="istanbul"` değişkenini <kbd>bash.bashrc</kbd> dosyamıza ekleyip kaydedelim.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/63.png)
 
@@ -576,10 +649,10 @@ Ardından değişikliklerin geçerli olup olmadığını denemek için birden fa
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/66.png)
 
-Son olarak da can kullanıcısı üzerinden değişkenimizi çağıralım.
+Son olarak da **can** kullanıcısı üzerinden değişkenimizi çağıralım.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/67.png)
 
-Çıktımız hepsinde lokasyon değişkeninin değeri olarak istanbul değerini aldığımıza göre sistem genelinde tanımlamayı başarmışız demektir. Yaptığımız bu değişiklik bütün kullanıcılar için yani sistem geneli için geçerlidir. Bu durumu başka bir hesap oluşturarak kendiniz de gözlemleyebilirsiniz.
+Çıktılarımızın hepsinde **lokasyon** değişkeninin değeri olarak **istanbul** ifadesini gördüğümüze göre, değişkenimizi sistem genelinde tanımlamayı başarmışız demektir. Yaptığımız bu değişiklik bütün kullanıcılar için yani sistem geneli için geçerlidir. Bu durumu başka bir hesap oluşturarak kendiniz de gözlemleyebilirsiniz.
 
-Ayrıca değişiklikleri geri almak isterseniz eklediğiniz ifadeyi ilgili dosyadan silin ve sistemi <code>source ilgili_dosya_adı</code> şeklindeki komut bütünü ile yeniden konfigüre edin, böylelikle bütün değişimler düzelmiş olacaktır.
+Ayrıca değişiklikleri geri almak isterseniz eklediğiniz ifadeyi ilgili dosyadan silin ve sistemi <code>source ilgili_dosya_adı</code> şeklindeki komut bütünü ile yeniden konfigüre edin, böylelikle bütün değişiklikler sıfırlanmış olacaktır.
