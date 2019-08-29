@@ -443,12 +443,22 @@ Ayrıca yeri gelmişken değişkenleri bastırırken kullandığımız `echo` ko
 
 Şimdi sırasıyla işlevleri örnekler üzerinden açıklayarak devam edelim.
 
-**-e parametresi**; `echo` komutunun ardından gireceğimiz **ters slash** işaretli özel parametrelerin doğru şekilde yorumlanabilmesini sağlar. Yani `echo` komutunun farklı bastırma seçeneklerini kullanmak istiyorsak mutlaka **-e** parametresini kullanmamız gerekiyor. Bu durumu örnekler üzerinden çok daha net kavramış olacaksınız.
-**-n parametresi**; Satır atlanmasını engeller. İşlevini anlamak için aşağıdaki iki çıktıyı dikkatlice incelemeniz yeterlidir.
+-e
+-
+
+`echo` komutunun ardından gireceğimiz **ters slash** işaretli özel parametrelerin doğru şekilde yorumlanabilmesini sağlar. Yani `echo` komutunun farklı bastırma seçeneklerini kullanmak istiyorsak mutlaka **-e** parametresini kullanmamız gerekiyor. Bu durumu örnekler üzerinden çok daha net kavramış olacaksınız.
+
+-n
+-
+
+Satır atlanmasını engeller. İşlevini anlamak için aşağıdaki iki çıktıyı dikkatlice incelemeniz yeterlidir.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo0.png)
 
-**\n parametresi**; kullanıldığı yerden sonra, bir alt satıra geçerek çıktıları bastırır. Yani bir satır atlamış olur.
+\n
+-
+
+Kullanıldığı yerden sonra, bir alt satıra geçerek çıktıları bastırır. Yani bir satır atlamış olur.
 
 Örnek olması açısından **"test metni"** ifadesini alt alta basılacak şekilde ayarlamak istiyorum.
 Bunun için `echo` komutunun ardından **-e** parametresini kullanıp bir alt satıra geçmek istediğim kısıma **\n** ifadesini ekliyorum.
@@ -459,21 +469,64 @@ Gördüğünüz gibi **metni** ifadesinin hemen öncesinde kullanmış olduğum 
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo2.png)
 
-**\b parametresi**; Parametrenin kullanıldığı yerin solundaki bir karakteri silme işlevindedir.
+\b
+-
+
+Parametrenin kullanıldığı yerin solundaki bir karakteri silme işlevindedir.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo3.png)
 
-**\e parametresi**; Parametrenin kullanıldığı yerin sağındaki bir karakteri silme işlevindedir.
+\e
+-
+
+Parametrenin kullanıldığı yerin sağındaki bir karakteri silme işlevindedir.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo4.png)
 
-**\c parametresi**; Parametrenin kullanıldığı yerin sağındaki her şeyi silme işlevindedir.
+\c
+-
+
+Parametrenin kullanıldığı yerin sağındaki her şeyi silme işlevindedir.
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo5.png)
 
 Gördüğünüz gibi sağ tarafta yer alan her şeyi sildiğinden, bir alt satıra geçme işlevi de siliniyor ve çıktı ile yeni komut girişi aynı satırda gözüküyor. Hatta son çıktıya dikkatlice bakacak olursanı, satırın sonuna eklemiş olduğum **\c** parametresi tıpkı **-n** parametresi gibi işlev görerek bir sonraki satıra atlamadan aynı satırdan devam edilmesini sağlıyor.
 
-**\r parametresi**;
+\r
+-
+
+Parametrenin kullanıldığı kısımdan önceki..
+
+\t
+-
+
+Parametrenin kullanıldığı
+
+\v
+-
+
+Parametrenin kullanıldığı 
+
+\\
+-
+
+Parametrenin kullanıldığı 
+
+\a
+-
+
+Parametrenin kullanıldığı 
+
+$(komut)
+-
+
+Parametrenin kullanıldığı 
+
+'komut'
+-
+
+Parametrenin kullanıldığı 
+
 
 Sistemde Tanımlı Ortam(Çevre) Değişkenleri
 =
