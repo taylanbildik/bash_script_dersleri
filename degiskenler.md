@@ -538,7 +538,9 @@ Basılan ifade ile birlikte eğer konsol destekliyorsa uyarı sesinin çıkması
 $(komut) ya da 'komut'
 -
 
+**Dolar** işaretinden sonra **parantez içerisinde** yazacağımız komutla ya da **ters tırnak**(<kbd>Alt Gr + ,</kbd>) içerisinde yazacağımız komut ile `echo` komutu üzerinden konsol komutlarını bastırabiliriz. 
 
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo12.png)
 
 
 Sistemde Tanımlı Ortam(Çevre) Değişkenleri
