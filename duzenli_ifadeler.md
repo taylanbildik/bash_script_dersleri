@@ -36,21 +36,22 @@ Ayrıca örneklerde ele aldığımız hariç tutma durumunu, ihtiyacınaza göre
 
 
  
-**\{n\}** :  Kendisinden önceki karakterin n kez tekrar edildiğiniz belirtir.
+**\{x\}** :  Kendisinden önceki karakterin x kez tekrar edildiğiniz belirtir.
 
-**\{n,m\}** : Kendisinden önceki karakterin en az n en fazla m kez tekrar ettiği durumları kapsar.
+**\{x,y\}** : Kendisinden önceki karakterin en az x den fazla y kez tekrar ettiği durumları kapsar.
 
-**\{n,\}** : Kendisinden önceki karakterin en az n kez tekrar edildiğiniz belirtir.
+**\{x,\}** : Kendisinden önceki karakterin **en az x kez** tekrar edildiğiniz belirtir.
 
-**\+** :
+**\+** : Kendisinden önceki karakterin bir ya da daha fazla olduğunuz belirtir.
 
-**\?** :
+**\?** : Kendisindne önceki karakterin 0 ya da 1 kez oldğunu belirtir.
 
-**\|** :
 
-**\(..\)** :
+**\|** : Kendisindne bir önceki veya bir sonraki karaktere den gelir.
 
-**\\** : 
+**\(..\)** : Grup olarak düzenli deyimler tanımlar.
+
+**\\** : Özel karakterlerin normal karakterler olarak algılanmasını sağlarlar.
 
 **Kullanım Örnekleri**
 
