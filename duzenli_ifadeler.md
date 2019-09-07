@@ -9,7 +9,47 @@ Ayrıca anlatımlarda; düzenli ifadelerin daha önce temel linux eğitimde değ
 
 Başlamadan evvel, burada yer alan bilgilerin ve kullanımların tam anlaşılabilmesi için buradaki örneklerin haricinde sizlerin de pek çok alıştırma yapması gerektiğini lütfen unutmayın. Bilgilerin kalıcı olması adına lütfen buradaki örneklerin dışına çıkarak, bolca alıştırma yapın.
 
-**[]** :  iki köşeli parantez arasına ulaşmak istediğiniz hedefteki ayırt edici karakterli yazmak üzerinedir.
+**[]** :  iki köşeli parantez arasına ulaşmak istediğiniz hedefteki ayırt edici karakterli yazmak üzerinedir. 
+
+<kbd>[]</kbd> karakterinin kullanımı, iki köşeli parantez arasına ulaşmak istediğiniz hedefteki ayırt edici karakterli yazmak üzerinedir.
+
+Örnek olması açısında "**dosya**" isimli belgelerden sadece sonunda **2,3,4** olanları kapsayacak bir komut olması için konsola `ls -l [234]` komutunu verdim.
+
+<img src="https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/15-%20Joker%20Karakterler/6.png" width="875">
+
+Bir örnek daha verelim.
+
+**[Dd]osya[Aa]dı** şeklinde bir belirtme; **DosyaAdı, Dosyaadı, dosyaAdı, dosyaadı** şeklindeki bütün isimleri kapsayacaktır. Bu sayede ilgili dosyalar için tüm küçük büyük harf kombinasyonu kolaylıkla sağlanmış olur.
+
+<img src="https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/15-%20Joker%20Karakterler/7.png" width="875">
+
+Ayrıca kullanım şekillerine çok fazla örnek verilebilir ancak burada birkaç örnek daha vererek keşfi size bırakıyorum.
+
+**Not** : Burada belirtilen **x y z** temsili değerleri ifade etmektedir !
+
+**[0-9] :** 0'dan 9'a kadar olan rakamları kapsar.
+
+<img src="https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/15-%20Joker%20Karakterler/8.png" width="875">
+
+**[x,y,z] :** belirtilen değerlerle eşleşenleri basar.
+
+<img src="https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/15-%20Joker%20Karakterler/9.png" width="875">
+
+**[x-z] :** x ile z değerleri arasındaki karakterlerle eşleşir.
+
+<img src="https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/15-%20Joker%20Karakterler/10.png" width="875">
+
+**[xyz] :** belirtilen değerlerle eşleşenleri basar.
+
+<img src="https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/15-%20Joker%20Karakterler/11.png" width="875">
+
+**[!xyz] :** Belirtilen karakterlerin dışındakileri diğer tüm karakterleri basar.
+
+<img src="https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/15-%20Joker%20Karakterler/12.png" width="875">
+
+**[!x-z] :** Verilen x ile z değeri arasındaki değerler haricindeki karakterler basar.
+
+<img src="https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/15-%20Joker%20Karakterler/13.png" width="875">
 
 **nokta(.)** : Noktanın bulunduğu yere gelebilecek herhangi bir karakteri temsil eder.
 
