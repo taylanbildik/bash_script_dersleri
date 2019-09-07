@@ -13,17 +13,44 @@ Başlamadan evvel, burada yer alan bilgilerin ve kullanımların tam anlaşılab
 
 **nokta(.)** : Noktanın bulunduğu yere gelebilecek herhangi bir karakteri temsil eder.
 
-**^**
-**$**
-**[^..]**
-**\{n\}**
-**\{n,m\}**
-**\{n,\}**
-**\+**
-**\?**
-**\|**
-**\(..\)**
-**\\**
+**^** : Satır başını temsil eder.
+
+
+**$** : Satır sonunu temsil eder.
+
+
+**[^..]** : Kümede belirtilen karakterler haricindeki tüm karakterleri kapsar. Ayrıca şapka işareti yerine **ünlem işareti(!)** de kullananabiliriz.
+
+Şimdi birkaç farklı örnek ile kullanımı ele alalım;
+
+Örneğin sonunda rakam bulunan dosyaları listelemek istemezsek komutumuzu `ls *[^0-9]` şeklinde girebiliriz. Bu sayede `ls` komutu başlangıcı ne olursa olsun sonunda rakam yer alan dosyaları liste dışı bırakıyor.
+
+
+
+Daha net anlaşılması adına bir örnek daha; * işaretinin sona koylması ile hariç tutma durumu, başlangıcında rakam yer alan dosyalar için de uygulanabilir. 
+
+
+
+Ayrıca örneklerde ele aldığımız hariç tutma durumunu, ihtiyacınaza göre rakamlar yerine harfler ya da özel karakterler için de kullanabiliyoruz. 
+
+
+
+ 
+**\{n\}** :  Kendisinden önceki karakterin n kez tekrar edildiğiniz belirtir.
+
+**\{n,m\}** : Kendisinden önceki karakterin en az n en fazla m kez tekrar ettiği durumları kapsar.
+
+**\{n,\}** : Kendisinden önceki karakterin en az n kez tekrar edildiğiniz belirtir.
+
+**\+** :
+
+**\?** :
+
+**\|** :
+
+**\(..\)** :
+
+**\\** : 
 
 **Kullanım Örnekleri**
 
