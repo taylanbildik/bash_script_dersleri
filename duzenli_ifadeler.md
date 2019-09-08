@@ -88,6 +88,31 @@ Ayrıca kullanım şekillerine çok fazla örnek verilebilir ancak burada birka�
 
 <img src="https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/15-%20Joker%20Karakterler/13.png" width="875">
 
+**{}** : Kıvırçık parantez de köşeli paranteze benzer şekilde çalışır.
+
+Çalışma yapısını anlamak için aşağıdaki örneklere göz atabilirsiniz.
+
+{aa,bb,cc,dd}  **=>** aa bb cc dd
+
+{0..12}        **=>** 0 1 2 3 4 5 6 7 8 9 10 11 12
+
+{5..-3}        **=>** 5 4 3 2 1 0 -1 -2 -3 
+
+{a..h}         **=>** a b c d e f g h
+
+{h..a}         **=>** h g f e d c b a
+
+a{0..3}b       **=>** a0b a1b a2b a3b
+
+{a,b{1..3},c,d}  **=>** a b1 b2 b3 c d
+
+{0..9..3} **=>** 0 3 6 9
+
+{1..9..2} **=>** 1 3 5 7 9
+
+{a..z..2} **=>** a c e g i k m o q s u w y
+
+
 **nokta(.)** : Noktanın bulunduğu yere gelebilecek herhangi bir karakteri temsil eder.
 
 **^** : Satır başını temsil eder.
