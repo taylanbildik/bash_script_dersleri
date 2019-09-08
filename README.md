@@ -13,6 +13,16 @@ Sıralı Şekilde Konu Konu Bash Shell Kabuk Programlama Dokümantasyon Müfreda
 - [Gerekli Ortamın Kurulması](https://github.com/taylanbildik/Linux_Dersleri/tree/master/dok%C3%BCmantasyonlar/gerekli_ortam%C4%B1n_kurulmas%C4%B1.md#gerekli-ortam%C4%B1n-kurulmas%C4%B1)	
 - [Başlarken](https://github.com/taylanbildik/bash_script_dersleri/blob/master/baslarken.md)	
 - [Değişkenler](https://github.com/taylanbildik/bash_script_dersleri/blob/master/degiskenler.md)	
+- [Veri Almak(input)](https://github.com/taylanbildik/bash_script_dersleri/blob/master/degiskenler.md)	
+- [Düzenli İfadeler](https://github.com/taylanbildik/bash_script_dersleri/blob/master/degiskenler.md)	
+- [Koşullu İfadeler](https://github.com/taylanbildik/bash_script_dersleri/blob/master/degiskenler.md)	
+- [Hata Yönelendirme](https://github.com/taylanbildik/bash_script_dersleri/blob/master/degiskenler.md)	
+- [Döngüler](https://github.com/taylanbildik/bash_script_dersleri/blob/master/degiskenler.md)	
+- [Pozisyon Değerleri](https://github.com/taylanbildik/bash_script_dersleri/blob/master/degiskenler.md)	
+- [Fonksiyonlar](https://github.com/taylanbildik/bash_script_dersleri/blob/master/degiskenler.md)	
+- [Sinyaller](https://github.com/taylanbildik/bash_script_dersleri/blob/master/degiskenler.md)	
+- [Örnek Projeler](https://github.com/taylanbildik/bash_script_dersleri/blob/master/degiskenler.md)	
+
 
 Dokümantasyon henüz şablon aşamasında..içerik eklenmeye devam ediyor..
 
