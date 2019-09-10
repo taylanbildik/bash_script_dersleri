@@ -436,9 +436,8 @@ Ayrıca yeri gelmişken değişkenleri bastırırken kullandığımız `echo` ko
 |**\v**|Dikey tab görevi görür.|
 |**\\\\**|Ters eğik çizgi basmak üzere kullanılır. |
 |**\a**|Çıktı ile birlikte konsoldan uyarı sesi çıkmasını sağlar.|
-|**$(komut)**|Komutların echo komutu üzerinden basılmasını sağlar.
-|**'komut'**| Komutların echo komutu üzerinden basılmasını sağlar.
-
+|**$(komut)**|Komutların echo komutu üzerinden basılmasını sağlar.|
+|**'komut'**| Komutların echo komutu üzerinden basılmasını sağlar.|
 
 
 Şimdi sırasıyla işlevleri örnekler üzerinden açıklayarak devam edelim.
@@ -542,7 +541,13 @@ $(komut) ya da 'komut'
 
 ![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo12.png)
 
-Ancak hatırlatmak isterim ki; aldığımız çıktılardan da görebileceğiniz gibi, `echo` komutu üzerinden konsol komutlarını çalıştırdığımızda, renklendirme ve içerik düzeni gibi bash kabuğunun sahip olduğu pek çok işlevsel özellik de kayboluyor. Yani bu kullanımı genel olarak yalnızca temel çıktılar elde etmede kullanacağımızı unutmayın lütfen.
+Dikkat ettiyseniz `echo` komutu üzerinden konsol komutlarını bastırırken her seferinde **çift tırnak** kullandık. Bunun nedeni `echo` komutu ile kullanılan tek tırnak ifadesinin konsol komutlarını bastırmıyor olmasıdır. Bu durumu aşağıdaki çıktılara bakarak gözlemleyebilirsiniz.
+
+![alt text](https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/De%C4%9Fi%C5%9Fkenler/echo13.png)
+
+
+Ayrıca hatırlatmak isterim ki; aldığımız çıktılardan da görebileceğiniz gibi, `echo` komutu üzerinden konsol komutlarını çalıştırdığımızda, renklendirme ve içerik düzeni gibi bash kabuğunun sahip olduğu pek çok işlevsel özellik de kayboluyor. Yani bu kullanımı genel olarak yalnızca temel çıktılar elde etmede kullanacağımızı unutmayın lütfen.
+
 
 
 Sistemde Tanımlı Ortam(Çevre) Değişkenleri
