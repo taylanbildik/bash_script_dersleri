@@ -158,18 +158,18 @@ Ayrıca örneklerde ele aldığımız hariç tutma durumunu, ihtiyacınaza göre
 <img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/6.png" width="875">
 
  
-**\\{x\}** 
+**\\{x\\}** 
 =
 
 Kendisinden önceki karakterin x kez tekrar edildiğiniz belirtir.
 
 
-**\\{x,y\}**  
+**\\{x,y\\}**  
 =
 
 Kendisinden önceki karakterin en az x en fazla y kez tekrar ettiği durumları kapsar.
 
-**\\{x,\}**   
+**\\{x,\\}**   
 =
 
 Kendisinden önceki karakterin **en az x kez** tekrar edildiğiniz belirtir.
