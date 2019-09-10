@@ -9,7 +9,10 @@ Ayrıca anlatımlarda; düzenli ifadelerin daha önce temel linux eğitimde değ
 
 Başlamadan evvel, burada yer alan bilgilerin ve kullanımların tam anlaşılabilmesi için buradaki örneklerin haricinde sizlerin de pek çok alıştırma yapması gerektiğini lütfen unutmayın. Bilgilerin kalıcı olması adına lütfen buradaki örneklerin dışına çıkarak, bolca alıştırma yapın.
 
-**[]** :  karakterinin kullanımı, iki köşeli parantez arasına ulaşmak istediğiniz hedefteki ayırt edici karakterli yazmak üzerinedir.
+**[]** 
+=
+
+kullanımı, iki köşeli parantez arasına ulaşmak istediğiniz hedefteki ayırt edici karakterleri yazmak üzerinedir.
 
 Örnek olması açısından "**dosya**" isimli belgelerden sadece sonunda **2,3,4** olanları kapsayacak bir komut olması için konsola `ls -l [234]` komutunu verdim.
 
@@ -88,73 +91,114 @@ Ayrıca kullanım şekillerine çok fazla örnek verilebilir ancak burada birka�
 
 <img src="https://raw.githubusercontent.com/taylanbildik/Linux_Dersleri/master/img/15-%20Joker%20Karakterler/13.png" width="875">
 
-**{}** : Kıvırçık parantez de köşeli paranteze benzer şekilde çalışır.
+**{}**
+=
+
+Kıvırcık parantez de köşeli paranteze benzer şekilde içerisine girilen argümanlara göre çalışır.
 
 Çalışma yapısını anlamak için aşağıdaki örneklere göz atabilirsiniz.
 
-{aa,bb,cc,dd}  **=>** aa bb cc dd
+**{x,y,z,t} :** Kıvırcık parantez, içerisinde virgüller ile ayrılmış ifadeleri tek tek basar.
 
-{0..12}        **=>** 0 1 2 3 4 5 6 7 8 9 10 11 12
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/kvr0.png" width="875">
 
-{5..-3}        **=>** 5 4 3 2 1 0 -1 -2 -3 
-
-{a..h}         **=>** a b c d e f g h
-
-{h..a}         **=>** h g f e d c b a
-
-a{0..3}b       **=>** a0b a1b a2b a3b
-
-{a,b{1..3},c,d}  **=>** a b1 b2 b3 c d
-
-{0..9..3} **=>** 0 3 6 9
-
-{1..9..2} **=>** 1 3 5 7 9
-
-{a..z..2} **=>** a c e g i k m o q s u w y
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/kvr1.png" width="875">
 
 
-**nokta(.)** : Noktanın bulunduğu yere gelebilecek herhangi bir karakteri temsil eder.
+**{x..y} :** Kıvırcık parantez içerisinde iki iki ifade arasına koyulan iki nokta(..) sayesinde otomatik olarak başlangıç karaterden son karaktere gelinceye kadar sıralı çıktılar elde edebiliyoruz. Tam kullanımı `{başlangıç_ifadesi..bitiş_ifadesi}` şeklindedir. 
 
-**^** : Satır başını temsil eder.
+**Kullanım örnekleri;**
+Rakam ya da harflerin istenildiği yerden başlayıp istenildiği kısıma kadar sıralanması sağlanabilir.
+
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/kvr2.png" width="875">
+
+Üstelik bu sıralama birer birer artmak zorunda da değil. İstenilen aralıkta artışın yapılması `{başlangıç_ifadesi..bitiş_ifadesi..artış_aralığı}` şeklindeki kullanım ile sağlanabilir.
+
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/kvr3.png" width="875">
 
 
-**$** : Satır sonunu temsil eder.
+**nokta(.)** 
+=
 
+Noktanın bulunduğu yere gelebilecek herhangi bir karakteri temsil eder.
 
-**[^..]** : Kümede belirtilen karakterler haricindeki tüm karakterleri kapsar. Ayrıca şapka işareti yerine **ünlem işareti(!)** de kullananabiliriz.
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/1.png" width="875">
+
+**^** 
+=
+
+Satır başını temsil eder.
+
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/2.png" width="875">
+
+**$**
+=
+
+Satır sonunu temsil eder.
+
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/3.png" width="875">
+
+**[^..]** 
+=
+
+Kümede belirtilen karakterler haricindeki tüm karakterleri kapsar. Ayrıca şapka işareti yerine **ünlem işareti(!)** de kullananabiliriz.
 
 Şimdi birkaç farklı örnek ile kullanımı ele alalım;
 
 Örneğin sonunda rakam bulunan dosyaları listelemek istemezsek komutumuzu `ls *[^0-9]` şeklinde girebiliriz. Bu sayede `ls` komutu başlangıcı ne olursa olsun sonunda rakam yer alan dosyaları liste dışı bırakıyor.
 
-
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/4.png" width="875">
 
 Daha net anlaşılması adına bir örnek daha; * işaretinin sona koylması ile hariç tutma durumu, başlangıcında rakam yer alan dosyalar için de uygulanabilir. 
 
-
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/5.png" width="875">
 
 Ayrıca örneklerde ele aldığımız hariç tutma durumunu, ihtiyacınaza göre rakamlar yerine harfler ya da özel karakterler için de kullanabiliyoruz. 
 
-
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/6.png" width="875">
 
  
-**\{x\}** :  Kendisinden önceki karakterin x kez tekrar edildiğiniz belirtir.
+**\\{x\}** 
+=
+
+Kendisinden önceki karakterin x kez tekrar edildiğiniz belirtir.
 
 
-**\{x,y\}** : Kendisinden önceki karakterin en az x en fazla y kez tekrar ettiği durumları kapsar.
+**\\{x,y\}**  
+=
 
-**\{x,\}** : Kendisinden önceki karakterin **en az x kez** tekrar edildiğiniz belirtir.
+Kendisinden önceki karakterin en az x en fazla y kez tekrar ettiği durumları kapsar.
 
-**\+** : Kendisinden önceki karakterin bir ya da daha fazla olduğunuz belirtir.
+**\\{x,\}**   
+=
 
-**\?** : Kendisindne önceki karakterin 0 ya da 1 kez oldğunu belirtir.
+Kendisinden önceki karakterin **en az x kez** tekrar edildiğiniz belirtir.
+
+**\\+**   
+=
+
+Kendisinden önceki karakterin bir ya da daha fazla olduğunuz belirtir.
+
+**\\?**   
+=
+
+Kendisindne önceki karakterin 0 ya da 1 kez oldğunu belirtir.
 
 
-**\|** : Kendisindne bir önceki veya bir sonraki karaktere den gelir.
+**\\|**   
+=
 
-**\(..\)** : Grup olarak düzenli deyimler tanımlar.
+Kendisindne bir önceki veya bir sonraki karaktere den gelir.
 
-**\\** : Özel karakterlerin normal karakterler olarak algılanmasını sağlarlar.
+**\\(..\)**   
+=
+
+Grup olarak düzenli deyimler tanımlar.
+
+**\\**   
+=
+
+Özel karakterlerin normal karakterler olarak algılanmasını sağlarlar.
 
 **Kullanım Örnekleri**
 
