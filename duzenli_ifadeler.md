@@ -12,7 +12,7 @@ Başlamadan evvel, burada yer alan bilgilerin ve kullanımların tam anlaşılab
 **[]** 
 =
 
-kullanımı, iki köşeli parantez arasına ulaşmak istediğiniz hedefteki ayırt edici karakterleri yazmak üzerinedir.
+Kullanımı, iki köşeli parantez arasına ulaşmak istediğiniz hedefteki ayırt edici karakterleri yazmak üzerinedir.
 
 Örnek olması açısından "**dosya**" isimli belgelerden sadece sonunda **2,3,4** olanları kapsayacak bir komut olması için konsola `ls -l [234]` komutunu verdim.
 
@@ -94,18 +94,18 @@ Ayrıca kullanım şekillerine çok fazla örnek verilebilir ancak burada birka�
 **{}**
 =
 
-Kıvırcık parantez de köşeli paranteze benzer şekilde içerisine girilen argümanlara göre çalışır.
+Kıvırcık parantez de köşeli paranteze benzer şekilde içerisine girilen ifadelere göre çalışır.
 
 Çalışma yapısını anlamak için aşağıdaki örneklere göz atabilirsiniz.
 
-**{x,y,z,t} :** Kıvırcık parantez, içerisinde virgüller ile ayrılmış ifadeleri tek tek basar.
+**{x,y,z} :** Kıvırcık parantez, içerisinde virgüller ile ayrılmış ifadeleri tek tek basar.
 
 <img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/kvr0.png" width="875">
 
 <img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/kvr1.png" width="875">
 
 
-**{x..y} :** Kıvırcık parantez içerisinde iki iki ifade arasına koyulan iki nokta(..) sayesinde otomatik olarak başlangıç karaterden son karaktere gelinceye kadar sıralı çıktılar elde edebiliyoruz. Tam kullanımı `{başlangıç_ifadesi..bitiş_ifadesi}` şeklindedir. 
+**{x..y} :** Kıvırcık parantez içerisinde, iki ifade arasına koyulan **iki nokta**(**..**) sayesinde otomatik olarak başlangıç karaterden son karaktere gelinceye kadar sıralı çıktılar elde edebiliyoruz. Tam kullanımı `{başlangıç_ifadesi..bitiş_ifadesi}` şeklindedir. 
 
 **Kullanım örnekleri;**
 Rakam ya da harflerin istenildiği yerden başlayıp istenildiği kısıma kadar sıralanması sağlanabilir.
