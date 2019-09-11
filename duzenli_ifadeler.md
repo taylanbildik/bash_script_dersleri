@@ -202,17 +202,17 @@ Kendisindne önceki karakterin 0 ya da 1 kez oldğunu belirtir.
 Kendisindne bir önceki veya bir sonraki karaktere denk gelir.
 <img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/12.png" width="875">
 
-**abc\\<**   
+**xyz\\<**   
 =
 
-abc ile başlayan satırları kapsar.
+xyz ile başlayan satırları kapsar.
 
 <img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/13.png" 
 
-**abc\\>**   
+**xyz\\>**   
 =
 
-abc ile biten satırları kapsar.
+xyz ile biten satırları kapsar.
 
 <img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/14.png" 
 
