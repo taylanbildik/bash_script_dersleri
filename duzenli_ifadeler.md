@@ -165,43 +165,63 @@ Kendisinden önceki karakterin x kez tekrar edildiğiniz belirtir.
 
 Örneğin **2 kez a** harfinin geçtiği tüm kelimeleri listelemek istersek, `grep` komutu yardımı ile `a\{2\}` düzenli ifadesini kullanabiliriz.
 
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/7.png" width="875">
+
 **\\{x,\\}**   
 =
 
 Kendisinden önceki karakterin **en az x kez** tekrar edildiğiniz belirtir.
 
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/8.png" width="875">
 
 **\\{x,y\\}**  
 =
 
 Kendisinden önceki karakterin en az x en fazla y kez tekrar ettiği durumları kapsar.
 
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/9.png" width="875">
 
 **\\+**   
 =
 
 Kendisinden önceki karakterin **1 ya da daha fazla** olduğunu, diğer bir deyişle **en az 1 kez** bulunduğu durumları belirtir.
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/10.png" width="875">
+
 
 **\\?**   
 =
 
 Kendisindne önceki karakterin 0 ya da 1 kez oldğunu belirtir.
 
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/11.png" width="875">
+
 
 **\\|**   
 =
 
-Kendisindne bir önceki veya bir sonraki karaktere den gelir.
+Kendisindne bir önceki veya bir sonraki karaktere denk gelir.
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/12.png" width="875">
 
-**\\(..\)**   
+**abc\\<**   
 =
 
-Grup olarak düzenli deyimler tanımlar.
+abc ile başlayan satırları kapsar.
+
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/13.png" 
+
+**abc\\>**   
+=
+
+abc ile biten satırları kapsar.
+
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/14.png" 
 
 **\\**   
 =
 
 Özel karakterlerin normal karakterler olarak algılanmasını sağlarlar.
+
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/15.png" width="875">
 
 **Kullanım Örnekleri**
 
