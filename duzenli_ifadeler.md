@@ -240,19 +240,62 @@ Anlatmak istediğim konuyu en iyi örnekler açıklayacaktır.
 
 |Sınıf|Özellik|
 |--|--|
-|digit|Rakamlar. **(0-9)**|
-|lower|Küçük karakterler. **(a-z)** |
-|upper|Büyük karakterler. **(A-Z)** |
-|alpha|Alfabetik karakterler: ‘**[: lower:]**’ ve ‘**[: upper:]**’; bu‘ **[A-Za-z]** ’ile aynıdır.|
-|alnum|Alfanümerik karakterler: ‘**[: alpha:]**’ ve ‘**[: digit:]**’;  bu‘ **[0-9A-Za-z]** ’ile aynıdır.|
-|punct|Noktalama işaretleri. (``! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~``)|
-|graph|Grafiksel karakterler: ‘**[: alnum:]**’ ve ‘**[: punct:]**’. |
+|digit|Rakamlar. bu‘ **(0-9)** ’ile aynıdır.|
+|lower|Küçük karakterler. bu‘ **(a-z)** ’ile aynıdır.|
+|upper|Büyük karakterler. bu‘ **(A-Z)** ’ile aynıdır. |
+|alpha|Alfabetik karakterler: ‘ **[: lower:]** ’ ve ‘ **[: upper:]** ’; bu‘ **[A-Za-z]** ’ile aynıdır.|
+|alnum|Alfanümerik karakterler: ‘ **[: alpha:]** ’ ve ‘ **[: digit:]** ’;  bu‘ **[0-9A-Za-z]** ’ile aynıdır.|
+|punct|Noktalama işaretleri.  (``! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~``)|)
+|graph|Grafiksel karakterler: ‘ **[: alnum:]** ’ ve ‘ **[: punct:]** ’. |
 |blank|Boş karakterler: **boşluk(space)** ve **tab** içerenler.|
 |space|Herhangi bir boşluk karakteri: **tab, yeni satır, dikey tab, space vb..**|
-|print|Yazdırılabilir karakterler: ‘**[: alnum:]**’, ‘**[: punct:]**’ ve **boşluk(space)**.|
+|print|Yazdırılabilir karakterler: ‘ **[: alnum:]** ’, ‘ **[: punct:]** ’ ve **boşluk(space)**.|
 |xdigit|Onaltılı sayı sistemi: `0 1 2 3 4 5 6 7 8 9 A B C D E F a b c d e f`.|
 
-Tablodan da anlayacağınız gibi belirli özellikler için sınırlandırılmış ifadeler bulunuyor. 
+Tablodan da anlayacağınız gibi belirli özellikler için sınırlandırılmış ifadeler bulunuyor. Bu ifadelerin kullanım örneklerine aşağıdaki görsellerden bakabilirsiniz. 
 
-Örneğin yalnızca noktalama işaretleri geçen ifadeleri yazdırmak istersek, [:punct:] karakter sınıfını kullanabiliriz.
-Örneğin bizler yalnızca alfanumerik karakterleri listelemek istersek; düzenli ifadeleri kullanarak [0-9A-Za-z] komutunu girebilir ya da karakter sınıfından yararlanarak [:alnum:] komutunu kullanabiliriz. 
+digit
+=
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/17.png" width="875">
+
+lower
+=
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/18.png" width="875">
+
+upper
+=
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/19.png" width="875">
+
+alpha
+=
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/20.png" width="875">
+
+alnum
+=
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/21.png" width="875">
+
+punct
+=
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/22.png" width="875">
+
+graph
+=
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/23.png" width="875">
+
+blank
+=
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/24.png" width="875">
+
+space
+=
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/25.png" width="875">
+
+print
+=
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/26.png" width="875">
+
+xdigit
+=
+
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/27.png" width="875">
+
