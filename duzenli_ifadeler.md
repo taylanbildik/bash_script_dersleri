@@ -161,7 +161,7 @@ Ayrıca örneklerde ele aldığımız hariç tutma durumunu, ihtiyacımıza gör
 **\\{x\\}** 
 =
 
-Kendisinden önceki karakterin x kez tekrar edildiğiniz belirtir.
+Kendisinden önceki karakterin **tam olarak x** kez tekrar edildiğiniz belirtir.
 
 Örneğin **2 kez a** harfinin geçtiği tüm kelimeleri listelemek istersek, `grep` komutu yardımı ile `a\{2\}` düzenli ifadesini kullanabiliriz.
 
@@ -174,12 +174,6 @@ Kendisinden önceki karakterin **en az x kez** tekrar edildiğiniz belirtir.
 
 <img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/8.png" width="875">
 
-**\\{x,y\\}**  
-=
-
-Kendisinden önceki karakterin en az x en fazla y kez tekrar ettiği durumları kapsar.
-
-<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/9.png" width="875">
 
 **\\+**   
 =
@@ -236,8 +230,9 @@ Karakter sınıflarını; bir önceki kısımda ele aldığımız düzenli ifade
 
 Örneğin biz yalnızca noktalama işaretleri içeren verileri almak istediğimizde düzenli ifadeler ile bunları tek tek tanımlamamız gerekiyorken, bunun yerine daha önceden tanımlanıp sınıf haline getirilmiş olan **punct** karakter sınıfını kullanabiliriz. 
 
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/16.png" width="875">
 
-Kısacası karakter sınıfları sık kullanılan filtreleme seçeneklerinin bir araya getirildiği bir düzenli ifade demetidir. Eğer filtreleyeceğimiz veri, bu sık kullanılan düzenli ifade demetine dahil ise, uzun uzadıya yazmak yerine yazdığımız kodun daha derli toplu olması adına karakter sınıfını kullanabiliriz. Ancak filtreleyeceğimiz veri çok daha spesifik ise düzenli ifadeleri kullanmamız gerekir. 
+Kısacası karakter sınıfları sık kullanılan filtreleme seçeneklerinin bir araya getirildiği düzenli ifade demetleridir. Eğer filtreleyeceğimiz veri, bu sık kullanılan düzenli ifade demetine dahil ise, uzun uzadıya yazmak yerine yazdığımız kodun daha derli toplu olması adına karakter sınıfını kullanabiliriz. Ancak filtreleyeceğimiz veri çok daha spesifik ise düzenli ifadeleri kullanmamız gerekir. 
 
 Anlatmak istediğim konuyu en iyi örnekler açıklayacaktır. 
 
