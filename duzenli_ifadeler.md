@@ -207,14 +207,14 @@ Kendisindne bir önceki veya bir sonraki karaktere denk gelir.
 
 xyz ile başlayan satırları kapsar.
 
-<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/13.png" 
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/13.png" width="875">
 
 **xyz\\>**   
 =
 
 xyz ile biten satırları kapsar.
 
-<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/14.png" 
+<img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/14.png" width="875">
 
 **\\**   
 =
