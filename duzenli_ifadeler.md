@@ -98,14 +98,14 @@ Kıvırcık parantez de köşeli paranteze benzer şekilde içerisine girilen if
 
 Çalışma yapısını anlamak için aşağıdaki örneklere göz atabilirsiniz.
 
-**{x,y,z} :** Kıvırcık parantez, içerisinde virgüller ile ayrılmış ifadeleri tek tek basar.
+**{x,y,z} :** içerisinde virgüller ile ayrılmış ifadeleri tek tek basar.
 
 <img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/kvr0.png" width="875">
 
 <img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/kvr1.png" width="875">
 
 
-**{x..y} :** Kıvırcık parantez içerisinde, iki ifade arasına koyulan **iki nokta**(**..**) sayesinde otomatik olarak başlangıç karaterden son karaktere gelinceye kadar sıralı çıktılar elde edebiliyoruz. Tam kullanımı `{başlangıç_ifadesi..bitiş_ifadesi}` şeklindedir. 
+**{x..y} :** iki ifade arasına koyulan **iki nokta**(**..**) sayesinde otomatik olarak başlangıç karaterinden son karaktere gelinceye kadar sıralı çıktılar elde edebiliyoruz. Tam kullanımı `{başlangıç_ifadesi..bitiş_ifadesi}` şeklindedir. 
 
 **Kullanım örnekleri;**
 Rakam ya da harflerin istenildiği yerden başlayıp istenildiği kısıma kadar sıralanması sağlanabilir.
@@ -149,11 +149,11 @@ Kümede belirtilen karakterler haricindeki tüm karakterleri kapsar. Ayrıca şa
 
 <img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/4.png" width="875">
 
-Daha net anlaşılması adına bir örnek daha; * işaretinin sona koylması ile hariç tutma durumu, başlangıcında rakam yer alan dosyalar için de uygulanabilir. 
+Daha net anlaşılması adına bir örnek daha; * işaretinin sona koyulması ile hariç tutma durumu, başlangıcında rakam yer alan dosyalar için de uygulanabilir. 
 
 <img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/5.png" width="875">
 
-Ayrıca örneklerde ele aldığımız hariç tutma durumunu, ihtiyacınaza göre rakamlar yerine harfler ya da özel karakterler için de kullanabiliyoruz. 
+Ayrıca örneklerde ele aldığımız hariç tutma durumunu, ihtiyacımıza göre rakamlar yerine harfler ya da özel karakterler için de kullanabiliyoruz. 
 
 <img src="https://raw.githubusercontent.com/taylanbildik/bash_script_dersleri/master/img/D%C3%BCzenli%20%C4%B0fadeler/6.png" width="875">
 
@@ -163,21 +163,24 @@ Ayrıca örneklerde ele aldığımız hariç tutma durumunu, ihtiyacınaza göre
 
 Kendisinden önceki karakterin x kez tekrar edildiğiniz belirtir.
 
-
-**\\{x,y\\}**  
-=
-
-Kendisinden önceki karakterin en az x en fazla y kez tekrar ettiği durumları kapsar.
+Örneğin **2 kez a** harfinin geçtiği tüm kelimeleri listelemek istersek, `grep` komutu yardımı ile `a\{2\}` düzenli ifadesini kullanabiliriz.
 
 **\\{x,\\}**   
 =
 
 Kendisinden önceki karakterin **en az x kez** tekrar edildiğiniz belirtir.
 
+
+**\\{x,y\\}**  
+=
+
+Kendisinden önceki karakterin en az x en fazla y kez tekrar ettiği durumları kapsar.
+
+
 **\\+**   
 =
 
-Kendisinden önceki karakterin bir ya da daha fazla olduğunuz belirtir.
+Kendisinden önceki karakterin **1 ya da daha fazla** olduğunu, diğer bir deyişle **en az 1 kez** bulunduğu durumları belirtir.
 
 **\\?**   
 =
