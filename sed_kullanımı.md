@@ -12,7 +12,9 @@ Aşağıdaki tablodan kullanabileceğimiz parametrelere kısaca göz atabilirsin
 |-n|Yalnızca belirtilen satırlarda uygulama yapar.|
 |-e| Bir sonraki komutun düzenleme komutu olduğunu belirtir. **e**dit ifadesinin kısaltmasıdır.|
 |-f| Dosyadan girdi alacaksa, bir sonraki ifadenin dosya adı olduğunu belirtir. **f**ile ifadesinin kısaltmasıdır.|
+|-r| Düzenli ifadeler kullanılmasını sağlar.|
 |p| Yazdırma işlevindedir. **p**rint ifadesinin kısaltmasıdır.|
-|d| Silme işlevindedir. **d**elete ifadesinin kısaltmasıdır.|
+|d| Silme işlevindedir. **d**elete ifadesinin kısaltmasıdır.|root
+
 
 
